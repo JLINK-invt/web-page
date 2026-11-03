@@ -60,7 +60,10 @@ export const en = {
   home: {
     hero: {
       eyebrow: 'Software for real operations',
-      unitsLabel: 'Our business units',
+      aboutLabel: 'Who we are',
+      aboutItem1: 'We build custom software for real operations',
+      aboutItem2: 'Domain-first: we map the process before writing code',
+      aboutItem3: 'Three products in operation across domotics',
       title: 'Systems that put real work in order.',
       titleAccent: 'in order',
       subtitle:

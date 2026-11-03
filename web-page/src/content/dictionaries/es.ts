@@ -58,7 +58,10 @@ export const es = {
   home: {
     hero: {
       eyebrow: 'Software para operaciones reales',
-      unitsLabel: 'Nuestras unidades de negocio',
+      aboutLabel: 'Quiénes somos',
+      aboutItem1: 'Construimos software a medida para operaciones reales',
+      aboutItem2: 'Dominio primero: mapeamos el proceso antes de escribir código',
+      aboutItem3: 'Tres productos en operación en domótica',
       title: 'Sistemas que ordenan el trabajo real.',
       titleAccent: 'ordenan',
       subtitle:
