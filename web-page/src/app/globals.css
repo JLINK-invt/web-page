@@ -1,0 +1,245 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-paper: #eef7fd;
+  --color-sand: #d7e8f5;
+  --color-ink: #0a2342;
+  --color-muted: #4b647c;
+  --color-line: #b9d2e6;
+  --color-cosmos: #1769aa;
+  --color-brass: #8a5f14;
+  --color-space: #051a33;
+  --color-space-2: #0a2b4f;
+  --color-space-3: #144a75;
+  --color-star: #f7fbff;
+  --color-gold: #e0b85a;
+  --color-gold-soft: #f5dfa6;
+  --color-aqua: #4fb8e8;
+  --color-aqua-soft: #b7e6f8;
+  --color-chrome: #cfdce8;
+  --color-silver: #c3d3e2;
+  --font-sans:
+    var(--font-frutiger), ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: var(--font-frutiger), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    display: flex;
+    min-height: 100svh;
+    flex-direction: column;
+    background-color: var(--color-paper);
+    background-image:
+      radial-gradient(80% 50% at 18% 0%, rgb(79 184 232 / 24%) 0%, rgb(79 184 232 / 0%) 62%),
+      radial-gradient(64% 44% at 88% 4%, rgb(255 255 255 / 96%) 0%, rgb(255 255 255 / 0%) 68%),
+      radial-gradient(46% 34% at 70% 82%, rgb(183 230 248 / 28%) 0%, rgb(183 230 248 / 0%) 70%),
+      linear-gradient(180deg, #f8fcff 0%, #e9f4fc 42%, #dcecf8 100%);
+    background-attachment: fixed;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  main {
+    flex: 1;
+  }
+
+  ::selection {
+    background-color: var(--color-gold);
+    color: var(--color-space);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-cosmos);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #dfeef9;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #f8fdff, #b8cfe1 48%, #7d9ab3);
+    border: 2px solid #dfeef9;
+    border-radius: 999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #fff0c6, #d9ad4a 52%, #a9781f);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .glass-panel {
+    background-image: linear-gradient(
+      180deg,
+      rgb(255 255 255 / 97%) 0%,
+      rgb(244 251 255 / 86%) 54%,
+      rgb(215 232 245 / 82%) 100%
+    );
+    border: 1px solid rgb(255 255 255 / 96%);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 100%),
+      inset 0 -1px 0 rgb(10 35 66 / 8%),
+      0 22px 46px -30px rgb(5 26 51 / 55%);
+  }
+
+  .glass-panel-deep {
+    background-image: linear-gradient(180deg, rgb(10 43 79 / 94%) 0%, rgb(5 26 51 / 94%) 100%);
+    border: 1px solid rgb(183 230 248 / 30%);
+    box-shadow:
+      inset 0 1px 0 rgb(183 230 248 / 40%),
+      0 26px 60px -34px rgb(5 26 51 / 90%);
+  }
+
+  .chrome-frame {
+    background-image: linear-gradient(180deg, #fff 0%, #e7f1f9 30%, #fbfdff 48%, #a9c1d6 100%);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 100%),
+      inset 0 -2px 5px rgb(5 26 51 / 20%),
+      0 26px 54px -34px rgb(5 26 51 / 60%);
+  }
+
+  .chrome-frame-deep {
+    background-image: linear-gradient(180deg, #fff 0%, #eaf4fb 28%, #fbfdff 44%, #94b2cc 100%);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 100%),
+      inset 0 -3px 7px rgb(5 26 51 / 26%),
+      0 30px 62px -34px rgb(5 26 51 / 70%);
+  }
+
+  .engraved {
+    color: var(--color-muted);
+    text-shadow: 0 1px 0 rgb(255 255 255 / 90%);
+  }
+
+  .engraved-dark {
+    color: rgb(223 240 252 / 76%);
+    text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+  }
+
+  .aero-glass {
+    background-image: linear-gradient(
+      180deg,
+      rgb(255 255 255 / 98%) 0%,
+      rgb(246 252 255 / 86%) 52%,
+      rgb(214 234 248 / 90%) 100%
+    );
+    border: 1px solid rgb(255 255 255 / 95%);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 100%),
+      inset 0 -2px 6px rgb(10 35 66 / 10%),
+      0 24px 44px -30px rgb(5 26 51 / 55%);
+  }
+
+  .aero-chrome {
+    background-image: linear-gradient(180deg, #fff 0%, #ebf4fb 30%, #fbfdff 48%, #a9c1d6 100%);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 100%),
+      inset 0 -2px 5px rgb(5 26 51 / 20%),
+      0 18px 34px -26px rgb(5 26 51 / 70%);
+  }
+
+  .aero-rivet {
+    background-image: radial-gradient(
+      circle at 32% 28%,
+      #fff 0%,
+      #e4f1fa 38%,
+      #9dbdd4 70%,
+      #5d84a6 100%
+    );
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 90%),
+      0 1px 1px rgb(5 26 51 / 45%);
+  }
+
+  .aero-sheen {
+    background-image: linear-gradient(
+      105deg,
+      rgb(255 255 255 / 0%) 0%,
+      rgb(255 255 255 / 36%) 46%,
+      rgb(255 255 255 / 0%) 100%
+    );
+  }
+}
+
+@layer components {
+  .world-skeuo .glass-panel {
+    background-image: linear-gradient(180deg, #fff 0%, #e9f4fb 42%, #c6dced 100%);
+    border-color: #fff;
+    box-shadow:
+      inset 0 2px 0 rgb(255 255 255 / 100%),
+      inset 0 -3px 7px rgb(5 26 51 / 20%),
+      0 28px 50px -28px rgb(5 26 51 / 80%);
+  }
+
+  .world-skeuo a[class*='rounded-full'] {
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 45%),
+      inset 0 -2px 4px rgb(4 20 43 / 35%),
+      0 12px 22px -14px rgb(5 26 51 / 90%);
+  }
+
+  .world-skeuo [data-skeuo-panel] {
+    background-image: linear-gradient(180deg, #fff 0%, #dcecf7 38%, #f7fcff 52%, #a3c2d8 100%);
+    border: 1px solid #fff;
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 100%),
+      inset 0 -3px 6px rgb(5 26 51 / 24%),
+      0 24px 46px -28px rgb(5 26 51 / 82%);
+  }
+}
+
+@keyframes orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.orbit-slow {
+  transform-origin: 200px 200px;
+  animation: orbit 120s linear infinite;
+}
+
+.orbit-counter {
+  transform-origin: 200px 200px;
+  animation: orbit 90s linear infinite reverse;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit-slow,
+  .orbit-counter {
+    animation: none;
+  }
+}

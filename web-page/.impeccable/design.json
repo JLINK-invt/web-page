@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-03T00:00:00.000Z",
+  "title": "Design System: Cosmos Compass",
+  "extensions": {
+    "colorMeta": {
+      "aero-blue": {
+        "role": "primary",
+        "displayName": "Aero",
+        "canonical": "#1769aa",
+        "tonalRamp": [
+          "#04182f",
+          "#06294f",
+          "#0d4470",
+          "#1769aa",
+          "#3a8dc8",
+          "#72b6df",
+          "#b7e6f8",
+          "#eef7fd"
+        ]
+      },
+      "deep-navy": {
+        "role": "primary",
+        "displayName": "Navy",
+        "canonical": "#0a2342",
+        "tonalRamp": [
+          "#051a33",
+          "#0a2342",
+          "#0a2b4f",
+          "#144a75",
+          "#2f6b97",
+          "#6f9bb8",
+          "#b9d2e6",
+          "#eef7fd"
+        ]
+      },
+      "compass-gold": {
+        "role": "secondary",
+        "displayName": "Oro Brújula",
+        "canonical": "#e0b85a",
+        "tonalRamp": [
+          "#3d2603",
+          "#5f3c07",
+          "#8a5f14",
+          "#a9781f",
+          "#c99a3d",
+          "#e0b85a",
+          "#f5dfa6",
+          "#fff3d4"
+        ]
+      },
+      "aqua-glass": {
+        "role": "secondary",
+        "displayName": "Aqua Vidrio",
+        "canonical": "#4fb8e8",
+        "tonalRamp": [
+          "#062437",
+          "#08374f",
+          "#0d5179",
+          "#1769aa",
+          "#2b9ed4",
+          "#4fb8e8",
+          "#b7e6f8",
+          "#eef7fd"
+        ]
+      },
+      "ice": {
+        "role": "neutral",
+        "displayName": "Cielo helado",
+        "canonical": "#eef7fd",
+        "tonalRamp": [
+          "#0a2342",
+          "#2f4d6b",
+          "#4b647c",
+          "#7f97ac",
+          "#b9d2e6",
+          "#d7e8f5",
+          "#eef7fd",
+          "#ffffff"
+        ]
+      },
+      "chrome": {
+        "role": "neutral",
+        "displayName": "Cromo",
+        "canonical": "#cfdce8",
+        "tonalRamp": [
+          "#203a52",
+          "#3f5d7a",
+          "#6685a1",
+          "#8eabc3",
+          "#b3c8d9",
+          "#cfdce8",
+          "#e8f2fa",
+          "#ffffff"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Línea",
+        "canonical": "#b9d2e6",
+        "tonalRamp": [
+          "#173247",
+          "#2a4d68",
+          "#3f6b8b",
+          "#5d8bab",
+          "#85abc7",
+          "#b9d2e6",
+          "#dcecf8",
+          "#f2f9ff"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Source Sans 3 Display",
+        "purpose": "Titulares de portada y de página; la voz del instrumento."
+      },
+      "headline": {
+        "displayName": "Source Sans 3 Headline",
+        "purpose": "Títulos de sección."
+      },
+      "title": {
+        "displayName": "Source Sans 3 Title",
+        "purpose": "Nombres de producto, área y tarjeta."
+      },
+      "body": {
+        "displayName": "Source Sans 3 Body",
+        "purpose": "Prosa de lectura, 65–75 caracteres de medida."
+      },
+      "label": {
+        "displayName": "Instrument Label",
+        "purpose": "Estados, verbos de enlace y rótulos en mayúscula con 0.16em."
+      }
+    },
+    "shadows": [
+      {
+        "name": "glass-panel",
+        "value": "inset 0 1px 0 rgba(255,255,255,1), inset 0 -1px 0 rgba(10,35,66,0.08), 0 22px 46px -30px rgba(5,26,51,0.55)",
+        "purpose": "Paneles claros, tarjetas y fichas de rumbo."
+      },
+      {
+        "name": "chrome-frame",
+        "value": "inset 0 1px 0 rgba(255,255,255,1), inset 0 -2px 5px rgba(5,26,51,0.2), 0 26px 54px -34px rgba(5,26,51,0.6)",
+        "purpose": "Marcos de las ventanas de producto y pedestales."
+      },
+      {
+        "name": "deep-instrument",
+        "value": "inset 0 1px 0 rgba(183,230,248,0.4), 0 26px 60px -34px rgba(5,26,51,0.9)",
+        "purpose": "Superficies navy: cierre, compás y ventanas."
+      },
+      {
+        "name": "floating-label",
+        "value": "0 16px 30px -22px rgba(5,26,51,0.7)",
+        "purpose": "Fichas de rumbo sobre la esfera y avisos."
+      }
+    ],
+    "motion": [
+      {
+        "name": "bearing-turn",
+        "value": "transform 700ms cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "La aguja gira 90 grados hacia el rumbo señalado."
+      },
+      {
+        "name": "orbital-drift",
+        "value": "orbit 120s linear infinite",
+        "purpose": "Deriva lenta de los anillos de la esfera; se anula con prefers-reduced-motion."
+      },
+      {
+        "name": "lift",
+        "value": "transform 500ms cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Las tarjetas y botones suben 2px al pasar el puntero."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botón primario",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Acción principal: navy con degradado aero, filo claro superior y filete dorado inferior.",
+      "html": "<button class=\"ds-btn-primary\">Ver proyectos</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 9999px; padding: 12px 24px; font-family: var(--font-sans); font-size: 0.875rem; font-weight: 600; color: #ffffff; background-image: linear-gradient(180deg, #2f6b97 0%, #144a75 52%, #0a2b4f 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.45), inset 0 -2px 0 rgba(224,184,90,0.35), 0 18px 34px -22px rgba(5,26,51,0.9); border: 1px solid rgba(255,255,255,0.22); cursor: pointer; transition: transform 200ms ease, filter 200ms ease; } .ds-btn-primary:hover { transform: translateY(-2px); filter: brightness(1.08); } .ds-btn-primary:focus-visible { outline: 2px solid var(--color-cosmos); outline-offset: 4px; }"
+    },
+    {
+      "name": "Botón secundario",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Acción de apoyo: cristal blanco con borde blanco sobre el cielo helado.",
+      "html": "<button class=\"ds-btn-secondary\">Hablemos</button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 9999px; padding: 12px 24px; font-family: var(--font-sans); font-size: 0.875rem; font-weight: 600; color: #0a2342; background-color: rgba(255,255,255,0.92); border: 1px solid rgba(255,255,255,0.98); box-shadow: inset 0 1px 0 #ffffff, 0 14px 28px -24px rgba(5,26,51,0.9); cursor: pointer; transition: transform 200ms ease, background-color 200ms ease; } .ds-btn-secondary:hover { transform: translateY(-2px); background-color: #ffffff; } .ds-btn-secondary:focus-visible { outline: 2px solid var(--color-cosmos); outline-offset: 4px; }"
+    },
+    {
+      "name": "Botón inverso",
+      "kind": "button",
+      "refersTo": "button-inverse",
+      "description": "Acción sobre navy: blanco con brillo de cromo y filete dorado.",
+      "html": "<button class=\"ds-btn-inverse\">Iniciar conversación</button>",
+      "css": ".ds-btn-inverse { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 9999px; padding: 12px 24px; font-family: var(--font-sans); font-size: 0.875rem; font-weight: 600; color: #0a2342; background-image: linear-gradient(180deg, #ffffff 0%, #eef7fd 62%, #d7e8f5 100%); box-shadow: inset 0 1px 0 #ffffff, inset 0 -2px 0 rgba(224,184,90,0.45), 0 16px 30px -18px rgba(2,12,26,0.9); border: none; cursor: pointer; transition: transform 200ms ease; } .ds-btn-inverse:hover { transform: translateY(-2px); } .ds-btn-inverse:focus-visible { outline: 2px solid #b7e6f8; outline-offset: 4px; }"
+    },
+    {
+      "name": "Campo de formulario",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Campo de contacto: blanco con sombra interior y foco en aero.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">Nombre</span><input class=\"ds-field-input\" type=\"text\" placeholder=\"Tu nombre\" /></label>",
+      "css": ".ds-field { display: block; font-family: var(--font-sans); } .ds-field-label { display: block; font-size: 0.688rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #4b647c; } .ds-field-input { margin-top: 6px; width: 100%; border-radius: 12px; padding: 12px 14px; font-size: 0.875rem; color: #0a2342; background-color: #ffffff; border: 1px solid #b9d2e6; box-shadow: inset 0 1px 2px rgba(5,26,51,0.08); } .ds-field-input::placeholder { color: rgba(75,100,124,0.72); } .ds-field-input:focus { outline: none; border-color: #1769aa; box-shadow: 0 0 0 2px rgba(23,105,170,0.2); }"
+    },
+    {
+      "name": "Panel de cristal",
+      "kind": "card",
+      "refersTo": "glass-panel",
+      "description": "Tarjeta base: cristal helado con luz superior y bisel inferior.",
+      "html": "<article class=\"ds-card\"><h3 class=\"ds-card-title\">Entendemos la operación</h3><p class=\"ds-card-body\">Mapeamos el flujo real, los riesgos y las decisiones que hoy frenan al equipo.</p></article>",
+      "css": ".ds-card { border-radius: 16px; padding: 24px; background-image: linear-gradient(180deg, rgba(255,255,255,0.97) 0%, rgba(244,251,255,0.86) 54%, rgba(215,232,245,0.82) 100%); border: 1px solid rgba(255,255,255,0.96); box-shadow: inset 0 1px 0 #ffffff, inset 0 -1px 0 rgba(10,35,66,0.08), 0 22px 46px -30px rgba(5,26,51,0.55); font-family: var(--font-sans); } .ds-card-title { margin: 0; font-family: var(--font-display); font-size: 1.125rem; font-weight: 600; color: #0a2342; } .ds-card-body { margin: 8px 0 0; font-size: 0.875rem; line-height: 1.6; color: #4b647c; }"
+    },
+    {
+      "name": "Ficha de rumbo",
+      "kind": "chip",
+      "refersTo": "bearing-chip",
+      "description": "Estado de un área: punto lleno para operativa, punto hueco para exploración.",
+      "html": "<span class=\"ds-chip\"><span class=\"ds-chip-dot\"></span>En exploración</span>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; gap: 8px; border-radius: 12px; padding: 6px 12px; font-family: var(--font-sans); font-size: 0.688rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #4b647c; background-color: rgba(255,255,255,0.7); border: 1px dashed rgba(138,95,20,0.5); } .ds-chip-dot { width: 6px; height: 6px; border-radius: 9999px; border: 1px solid rgba(138,95,20,0.7); } .ds-chip.is-live { color: #1769aa; border-style: solid; border-color: rgba(23,105,170,0.25); background-color: rgba(23,105,170,0.08); } .ds-chip.is-live .ds-chip-dot { background-color: #1769aa; border-color: transparent; }"
+    },
+    {
+      "name": "Barra de navegación",
+      "kind": "nav",
+      "refersTo": "button-primary",
+      "description": "Barra pegajosa de cristal con logo, Inicio, Soluciones, Proyectos, Contacto e idioma.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link\" href=\"#\">Inicio</a><a class=\"ds-nav-link\" href=\"#\">Soluciones</a><a class=\"ds-nav-link\" href=\"#\">Proyectos</a><a class=\"ds-nav-link\" href=\"#\">Contacto</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 24px; padding: 16px 24px; background-color: rgba(238,247,253,0.8); border-bottom: 1px solid rgba(255,255,255,0.9); box-shadow: inset 0 -1px 0 rgba(224,184,90,0.35); backdrop-filter: blur(18px); } .ds-nav-link { font-family: var(--font-sans); font-size: 0.8125rem; font-weight: 500; color: rgba(10,35,66,0.8); text-decoration: none; transition: color 200ms ease; } .ds-nav-link:hover { color: #1769aa; } .ds-nav-link:focus-visible { outline: 2px solid #1769aa; outline-offset: 3px; }"
+    },
+    {
+      "name": "Ventana de producto",
+      "kind": "custom",
+      "refersTo": "chrome-frame",
+      "description": "Marco de cromo con remaches, barra de tres luces y cuerpo navy con escena vectorial.",
+      "html": "<div class=\"ds-window\"><div class=\"ds-window-bar\"><span></span><span></span><span></span></div><div class=\"ds-window-body\"></div></div>",
+      "css": ".ds-window { border-radius: 20px; padding: 5px; background-image: linear-gradient(180deg, #ffffff 0%, #d7e8f5 34%, #f7fcff 50%, #8eabc3 100%); box-shadow: inset 0 1px 0 #ffffff, inset 0 -2px 5px rgba(5,26,51,0.2), 0 26px 54px -34px rgba(5,26,51,0.6); } .ds-window-bar { display: flex; gap: 6px; padding: 9px 12px; background-image: linear-gradient(180deg, #ffffff 0%, #dcecf8 100%); border-radius: 14px 14px 0 0; } .ds-window-bar span { width: 8px; height: 8px; border-radius: 9999px; background-color: #4fb8e8; } .ds-window-bar span:nth-child(2) { background-color: #e0b85a; } .ds-window-bar span:nth-child(3) { background-color: #b9d2e6; } .ds-window-body { aspect-ratio: 4 / 3; border-radius: 0 0 14px 14px; overflow: hidden; background-color: #0a2342; }"
+    },
+    {
+      "name": "Rótulo de rumbo",
+      "kind": "custom",
+      "refersTo": "bearing-chip",
+      "description": "Etiqueta flotante sobre la esfera; al señalarla, la aguja dorada gira hacia ese rumbo.",
+      "html": "<a class=\"ds-bearing\" href=\"#\"><span class=\"ds-bearing-name\">Domótica</span><span class=\"ds-bearing-state\">Activo</span></a>",
+      "css": ".ds-bearing { display: inline-flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 12px; border-radius: 12px; text-decoration: none; background-color: rgba(244,251,255,0.94); border: 1px solid #ffffff; box-shadow: 0 16px 30px -22px rgba(5,26,51,0.7), inset 0 1px 0 #ffffff; backdrop-filter: blur(12px); } .ds-bearing-name { font-family: var(--font-display); font-size: 0.813rem; font-weight: 600; color: #0a2342; } .ds-bearing-state { font-family: var(--font-sans); font-size: 0.625rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #1769aa; } .ds-bearing:hover { transform: translateY(-2px); } .ds-bearing:focus-visible { outline: 2px solid #1769aa; outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Aero chrome",
+    "overview": "Cosmos Compass se ve como un sitio de producto de 2003 reconstruido con disciplina de 2026: cielo azul helado, cristal blanco, marcos de cromo y una brújula de mesa que orienta entre cuatro áreas. La nostalgia aporta el material (brillo, bisel, cromo, bokeh); la funcionalidad moderna aporta jerarquía, espaciado, foco y respuesta. El navy sostiene el texto y los instrumentos; el plateado construye marcos; el dorado se reserva a la aguja, al rumbo activo y a los filetes finos; el blanco helado es el suelo. Nada de papel cálido, serif editorial ni campo estelar decorativo.",
+    "keyCharacteristics": [
+      "Cielo azul helado, cristal blanco, cromo plateado, navy y dorado.",
+      "Un compás de mesa con bisel cromado, esfera aqua y aguja dorada.",
+      "Cuatro áreas siempre visibles, con estado y soluciones propias.",
+      "Escenas vectoriales planas dentro de ventanas cromadas; nunca capturas inventadas.",
+      "Source Sans 3 en todos los niveles y movimiento mecánico breve."
+    ],
+    "rules": [
+      {
+        "name": "La Regla del Dorado",
+        "body": "El dorado marca orientación, estado o foco: la aguja, el rumbo activo, el filete de un botón, el subrayado de un enlace. Nunca es color de cuerpo de texto sobre claro; para eso existe el oro oscuro.",
+        "section": "colors"
+      },
+      {
+        "name": "La Regla del Cielo",
+        "body": "El suelo es cielo helado, no papel. Las superficies oscuras son instrumentos (compás, ventanas, cierre), no decoración.",
+        "section": "colors"
+      },
+      {
+        "name": "La Regla de una Sola Voz",
+        "body": "No hay monoespaciada ni serif: la medida se comunica con el tamaño del rótulo, no con una fuente de consola. El tracking negativo se reserva a los titulares.",
+        "section": "typography"
+      },
+      {
+        "name": "La Regla del Bisel",
+        "body": "Toda superficie recibe luz de arriba y bisel oscuro abajo. Un componente sin esa tríada no pertenece al mundo.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do reservar el dorado para orientación, estado y foco.",
+      "Do dar a cada superficie luz de arriba, bisel abajo y sombra proyectada.",
+      "Do usar cristal blanco y cromo para los paneles; navy para los instrumentos y el cierre.",
+      "Do dibujar cada dominio con una escena plana reconocible antes que con una interfaz genérica.",
+      "Do enlazar cada solución a un destino real: proyecto, área o contacto.",
+      "Do mantener el menú móvil y el mega-menú opacos: la legibilidad gana al vidrio."
+    ],
+    "donts": [
+      "Don't volver al papel cálido, al latón envejecido ni a la serif editorial.",
+      "Don't usar campo estelar decorativo, marquesinas ni contadores de visitas.",
+      "Don't usar sombras duras ni halos de color como profundidad.",
+      "Don't usar monoespaciada como atajo de \"técnico\".",
+      "Don't ocultar un área sin proyectos: se muestra en exploración y tiene su propia página.",
+      "Don't inventar capturas, precios, clientes o métricas."
+    ]
+  }
+}
