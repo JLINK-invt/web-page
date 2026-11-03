@@ -60,7 +60,7 @@ export const en = {
   home: {
     hero: {
       eyebrow: 'Software for real operations',
-      compassEyebrow: 'Active business units',
+      unitsLabel: 'Our business units',
       title: 'Systems that put real work in order.',
       titleAccent: 'in order',
       subtitle:

@@ -4,6 +4,7 @@ import type { Locale } from '@/lib/i18n';
 import { href } from '@/lib/routes';
 import { ButtonLink } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
+import { cn } from '@/lib/cn';
 
 function renderTitle(title: string, accent: string) {
   const index = title.toLowerCase().indexOf(accent.toLowerCase());
@@ -20,7 +21,7 @@ function renderTitle(title: string, accent: string) {
 
 export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden bg-[radial-gradient(ellipse_at_70%_15%,rgba(79,184,232,0.18),rgba(79,184,232,0)_65%),radial-gradient(ellipse_at_20%_85%,rgba(224,184,90,0.12),rgba(224,184,90,0)_55%)]">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(58%_46%_at_78%_16%,rgba(79,184,232,0.22),rgba(79,184,232,0)_72%)]"
@@ -80,26 +81,63 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
         </div>
 
         <div className="lg:col-span-6">
-          <div className="mx-auto aspect-square max-w-[20rem] sm:max-w-[28rem] lg:max-w-none">
-            <div className="from-cosmos/5 to-gold/5 flex h-full w-full items-center justify-center rounded-2xl border border-white/50 bg-gradient-to-br via-transparent shadow-[0_40px_80px_-44px_rgba(5,26,51,0.4),inset_0_1px_0_rgba(255,255,255,0.5)]">
-              <div className="p-8 text-center">
-                <p className="text-muted mb-4 text-[13px] font-medium tracking-[0.1em] uppercase">
-                  {dict.home.hero.compassEyebrow || '4 Business Units'}
-                </p>
-                <ul className="space-y-3 text-left">
-                  {domains
-                    .filter((d) => d.status === 'active')
-                    .map((domain) => (
-                      <li key={domain.id} className="text-ink/80 flex items-center gap-3">
-                        <span className="bg-cosmos/10 text-cosmos flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-semibold">
-                          {domain.number}
-                        </span>
-                        <span className="font-semibold">{domain.name[locale]}</span>
-                      </li>
-                    ))}
-                </ul>
-              </div>
-            </div>
+          <div className="mx-auto max-w-[28rem] sm:max-w-[36rem] lg:max-w-none">
+            <ul className="space-y-3" role="list" aria-label={dict.home.hero.unitsLabel}>
+              {domains.map((domain) => (
+                <li
+                  key={domain.id}
+                  className="group flex items-center gap-4 rounded-xl border border-white/80 bg-[rgba(247,252,255,0.72)] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,1),0_12px_24px_-20px_rgba(5,26,51,0.45)] transition-all duration-300 hover:-translate-x-1 hover:shadow-[inset_0_1px_0_rgba(255,255,255,1),0_20px_40px_-24px_rgba(5,26,51,0.6)]"
+                >
+                  <span
+                    className={cn(
+                      'flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/80 text-sm font-semibold shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_4px_12px_-8px_rgba(5,26,51,0.5)] transition-transform group-hover:scale-105',
+                      domain.status === 'active'
+                        ? 'from-cosmos to-cosmos/80 bg-gradient-to-br text-white'
+                        : 'to-paper text-muted border-muted/40 bg-gradient-to-br from-white'
+                    )}
+                    aria-hidden="true"
+                  >
+                    {domain.number}
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <span className="font-display text-ink group-hover:text-cosmos block text-base font-semibold tracking-tight">
+                      {domain.name[locale]}
+                    </span>
+                    <span
+                      className={cn(
+                        'mt-1 inline-flex items-center gap-1 text-[10px] font-medium tracking-[0.1em] uppercase',
+                        domain.status === 'active' ? 'text-status-green' : 'text-gold-badge'
+                      )}
+                    >
+                      <span
+                        aria-hidden="true"
+                        className={cn(
+                          'h-1.5 w-1.5 rounded-full',
+                          domain.status === 'active'
+                            ? 'bg-status-green'
+                            : 'border-gold-badge/60 border'
+                        )}
+                      />
+                      {domain.status === 'active' ? dict.common.active : dict.common.exploration}
+                    </span>
+                  </div>
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 16 16"
+                    className="text-muted group-hover:text-cosmos h-5 w-5 shrink-0 transition-colors"
+                  >
+                    <path
+                      d="m4 4 8 8-8 8"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </Container>
