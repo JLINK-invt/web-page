@@ -1,3 +1,5 @@
+'use client';
+
 import { getUpcomingDomains } from '@/content/domains';
 import { getFeaturedProjects } from '@/content/projects';
 import { getDictionary, type Locale } from '@/lib/i18n';

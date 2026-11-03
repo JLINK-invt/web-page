@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import type { ReactNode } from 'react';
 import { site } from '@/content/site';
 import { defaultLocale, getDictionary, isLocale, locales } from '@/lib/i18n';
-import { frutiger } from '@/lib/fonts';
+import { frutiger, spaceGrotesk, jetbrainsMono } from '@/lib/fonts';
 import { Footer } from '@/components/site/Footer';
 import { Header } from '@/components/site/Header';
 import { SkipLink } from '@/components/site/SkipLink';
@@ -62,7 +62,11 @@ export default async function LocaleLayout({
   const dict = getDictionary(locale);
 
   return (
-    <html lang={locale} className={frutiger.variable} suppressHydrationWarning>
+    <html
+      lang={locale}
+      className={`${frutiger.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
+      suppressHydrationWarning
+    >
       <body className="font-sans antialiased">
         <SkipLink label={dict.a11y.skipToContent} />
         <Header locale={locale} />

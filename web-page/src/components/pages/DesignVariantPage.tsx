@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import type { Dictionary } from '@/content/dictionaries';
 import { domains } from '@/content/domains';

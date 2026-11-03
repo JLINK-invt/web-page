@@ -1,3 +1,5 @@
+'use client';
+
 import { getDictionary, type Locale } from '@/lib/i18n';
 import { Approach } from '@/components/sections/Approach';
 import { CtaBand } from '@/components/sections/CtaBand';

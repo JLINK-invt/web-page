@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
 import type { Dictionary } from '@/content/dictionaries';
 import { solutionAreas, solutionHref } from '@/content/solutions';
@@ -5,36 +8,71 @@ import type { Locale } from '@/lib/i18n';
 import { href } from '@/lib/routes';
 import { Container } from '@/components/ui/Container';
 import { SectionHeading } from '@/components/ui/SectionHeading';
-import { SectorScene } from '@/components/aero/SectorScene';
 import { ArrowIcon } from '@/components/ui/ArrowIcon';
 import { cn } from '@/lib/cn';
+import { ProductWindow } from '@/components/aero/ProductWindow';
+import { MetallicTabs } from '@/components/aero/MetallicTabs';
+import type { BoxShotName } from '@/components/aero/BoxShot';
+
+const AREA_BOX_SHOTS: Record<string, string> = {
+  domotics: 'smart-house',
+  agriculture: 'agro-monitor',
+  industrial: 'industry-vision',
+  medical: 'medical-records',
+};
+
+const AREA_TABS = [
+  { id: 'domotics', label: 'Domótica' },
+  { id: 'industrial', label: 'Industria' },
+  { id: 'agriculture', label: 'Agricultura' },
+  { id: 'medical', label: 'Salud' },
+];
 
 export function DomainGrid({ locale, dict }: { locale: Locale; dict: Dictionary }) {
+  const [activeTab, setActiveTab] = useState('domotics');
+
+  const filteredAreas = solutionAreas.filter((area) => area.id === activeTab);
+
   return (
     <section id="soluciones" className="py-16 sm:py-20">
       <Container>
         <SectionHeading title={dict.home.domains.title} subtitle={dict.home.domains.subtitle} />
 
-        <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          {solutionAreas.map((area) => (
+        <div className="mx-auto mt-8 max-w-4xl">
+          <MetallicTabs
+            activeTab={activeTab}
+            onTabChange={setActiveTab}
+            tabs={AREA_TABS.map((t) => ({
+              id: t.id,
+              label: dict.nav[t.id as keyof typeof dict.nav] || t.label,
+            }))}
+          />
+        </div>
+
+        <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          {filteredAreas.map((area) => (
             <article
               key={area.id}
               className="group flex flex-col overflow-hidden rounded-2xl border border-white bg-[rgba(247,252,255,0.82)] shadow-[inset_0_1px_0_rgba(255,255,255,1),inset_0_-1px_0_rgba(10,35,66,0.06),0_28px_50px_-44px_rgba(5,26,51,0.55)] transition-transform duration-300 hover:-translate-y-1"
             >
               <Link
                 href={solutionHref(locale, area.href)}
-                className="border-line/60 relative block aspect-[16/10] overflow-hidden border-b"
+                className="relative block aspect-[16/10] overflow-hidden"
               >
-                <SectorScene
-                  name={area.scene}
-                  className="h-full w-full rounded-none transition-transform duration-500 group-hover:scale-[1.02]"
+                <ProductWindow
+                  variant={
+                    area.scene === 'house' ? 'orbits' : area.scene === 'gym' ? 'waves' : 'grid'
+                  }
+                  showBoxShot
+                  boxShotName={AREA_BOX_SHOTS[area.id] as BoxShotName}
+                  className="h-full w-full"
                 />
                 <span className="text-muted absolute top-3 left-3 flex items-center gap-1.5 rounded-full border border-white bg-[rgba(247,252,255,0.94)] px-2 py-1 text-[9px] font-semibold tracking-[0.14em] uppercase shadow-[0_6px_14px_-10px_rgba(5,26,51,0.5)]">
                   <span
                     aria-hidden="true"
                     className={cn(
                       'h-1.5 w-1.5 rounded-full',
-                      area.status === 'active' ? 'bg-cosmos' : 'border-brass/60 border'
+                      area.status === 'active' ? 'bg-status-green' : 'border-gold-badge/60 border'
                     )}
                   />
                   {area.status === 'active' ? dict.common.active : dict.common.exploration}
@@ -66,7 +104,9 @@ export function DomainGrid({ locale, dict }: { locale: Locale; dict: Dictionary 
                           aria-hidden="true"
                           className={cn(
                             'h-1 w-1 shrink-0 rounded-full',
-                            solution.status === 'live' ? 'bg-cosmos' : 'border-brass/60 border'
+                            solution.status === 'live'
+                              ? 'bg-status-green'
+                              : 'border-gold-badge/60 border'
                           )}
                         />
                         <span className="text-ink group-hover/sol:text-cosmos text-[12.5px] leading-tight font-semibold">
