@@ -11,14 +11,6 @@ import { LocaleSwitcher } from './LocaleSwitcher';
 import { Logo } from './Logo';
 import { MobileNav, type NavItem } from './MobileNav';
 import { SolutionsMenu, type MenuArea } from './SolutionsMenu';
-import { MetallicTabs } from '@/components/aero/MetallicTabs';
-
-const AREA_TABS = [
-  { id: 'domotics', label: 'domotics' },
-  { id: 'industrial', label: 'industrial' },
-  { id: 'agriculture', label: 'agriculture' },
-  { id: 'medical', label: 'medical' },
-];
 
 export function Header({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale);
@@ -28,7 +20,8 @@ export function Header({ locale }: { locale: Locale }) {
     { label: dict.nav.contact, href: href(locale, 'contact') },
   ];
 
-  const areas: MenuArea[] = solutionAreas.map((area) => ({
+  const activeAreas = solutionAreas.filter((area) => area.status === 'active');
+  const areas: MenuArea[] = activeAreas.map((area) => ({
     id: area.id,
     label: area.name[locale],
     description: area.description[locale],
@@ -36,13 +29,15 @@ export function Header({ locale }: { locale: Locale }) {
     scene: area.scene,
     status: area.status,
     statusLabel: area.status === 'active' ? dict.common.active : dict.common.exploration,
-    solutions: area.solutions.map((solution) => ({
-      id: solution.id,
-      label: solution.name[locale],
-      description: solution.description[locale],
-      href: solutionHref(locale, solution.href),
-      status: solution.status,
-    })),
+    solutions: area.solutions
+      .filter((s) => s.status === 'live')
+      .map((solution) => ({
+        id: solution.id,
+        label: solution.name[locale],
+        description: solution.description[locale],
+        href: solutionHref(locale, solution.href),
+        status: solution.status,
+      })),
   }));
 
   return (
@@ -69,17 +64,6 @@ export function Header({ locale }: { locale: Locale }) {
               className="bg-gold absolute inset-x-1 -bottom-0.5 h-px origin-left scale-x-0 transition-transform duration-200 group-hover:scale-x-100"
             />
           </Link>
-
-          <div className="hidden lg:block">
-            <MetallicTabs
-              activeTab="domotics"
-              onTabChange={() => {}}
-              tabs={AREA_TABS.map((t) => ({
-                id: t.id,
-                label: dict.nav[t.id as keyof typeof dict.nav] || t.label,
-              }))}
-            />
-          </div>
 
           <SolutionsMenu
             label={dict.nav.solutions}

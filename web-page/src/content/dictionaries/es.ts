@@ -58,6 +58,7 @@ export const es = {
   home: {
     hero: {
       eyebrow: 'Software para operaciones reales',
+      compassEyebrow: 'Unidades de negocio activas',
       title: 'Sistemas que ordenan el trabajo real.',
       titleAccent: 'ordenan',
       subtitle:

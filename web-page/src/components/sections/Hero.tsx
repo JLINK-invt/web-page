@@ -4,7 +4,6 @@ import type { Locale } from '@/lib/i18n';
 import { href } from '@/lib/routes';
 import { ButtonLink } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
-import { CompassDial } from '@/components/aero/CompassDial';
 
 function renderTitle(title: string, accent: string) {
   const index = title.toLowerCase().indexOf(accent.toLowerCase());
@@ -20,14 +19,6 @@ function renderTitle(title: string, accent: string) {
 }
 
 export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
-  const bearings = domains.map((domain) => ({
-    id: domain.id,
-    label: domain.name[locale],
-    href: href(locale, 'domain', domain.id),
-    live: domain.status === 'active',
-    status: domain.status === 'active' ? dict.common.active : dict.common.exploration,
-  }));
-
   return (
     <section className="relative overflow-hidden">
       <div
@@ -89,8 +80,26 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
         </div>
 
         <div className="lg:col-span-6">
-          <div className="mx-auto max-w-[20rem] sm:max-w-[28rem] lg:max-w-none">
-            <CompassDial bearings={bearings} />
+          <div className="mx-auto aspect-square max-w-[20rem] sm:max-w-[28rem] lg:max-w-none">
+            <div className="from-cosmos/5 to-gold/5 flex h-full w-full items-center justify-center rounded-2xl border border-white/50 bg-gradient-to-br via-transparent shadow-[0_40px_80px_-44px_rgba(5,26,51,0.4),inset_0_1px_0_rgba(255,255,255,0.5)]">
+              <div className="p-8 text-center">
+                <p className="text-muted mb-4 text-[13px] font-medium tracking-[0.1em] uppercase">
+                  {dict.home.hero.compassEyebrow || '4 Business Units'}
+                </p>
+                <ul className="space-y-3 text-left">
+                  {domains
+                    .filter((d) => d.status === 'active')
+                    .map((domain) => (
+                      <li key={domain.id} className="text-ink/80 flex items-center gap-3">
+                        <span className="bg-cosmos/10 text-cosmos flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-semibold">
+                          {domain.number}
+                        </span>
+                        <span className="font-semibold">{domain.name[locale]}</span>
+                      </li>
+                    ))}
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </Container>
