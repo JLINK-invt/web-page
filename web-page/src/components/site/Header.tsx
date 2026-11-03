@@ -20,8 +20,7 @@ export function Header({ locale }: { locale: Locale }) {
     { label: dict.nav.contact, href: href(locale, 'contact') },
   ];
 
-  const activeAreas = solutionAreas.filter((area) => area.status === 'active');
-  const areas: MenuArea[] = activeAreas.map((area) => ({
+  const areas: MenuArea[] = solutionAreas.map((area) => ({
     id: area.id,
     label: area.name[locale],
     description: area.description[locale],
@@ -29,15 +28,13 @@ export function Header({ locale }: { locale: Locale }) {
     scene: area.scene,
     status: area.status,
     statusLabel: area.status === 'active' ? dict.common.active : dict.common.exploration,
-    solutions: area.solutions
-      .filter((s) => s.status === 'live')
-      .map((solution) => ({
-        id: solution.id,
-        label: solution.name[locale],
-        description: solution.description[locale],
-        href: solutionHref(locale, solution.href),
-        status: solution.status,
-      })),
+    solutions: area.solutions.map((solution) => ({
+      id: solution.id,
+      label: solution.name[locale],
+      description: solution.description[locale],
+      href: solutionHref(locale, solution.href),
+      status: solution.status,
+    })),
   }));
 
   return (

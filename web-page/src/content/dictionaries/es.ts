@@ -58,17 +58,19 @@ export const es = {
   home: {
     hero: {
       eyebrow: 'Software para operaciones reales',
-      aboutLabel: 'Quiénes somos',
-      aboutItem1: 'Construimos software a medida para operaciones reales',
-      aboutItem2: 'Dominio primero: mapeamos el proceso antes de escribir código',
-      aboutItem3: 'Tres productos en operación en domótica',
       title: 'Sistemas que ordenan el trabajo real.',
       titleAccent: 'ordenan',
       subtitle:
         'Construimos software a medida para ordenar operaciones en domótica, agricultura, industria y salud. Menos planillas paralelas, menos datos sin dueño y menos decisiones a ciegas.',
       note: 'Tres productos en operación. Cuatro áreas en el mapa.',
       primaryCta: 'Ver sistemas en operación',
-      secondaryCta: 'Cuéntanos tu caso',
+      secondaryCta: 'Hablemos',
+      valuesLabel: 'Cómo trabajamos',
+      value1: 'Dominio primero: mapeamos el proceso real antes de escribir código',
+      value2: 'Seguridad y trazabilidad integradas desde el día uno',
+      value3: 'Software a medida, no paquetes por rubro',
+      value4: 'Entregamos, medimos e iteramos con evidencia',
+      valuesNote: 'Cuatro principios. Cada proyecto.',
     },
     domains: {
       title: 'Cuatro áreas. Software a medida en cada una.',

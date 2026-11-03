@@ -31,7 +31,7 @@ export const en = {
     menuNote:
       'We do not sell an industry package: we build the software and design the solution with your team.',
     allProjects: 'View projects',
-    tellUs: 'Tell us your case',
+    tellUs: "Let's talk",
     projects: 'Projects',
     contact: 'Contact',
     cta: "Let's talk",
@@ -60,17 +60,19 @@ export const en = {
   home: {
     hero: {
       eyebrow: 'Software for real operations',
-      aboutLabel: 'Who we are',
-      aboutItem1: 'We build custom software for real operations',
-      aboutItem2: 'Domain-first: we map the process before writing code',
-      aboutItem3: 'Three products in operation across domotics',
       title: 'Systems that put real work in order.',
       titleAccent: 'in order',
       subtitle:
         'We build custom software to put operations in order across domotics, agriculture, industry and health. Fewer parallel spreadsheets, fewer ownerless data points and fewer blind decisions.',
       note: 'Three products in operation. Four areas on the map.',
       primaryCta: 'See systems at work',
-      secondaryCta: 'Tell us your case',
+      secondaryCta: "Let's talk",
+      valuesLabel: 'How we work',
+      value1: 'Domain-first: we map the real process before writing code',
+      value2: 'Security & traceability built in from day one',
+      value3: 'Custom software, not industry packages',
+      value4: 'We ship, measure, and iterate with evidence',
+      valuesNote: 'Four principles. Every project.',
     },
     domains: {
       title: 'Four areas. Custom software in each one.',
@@ -80,7 +82,7 @@ export const en = {
       customTitle: 'Your operation does not fit an area?',
       customText:
         'We also build custom software from scratch: we map the process and design the solution with you.',
-      customCta: 'Tell us your case',
+      customCta: "Let's talk",
     },
     projects: {
       title: 'Systems already at work.',
