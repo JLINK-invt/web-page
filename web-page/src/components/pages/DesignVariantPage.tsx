@@ -148,13 +148,7 @@ export function DesignVariantPage({
           <SectionHeading title={dict.home.projects.title} subtitle={dict.home.projects.subtitle} />
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {projects.map((project) => (
-              <ProjectCard
-                key={project.slug}
-                locale={locale}
-                project={project}
-                dict={dict}
-                depth={skeuo ? 'skeuo' : 'glass'}
-              />
+              <ProjectCard key={project.slug} locale={locale} project={project} dict={dict} />
             ))}
           </div>
         </Container>

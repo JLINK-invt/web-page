@@ -146,11 +146,12 @@ export function SolutionsMenu({
         hidden={!open}
         className="fixed top-16 left-1/2 z-50 w-[min(64rem,calc(100vw-2rem))] -translate-x-1/2 sm:top-20"
       >
-        <div className="overflow-hidden rounded-2xl border border-white bg-[#f2f9ff] shadow-[0_40px_80px_-44px_rgba(5,26,51,0.7),inset_0_1px_0_rgba(255,255,255,1)]">
+        <div className="overflow-hidden rounded-2xl border border-white bg-[#f2f9ff] shadow-[0_32px_72px_-48px_rgba(5,26,51,0.7),inset_0_1px_0_rgba(255,255,255,1)]">
+          {/* Top chrome highlight bar */}
           <div className="h-1 w-full bg-[linear-gradient(90deg,#9fbdd4,#ffffff_28%,#e0b85a_52%,#ffffff_72%,#9fbdd4)]" />
           <div className="divide-line/60 grid grid-cols-4 divide-x">
             {areas.map((area, areaIndex) => (
-              <div key={area.id} className="flex flex-col p-4">
+              <div key={area.id} className="flex flex-col p-4 sm:p-5">
                 <Link
                   ref={areaIndex === 0 ? firstLinkRef : undefined}
                   href={area.href}
@@ -160,7 +161,7 @@ export function SolutionsMenu({
                   <div className="border-line/60 relative aspect-[16/9] overflow-hidden rounded-lg border">
                     <SectorScene
                       name={area.scene}
-                      className="h-full w-full rounded-none transition-transform duration-500 group-hover:scale-[1.02]"
+                      className="h-full w-full rounded-none transition-transform duration-500 group-hover:scale-[1.015]"
                     />
                   </div>
                   <div className="mt-3 flex items-center justify-between gap-2">
@@ -171,8 +172,8 @@ export function SolutionsMenu({
                       className={cn(
                         'inline-flex shrink-0 items-center gap-1 rounded-full border px-1.5 py-0.5 text-[8px] font-semibold tracking-[0.12em] uppercase',
                         area.status === 'active'
-                          ? 'border-cosmos/25 bg-cosmos/5 text-cosmos'
-                          : 'border-line text-muted bg-white/60'
+                          ? 'border-cosmos/30 bg-cosmos/5 text-cosmos'
+                          : 'border-line text-muted bg-white/70'
                       )}
                     >
                       <span
@@ -185,24 +186,24 @@ export function SolutionsMenu({
                       {area.statusLabel}
                     </span>
                   </div>
-                  <p className="text-muted mt-1 text-[11px] leading-snug">{area.description}</p>
+                  <p className="text-muted mt-1.5 text-[11px] leading-snug">{area.description}</p>
                 </Link>
 
                 <p className="text-muted mt-4 text-[9px] font-semibold tracking-[0.18em] uppercase">
                   {solutionsLabel}
                 </p>
-                <ul className="mt-1">
+                <ul className="mt-1 space-y-1">
                   {area.solutions.map((solution) => (
                     <li key={solution.id}>
                       <Link
                         href={solution.href}
                         onClick={() => setOpen(false)}
-                        className="group border-line/50 flex items-start gap-2 border-t py-2 first:border-t-0"
+                        className="group border-line/50 flex items-start gap-2.5 border-t py-2.5 transition-colors first:border-t-0"
                       >
                         <span
                           aria-hidden="true"
                           className={cn(
-                            'mt-1.5 h-1 w-1 shrink-0 rounded-full',
+                            'mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full',
                             solution.status === 'live' ? 'bg-cosmos' : 'border-brass/60 border'
                           )}
                         />
@@ -234,7 +235,7 @@ export function SolutionsMenu({
               <Link
                 href={contactHref}
                 onClick={() => setOpen(false)}
-                className="text-ink hover:border-gold/60 rounded-full border border-white bg-[linear-gradient(180deg,#ffffff,#dcecf7)] px-3.5 py-1.5 text-[11px] font-semibold shadow-[inset_0_1px_0_rgba(255,255,255,1),0_8px_16px_-12px_rgba(5,26,51,0.7)] transition-colors hover:bg-white"
+                className="text-space hover:border-gold/60 rounded-full border border-white bg-[linear-gradient(180deg,#ffffff,#dcecf7)] px-3.5 py-1.5 text-[11px] font-semibold shadow-[inset_0_1px_0_rgba(255,255,255,1),0_6px_14px_-10px_rgba(5,26,51,0.6)] transition-colors hover:bg-white"
               >
                 {contactLabel}
               </Link>

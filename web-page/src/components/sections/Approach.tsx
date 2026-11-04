@@ -94,23 +94,37 @@ const marks = [ScanMark, CoreMark, SignalMark];
 
 export function Approach({ dict }: { dict: Dictionary }) {
   return (
-    <section className="border-y border-white/90 bg-[linear-gradient(180deg,rgba(255,255,255,0.72),rgba(214,234,248,0.55))] py-16 shadow-[inset_0_1px_0_rgba(255,255,255,0.95)] backdrop-blur-sm sm:py-20">
+    <section className="relative border-y border-white/90 bg-[linear-gradient(180deg,rgba(255,255,255,0.72),rgba(214,234,248,0.55))] py-16 shadow-[inset_0_1px_0_rgba(255,255,255,0.95)] backdrop-blur-sm sm:py-20">
+      {/* Single clean radial glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_50%_30%_at_50%_0%,rgba(100,180,230,0.08),rgba(100,180,230,0)_50%)]"
+      />
+      {/* Top chrome highlight */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute top-0 right-0 left-0 h-1 bg-gradient-to-r from-transparent via-white/70 to-transparent"
+      />
+
       <Container>
         <SectionHeading title={dict.home.approach.title} subtitle={dict.home.approach.subtitle} />
 
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
           {dict.home.approach.steps.map((step, index) => {
             const Mark = marks[index % marks.length];
             return (
               <Reveal key={step.title} delay={index * 80}>
-                <article className="aero-glass h-full rounded-2xl p-6">
+                <article className="relative overflow-hidden rounded-2xl border border-white/80 bg-gradient-to-br from-white/90 via-[#f8fbff]/70 to-white/60 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,1),inset_0_-1px_0_rgba(100,180,230,0.05),0_12px_28px_-16px_rgba(100,180,230,0.15)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#64b4e6]/40 hover:shadow-[inset_0_1px_0_rgba(255,255,255,1),inset_0_-1px_0_rgba(100,180,230,0.08),0_18px_36px_-20px_rgba(100,180,230,0.22)]">
+                  {/* Top crystalline highlight */}
+                  <div className="absolute top-0 right-0 left-0 h-1 bg-gradient-to-r from-transparent via-white/90 to-transparent" />
+
                   <span className="text-cosmos">
                     <Mark />
                   </span>
                   <h3 className="font-display text-ink mt-5 text-lg font-semibold tracking-tight">
                     {step.title}
                   </h3>
-                  <p className="text-muted mt-2 text-sm leading-relaxed">{step.description}</p>
+                  <p className="text-muted mt-2.5 text-sm leading-relaxed">{step.description}</p>
                 </article>
               </Reveal>
             );

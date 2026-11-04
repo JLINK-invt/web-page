@@ -7,6 +7,7 @@ import { frutiger, spaceGrotesk, jetbrainsMono } from '@/lib/fonts';
 import { Footer } from '@/components/site/Footer';
 import { Header } from '@/components/site/Header';
 import { SkipLink } from '@/components/site/SkipLink';
+import { WindowProvider } from '@/components/site/WindowProvider';
 import '../../globals.css';
 
 export const dynamicParams = false;
@@ -69,9 +70,15 @@ export default async function LocaleLayout({
     >
       <body className="font-sans antialiased">
         <SkipLink label={dict.a11y.skipToContent} />
-        <Header locale={locale} />
-        <main id="main">{children}</main>
-        <Footer locale={locale} />
+        <div className="win-column mx-auto flex h-full w-full max-w-[1040px] flex-col">
+          <WindowProvider>
+            <Header locale={locale} />
+            <main id="main" className="relative min-h-0 flex-1">
+              {children}
+            </main>
+            <Footer locale={locale} />
+          </WindowProvider>
+        </div>
       </body>
     </html>
   );

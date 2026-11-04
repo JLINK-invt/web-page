@@ -26,7 +26,7 @@ export function ScreenshotFrame({
         <div className="window-title">
           <span className="window-title-text">{title}</span>
         </div>
-        <div style={{ width: '38%', minWidth: '120px' }} aria-hidden="true" />
+        <div style={{ width: '45px' }} aria-hidden="true" />
       </div>
       <div className="bg-[{colors.ink}] relative" style={{ aspectRatio: '4/3' }}>
         <SectorScene name={scene} className="h-full w-full" />

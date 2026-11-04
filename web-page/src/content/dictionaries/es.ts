@@ -37,6 +37,44 @@ export const es = {
     close: 'Cerrar',
     language: 'Idioma',
   },
+  window: {
+    navMethod: 'Método',
+    screenTitle: 'Panel de control',
+    osdTitle: 'Selector',
+    clock: '09:41',
+    live: {
+      label: 'En producción',
+      title: 'Domótica: tres sistemas trabajando',
+      body: 'Smart House, Fitness Gym y Health Psychology operan todos los días en casa, gimnasio y clínica.',
+      cta: 'Ver los productos',
+    },
+    exploration: {
+      label: 'En exploración',
+      title: 'Tres áreas por abrir',
+      body: 'Agricultura, Industria y Salud: el método es el mismo, falta el primer caso en cada una.',
+      cta: 'Proponer un caso',
+    },
+    method: {
+      label: 'Método',
+      title: 'Primero el problema, después el sistema',
+      body: 'Mapeamos la operación, construimos el núcleo y operamos con evidencia.',
+      cta: 'Ver los tres pasos',
+    },
+    projects: {
+      note: 'Agricultura, Industria y Salud siguen en exploración: todavía no hay producto público que mostrar.',
+    },
+    unit: {
+      openPage: 'Abrir la página del área',
+      solutionsTitle: 'Qué construimos aquí',
+      statusLive: 'En operación',
+      statusExploration: 'En exploración',
+      contact: 'Cuéntanos tu caso',
+    },
+    contactPanel: {
+      formTitle: 'Escríbenos',
+      note: 'Respondemos en dos días hábiles.',
+    },
+  },
   common: {
     viewProjects: 'Ver proyectos',
     viewProject: 'Ver proyecto',

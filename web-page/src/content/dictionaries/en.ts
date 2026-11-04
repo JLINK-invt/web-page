@@ -39,6 +39,44 @@ export const en = {
     close: 'Close',
     language: 'Language',
   },
+  window: {
+    navMethod: 'Method',
+    screenTitle: 'Control panel',
+    osdTitle: 'Selector',
+    clock: '09:41',
+    live: {
+      label: 'In production',
+      title: 'Domotics: three systems at work',
+      body: 'Smart House, Fitness Gym and Health Psychology run every day in homes, gyms and clinics.',
+      cta: 'See the products',
+    },
+    exploration: {
+      label: 'In exploration',
+      title: 'Three areas to open',
+      body: 'Agriculture, Industry and Health: the method is the same, each one still needs its first case.',
+      cta: 'Propose a case',
+    },
+    method: {
+      label: 'Method',
+      title: 'The problem first, the system after',
+      body: 'We map the operation, build the core and run it with evidence.',
+      cta: 'See the three steps',
+    },
+    projects: {
+      note: 'Agriculture, Industry and Health remain in exploration: there is no public product to show yet.',
+    },
+    unit: {
+      openPage: 'Open the area page',
+      solutionsTitle: 'What we build here',
+      statusLive: 'In operation',
+      statusExploration: 'In exploration',
+      contact: 'Tell us your case',
+    },
+    contactPanel: {
+      formTitle: 'Write to us',
+      note: 'We reply within two business days.',
+    },
+  },
   common: {
     viewProjects: 'View projects',
     viewProject: 'View project',

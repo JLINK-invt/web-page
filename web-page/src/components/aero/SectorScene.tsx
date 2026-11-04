@@ -614,7 +614,7 @@ const SCENES: Record<SectorSceneName, () => ReactElement> = {
 export function SectorScene({ name, className }: { name: SectorSceneName; className?: string }) {
   const Component = SCENES[name];
   return (
-    <div className={cn('overflow-hidden rounded-lg', className)}>
+    <div className={cn('overflow-hidden rounded-none', className)}>
       <Component />
     </div>
   );

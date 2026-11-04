@@ -2,8 +2,6 @@ import Link from 'next/link';
 import type { Dictionary } from '@/content/dictionaries';
 import type { Locale } from '@/lib/i18n';
 import { designsHref, href } from '@/lib/routes';
-import { Container } from '@/components/ui/Container';
-import { SectionHeading } from '@/components/ui/SectionHeading';
 import { ArrowIcon } from '@/components/ui/ArrowIcon';
 import type { DesignVariant } from './DesignVariantPage';
 
@@ -119,39 +117,41 @@ const cards: {
 
 export function DesignsGallery({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   return (
-    <section className="py-14 sm:py-20">
-      <Container>
-        <SectionHeading title={dict.designs.title} subtitle={dict.designs.subtitle} />
+    <div className="p-2">
+      <section className="win-panel overflow-hidden">
+        <div className="win-banner px-4 py-4 sm:py-5">
+          <h1 className="font-display text-[23px] leading-tight font-bold text-white">
+            {dict.designs.title}
+          </h1>
+          <p className="mt-1.5 max-w-[64ch] text-[12.5px] leading-[1.55] text-[#eaf2ff]">
+            {dict.designs.subtitle}
+          </p>
+        </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="grid gap-3 p-3 sm:grid-cols-3 sm:p-4">
           {cards.map((card) => {
             const Thumb = card.thumb;
             return (
-              <article
-                key={card.variant}
-                className="glass-panel flex h-full flex-col rounded-2xl p-5"
-              >
-                <span className="mx-auto h-36 w-36">
+              <article key={card.variant} className="win-panel flex h-full flex-col p-3">
+                <h2 className="win-title text-[15px]">{dict.designs.labels[card.variant]}</h2>
+                <span className="mx-auto mt-3 block h-32 w-32 border border-[#e0e0e0] bg-[#f6f6f6] p-1">
                   <Thumb />
                 </span>
-                <h2 className="font-display text-ink mt-5 text-lg font-semibold tracking-tight">
-                  {dict.designs.labels[card.variant]}
-                </h2>
-                <p className="text-muted mt-2 flex-1 text-sm leading-relaxed">
+                <p className="mt-1 flex-1 text-[12px] leading-[1.55] text-[#5f5f5f]">
                   {dict.designs.descriptions[card.variant]}
                 </p>
                 <Link
                   href={card.href(locale)}
-                  className="text-cosmos mt-5 inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.16em] uppercase"
+                  className="win-link mt-3 inline-flex items-center gap-1 text-[12px] font-bold"
                 >
                   {dict.designs.visit}
-                  <ArrowIcon />
+                  <ArrowIcon className="h-3 w-3" />
                 </Link>
               </article>
             );
           })}
         </div>
-      </Container>
-    </section>
+      </section>
+    </div>
   );
 }

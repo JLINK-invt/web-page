@@ -1,383 +1,360 @@
 ---
 name: Cosmos Compass
-description: Ecosistema de software de escritorio con estética retro-futurista Y2K/Frutiger Aero: cuatro unidades de negocio, catálogo multiproducto con box shots 3D, fichas técnicas y comparativas de licencias.
+description: 'Sitio de producto con la estética de una aplicación de escritorio Windows XP/Luna de 2004: campo gris, una sola ventana centrada, filetes de un píxel, tipografía pequeña y controles azul gel.'
 colors:
-  paper: "#eef7fd"
-  sand: "#d7e8f5"
-  ink: "#0a2342"
-  muted: "#4b647c"
-  line: "#b9d2e6"
-  cosmos: "#1769aa"
-  brass: "#8a5f14"
-  space: "#051a33"
-  space-2: "#0a2b4f"
-  space-3: "#144a75"
-  star: "#f7fbff"
-  gold: "#e0b85a"
-  gold-soft: "#f5dfa6"
-  aqua: "#4fb8e8"
-  aqua-soft: "#b7e6f8"
-  chrome: "#cfdce8"
-  silver: "#c3d3e2"
-  gold-badge: "#e0b85a"
-  gold-badge-dark: "#a9781f"
-  chrome-highlight: "#ffffff"
-  chrome-mid: "#e4f1fa"
-  chrome-shadow: "#9dbdd4"
-  chrome-deep: "#5d84a6"
-  window-title-blue: "#2b7fbe"
-  window-title-gold: "#e0b85a"
-  window-title-silver: "#9dbdd4"
-  status-green: "#3f9c8f"
-  status-red: "#c06a58"
+  paper: '#f7f7f7'
+  field: '#e4e4e4'
+  ink: '#333333'
+  muted: '#6b6b6b'
+  line: '#d3d3d3'
+  panel: '#ffffff'
+  panel-soft: '#f2f2f2'
+  panel-sunken: '#fafafa'
+  blue: '#2a5db0'
+  blue-deep: '#1f4b96'
+  blue-bright: '#3f79cd'
+  blue-pale: '#eef3fa'
+  gold: '#e0b85a'
+  gold-deep: '#8a6a1f'
+  gold-light: '#f6e2b4'
+  gold-ink: '#3a2c0a'
+  green: '#4c9a4c'
+  green-deep: '#2f6f2f'
+  green-wash: '#eef7ea'
+  green-ink: '#35662f'
+  amber-wash: '#fdf6e6'
+  amber-ink: '#7a6320'
+  chrome: '#dcdcdc'
+  chrome-deep: '#8f8f8f'
+  osd-top: '#2c4a78'
+  osd-bottom: '#1c3557'
+  osd-active: '#4f86d6'
+  banner-hi: '#2f6fd0'
+  banner-mid: '#2a63be'
+  banner-lo: '#1c4a94'
+  banner-accent: '#ffe3a3'
+  titlebar-hi: '#4a7fc4'
+  nav-hover: '#7fa4dd'
+  blue-gel-hi: '#6d9ee0'
+  gold-gel-hi: '#fbe9bd'
+  gold-gel-mid: '#efc974'
+  gold-gel-lo: '#d6a43b'
+  gold-border: '#96701c'
+  panel-border: '#d8d8d8'
+  shelf-border: '#cfcfcf'
+  frame-border: '#c9c9c9'
+  input-border: '#b8b8b8'
+  status-green-border: '#b8cfae'
+  status-amber-border: '#dcc79a'
+  status-amber-dot: '#c79a33'
+  close-hi: '#f4b48d'
+  close-lo: '#c0562f'
+  status-red: '#b8442c'
 typography:
   display:
-    fontFamily: "Space Grotesk, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(2.4rem, 6vw, 4.6rem)"
+    fontFamily: 'PT Sans, Tahoma, Verdana, ui-sans-serif, system-ui, sans-serif'
+    fontSize: 'clamp(1.85rem, 3.6vw, 3.15rem)'
     fontWeight: 700
-    lineHeight: 0.95
-    letterSpacing: "-0.02em"
+    lineHeight: 1.04
+    letterSpacing: '-0.025em'
   headline:
-    fontFamily: "Space Grotesk, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(1.9rem, 3.6vw, 2.9rem)"
-    fontWeight: 600
-    lineHeight: 1.05
-    letterSpacing: "-0.015em"
+    fontFamily: 'PT Sans, Tahoma, Verdana, ui-sans-serif, system-ui, sans-serif'
+    fontSize: '21px'
+    fontWeight: 700
+    lineHeight: 1.15
+    letterSpacing: '-0.01em'
   title:
-    fontFamily: "Space Grotesk, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "1.25rem"
-    fontWeight: 600
-    lineHeight: 1.2
-    letterSpacing: "-0.01em"
+    fontFamily: 'PT Sans, Tahoma, Verdana, ui-sans-serif, system-ui, sans-serif'
+    fontSize: '17px'
+    fontWeight: 700
+    lineHeight: 1.18
+    letterSpacing: '-0.01em'
   body:
-    fontFamily: "Source Sans 3, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "1rem"
-    fontWeight: 400
-    lineHeight: 1.6
-    letterSpacing: "0em"
-  label:
-    fontFamily: "Source Sans 3, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "0.688rem"
-    fontWeight: 600
-    lineHeight: 1.4
-    letterSpacing: "0.16em"
-  mono:
-    fontFamily: "JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, monospace"
-    fontSize: "0.8125rem"
-    fontWeight: 400
-    lineHeight: 1.55
-    letterSpacing: "0em"
-  mono-sm:
-    fontFamily: "JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, monospace"
-    fontSize: "0.6875rem"
+    fontFamily: 'PT Sans, Tahoma, Verdana, ui-sans-serif, system-ui, sans-serif'
+    fontSize: '13px'
     fontWeight: 400
     lineHeight: 1.5
-    letterSpacing: "0em"
+    letterSpacing: '0em'
+  label:
+    fontFamily: 'PT Sans, Tahoma, Verdana, ui-sans-serif, system-ui, sans-serif'
+    fontSize: '11px'
+    fontWeight: 400
+    lineHeight: 1.4
+    letterSpacing: '0.08em'
+  mono:
+    fontFamily: 'JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, monospace'
+    fontSize: '11px'
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: '0em'
 rounded:
-  sm: "8px"
-  md: "12px"
-  lg: "16px"
-  xl: "20px"
-  pill: "9999px"
+  control: '2px'
+  panel: '3px'
+  pill: '10px'
 spacing:
-  xs: "8px"
-  sm: "12px"
-  md: "16px"
-  lg: "24px"
-  xl: "40px"
-  section: "80px"
+  hair: '2px'
+  xs: '4px'
+  sm: '8px'
+  md: '12px'
+  lg: '16px'
+  xl: '24px'
 components:
   button-primary:
-    backgroundColor: "{colors.space-3}"
-    textColor: "#ffffff"
-    rounded: "{rounded.pill}"
-    padding: "12px 24px"
-  button-secondary:
-    backgroundColor: "rgba(255,255,255,0.95)"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.pill}"
-    padding: "12px 24px"
-  button-inverse:
-    backgroundColor: "#ffffff"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.pill}"
-    padding: "12px 24px"
-  glass-panel:
-    backgroundColor: "{colors.paper}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.lg}"
-    padding: "24px"
-  chrome-frame:
-    backgroundColor: "{colors.chrome}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.lg}"
-    padding: "5px"
+    backgroundColor: 'linear-gradient(180deg, #6d9ee0 0%, #3f79cd 48%, #2a5db0 100%)'
+    textColor: '#ffffff'
+    rounded: '{rounded.panel}'
+    padding: '7px 16px'
+  button-gold:
+    backgroundColor: 'linear-gradient(180deg, #fbe9bd 0%, #efc974 46%, #d6a43b 100%)'
+    textColor: '{colors.gold-ink}'
+    rounded: '{rounded.panel}'
+    padding: '7px 16px'
+  button-light:
+    backgroundColor: 'linear-gradient(180deg, #ffffff 0%, #f0f4fa 52%, #e1e9f4 100%)'
+    textColor: '{colors.blue-deep}'
+    rounded: '{rounded.panel}'
+    padding: '7px 16px'
+  panel:
+    backgroundColor: '{colors.panel}'
+    textColor: '{colors.ink}'
+    rounded: '0'
+    padding: '12px 16px'
+  strip-card:
+    backgroundColor: '{colors.panel-soft}'
+    textColor: '{colors.ink}'
+    rounded: '0'
+    padding: '12px 16px'
   input:
-    backgroundColor: "#ffffff"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.md}"
-    padding: "12px 14px"
-  bearing-chip:
-    backgroundColor: "{colors.star}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.md}"
-    padding: "6px 12px"
-  box-shot:
-    backgroundColor: "{colors.ink}"
-    textColor: "#ffffff"
-    rounded: "{rounded.xl}"
-    padding: "0"
+    backgroundColor: '{colors.panel}'
+    textColor: '{colors.ink}'
+    rounded: '{rounded.control}'
+    padding: '6px 8px'
+  status-pill:
+    backgroundColor: '{colors.green-wash}'
+    textColor: '{colors.green-ink}'
+    rounded: '{rounded.pill}'
+    padding: '2px 8px'
   window-frame:
-    backgroundColor: "linear-gradient(180deg, #ffffff 0%, #e4f1fa 38%, #fbfdff 48%, #9dbdd4 100%)"
-    rounded: "{rounded.xl}"
-    padding: "4px"
-  window-titlebar:
-    backgroundColor: "linear-gradient(180deg, #ffffff 0%, #e9f3fa 52%, #c2d9e9 100%)"
-    rounded: "{rounded.md}"
-    padding: "7px 12px"
-  badge-gold:
-    backgroundColor: "linear-gradient(135deg, #e0b85a 0%, #f5dfa6 50%, #e0b85a 100%)"
-    textColor: "#0a2342"
-    rounded: "{rounded.md}"
-    padding: "6px 10px"
-  license-table:
-    backgroundColor: "#ffffff"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.lg}"
-    padding: "16px"
+    backgroundColor: 'linear-gradient(180deg, #ffffff 0%, #e9e9e9 100%)'
+    textColor: '{colors.ink}'
+    rounded: '{rounded.panel}'
+    padding: '3px'
+  titlebar:
+    backgroundColor: 'linear-gradient(180deg, #4a7fc4 0%, #2a5db0 100%)'
+    textColor: '#ffffff'
+    rounded: '0'
+    padding: '8px 9px'
+  statusbar:
+    backgroundColor: 'linear-gradient(180deg, #eeeeee 0%, #dddddd 100%)'
+    textColor: '{colors.muted}'
+    rounded: '0'
+    padding: '5px 9px'
 ---
 
-# Design System: Cosmos Compass — Y2K/Frutiger Aero Product Catalog
+# Design System: Cosmos Compass — Luna Window
 
 ## Overview
 
-**Creative North Star: "Aero Product Catalog"**
+**Creative North Star: "The 2004 Desktop Window"**
 
-Cosmos Compass se presenta como un catálogo de software de escritorio del 2003-2005 reconstruido con disciplina de 2026: pestañas metálicas, box shots 3D con biseles cromados, ventanas de sistema operativo retro con botones [ _ ][ □ ][ X ], fichas técnicas en monoespaciada, badges dorados con reflejos y tablas comparativas con bordes en relieve (inset/outset). La nostalgia aporta el material —cromo, cristal, biseles, gotas de luz, degradados glossy—; la funcionalidad moderna aporta jerarquía, espaciado, foco, respuesta y accesibilidad.
+Cosmos Compass se presenta como una única ventana de aplicación de escritorio sobre un campo gris: barra de menú arriba, área de contenido con scroll propio, barra de estado al pie. El material es el de Windows XP/Luna —azul gel, filetes de un píxel, degradados de tres pasos, tipografía de 10–13 px— aplicado con la disciplina de 2026: jerarquía clara, foco visible, contraste AA y navegación por teclado.
 
-Cuatro unidades de negocio siempre visibles: **Domótica, Industria, Agricultura, Salud**. Domótica tiene 3 productos operativos (Smart House, Fitness Gym, Health Psychology); las otras tres muestran estado de exploración con box shots placeholder autorizados. Sin capturas inventadas, sin precios, sin clientes falsos.
+El sitio no imita un sistema operativo entero ni dibuja ventanas flotantes decorativas. Hay **una** ventana, siempre centrada, de 1040 px como máximo; dentro, cada superficie es un panel plano con cabecera gris y borde hairline. Los datos de producto son reales; no hay capturas inventadas, precios, clientes ni certificaciones falsas.
 
 **Key Characteristics:**
 
-- Pestañas metálicas navegación principal con detalles en oro
-- Box shots 3D (SVG autorizado) enmarcados en ventanas biseladas con barra de título retro
-- Fichas de producto: resumen, enlace a suite, botón 3D glossy "Buy Now / Download Trial", ficha técnica compacta (ej. MedicalSuite_v2.4.exe - 45.8 MB)
-- Badges dorados estilo sello/pixel-art: "ISO Medical Certified", "Industrial Grade", "100% Secure System"
-- Capturas en marcos con botones de ventana [ _ ][ □ ][ X ]
-- Tablas comparativas licencias/módulos con bordes inset/outset
-- Tipografía: Space Grotesk (display/headline/title), Source Sans 3 (body), JetBrains Mono (specs/technical)
+- Una sola columna-ventana sobre campo gris, con nav-shelf, main con scroll interno y footer de estado.
+- Paneles blancos cuadrados con borde `#d8d8d8`; cabeceras en gradiente gris claro y títulos de 15–21 px.
+- Azul de barra de título (`#2a5db0`) con controles cuadrados de 13×12 px; barra de estado gris con indicador verde.
+- Botones gel de tres pasos: azul primario, dorado para la acción principal del banner, claro para acciones secundarias.
+- Banner azul glossy en cada página interior, con titular blanco y un solo reflejo diagonal.
+- Tipografía PT Sans para todo (display, títulos, cuerpo, rótulos) y JetBrains Mono solo para fichas técnicas.
+- Estados como píldoras funcionales: verde "Operativo" / ámbar "En exploración"; nunca como decoración.
 
 ## Colors
 
-Tres familias: hielo para el suelo, navy para tinta e instrumentos, cromo y dorado para profundidad y orientación.
+Tres familias: gris de escritorio, azul de sistema y blanco de panel. El dorado es acento escaso; el verde y el ámbar solo comunican estado.
 
 ### Primary
 
-- **Navy / Tinta** (`#0a2342`): texto principal, fondos de cierre, cuerpo de ventanas y paneles profundos.
-- **Aero** (`#1769aa`): enlaces, verbos de estado, acentos sobre superficies claras.
-- **Cielo** (`#eef7fd`) y **Plata** (`#d7e8f5`): suelo y bandas alternas.
+- **Azul sistema** (`#2a5db0`): barras de título, botones primarios, enlaces, foco y énfasis.
+- **Azul profundo** (`#1f4b96`): hover de enlaces, bordes de control, texto sobre botón claro.
+- **Azul brillante** (`#3f79cd`): paso medio de los degradados gel y hover de botón.
 
 ### Secondary
 
-- **Dorado** (`#e0b85a`): aguja compás, rumbo activo, filetes de foco, badges, botones 3D, detalles escenas.
-- **Oro oscuro** (`#8a5f14`): texto pequeño dorado sobre claro (etiquetas), contraste AA.
-- **Cromo** (`#cfdce8` → `#ffffff` → `#8ea9c2` → `#5d84a6`): biseles, marcos, remaches, barras de título.
-- **Aqua** (`#4fb8e8`) / **Aqua suave** (`#b7e6f8`): glows, burbujas, detalles de esfera.
-- **Verde estado** (`#3f9c8f`): indicadores live/operativo.
-- **Rojo estado** (`#c06a58`): alertas, badges críticos.
+- **Dorado** (`#e0b85a`): acción principal del banner, viñetas de área, filetes de foco y detalles de arte.
+- **Oro profundo** (`#8a6a1f`): texto dorado pequeño sobre claro (contraste AA) y bordes de viñeta.
+- **Oro claro** (`#f6e2b4`): paso superior del botón dorado y reflejos.
+- **Verde estado** (`#4c9a4c`) / **verde texto** (`#35662f`): indicador "Operativo".
+- **Ámbar estado** (`#7a6320`) sobre `#fdf6e6`: indicador "En exploración".
 
 ### Neutral
 
-- **Blanco estrella** (`#f7fbff`): fichas, reflejos, texto sobre navy.
-- **Gris azulado** (`#4b647c`): texto secundario.
-- **Línea** (`#b9d2e6`): separadores, bordes.
-- **Espacio** (`#051a33` / `#0a2b4f` / `#144a75`): profundidades de cierre e instrumentos.
+- **Campo** (`#e4e4e4`, degradado a `#dedede`): escritorio detrás de la ventana.
+- **Papel** (`#f7f7f7`): suelo de la ventana y de las páginas interiores.
+- **Blanco panel** (`#ffffff`): superficies de contenido.
+- **Gris panel** (`#f2f2f2`): cabeceras de panel y barras de herramientas.
+- **Gris hundido** (`#fafafa`): filas y cajas dentro de un panel.
+- **Tinta** (`#333333`): texto principal.
+- **Apagado** (`#6b6b6b`): texto secundario y barras de estado.
+- **Línea** (`#d3d3d3` → `#d8d8d8`): bordes hairline.
+- **Cromo** (`#dcdcdc` → `#8f8f8f`): controles y marcos de ventana.
+- **OSD** (`#2c4a78` → `#1c3557`): menú del monitor del hero.
 
 ### Named Rules
 
-**La Regla del Dorado.** El dorado marca orientación, estado, foco, badges y botones de acción principal. Nunca es color de cuerpo de texto sobre claro; para eso existe el oro oscuro.
+**La Regla del Gris.** El suelo es gris de escritorio, no blanco. La ventana se distingue del campo por un filete y una sombra de un píxel, no por una elevación grande.
 
-**La Regla del Cielo.** El suelo es cielo helado, no papel: el sitio se lee como un instrumento sobre mesa de luz. Superficies oscuras son instrumentos (compás, ventanas, cierre), no decoración.
+**La Regla del Azul.** El azul pertenece a la barra de título, al foco, a los enlaces y al botón primario. No se usa como fondo de bloques de texto ni como decoración de sección.
 
-**La Regla del Bisel.** Toda superficie recibe luz de arriba, bisel abajo, sombra proyectada. Un componente sin esa tríada no pertenece al mundo.
-
-**La Regla de la Ventana.** Product windows y box shots usan barra de título de 3 luces (azul, dorado, plata) + botones [ _ ][ □ ][ X ]. El marco es cromo 4-5px con remaches en esquinas.
+**La Regla del Dorado Escaso.** El dorado aparece en la acción principal del banner, en las viñetas de estado y en detalles de arte. Nunca es texto de cuerpo ni fondo extenso.
 
 ## Typography
 
-**Display/Headline/Title Font:** Space Grotesk (corporate tech sans-serif, geometric, high x-height, distinctive numerals)
-**Body/Label Font:** Source Sans 3 (humanista abierta, claridad señalización, respaldo Frutiger)
-**Mono Font:** JetBrains Mono (clean monospace for engineering specs, file names, versions, sizes)
-
-**Character:** Space Grotesk aporta la voz técnica corporativa; Source Sans 3 la legibilidad de prosa; JetBrains Mono la precisión de ficha técnica. Una sola familia display sostiene titulares, rótulos y tarjetas; la jerarquía se construye con tamaño, peso y tracking.
+**Una sola familia:** PT Sans (con Tahoma/Verdana como respaldo) para display, titulares, cuerpo y rótulos. **JetBrains Mono** aparece únicamente en fichas técnicas y metadatos de producto. La jerarquía se construye con tamaño, peso y caja, no con familias distintas.
 
 ### Hierarchy
 
-- **Display** (700, clamp 2.4–4.6rem, 0.95, -0.02em): portada y cabeceras de página.
-- **Headline** (600, clamp 1.9–2.9rem, 1.05, -0.015em): títulos de sección.
-- **Title** (600, 1.25rem, 1.2, -0.01em): áreas, productos, tarjetas, box shots.
-- **Body** (400, 1rem, 1.6): prosa, máximo 75 caracteres.
-- **Label** (600, 0.688rem, 0.16em, mayúsculas): estados, enlaces, rótulos instrumento.
-- **Mono** (400, 0.8125rem, 1.55): fichas técnicas, nombres archivo, versiones, tamaños.
-- **Mono-sm** (400, 0.6875rem, 1.5): badges, etiquetas compactas, tablas comparativas.
+- **Display** (700, `clamp(1.85rem, 3.6vw, 3.15rem)`, 1.04, -0.025em): titular del hero, máximo ~19ch.
+- **Headline** (700, 21px, 1.15): título de panel o de página interior; el mismo rol a 19px en `.win-title`.
+- **Title** (700, 16–17px, 1.18): tarjetas, filas de proyecto, cabeceras de panel compartido.
+- **Body** (400, 12–13.5px, 1.5–1.65): prosa; medida de 65–75 caracteres en páginas de lectura.
+- **Label** (400, 11px, 0.08em, mayúsculas): rótulos de campo, metadatos, cabeceras de lista.
+- **Mono** (400, 11px, 1.5): pares etiqueta/valor de las fichas de producto.
 
 ### Named Rules
 
-**La Regla de Tres Voces.** Display/Headline/Title = Space Grotesk; Body/Label = Source Sans 3; Mono = JetBrains Mono. No hay serif editorial. El tracking negativo se reserva a Display/Headline.
+**La Regla de una Sola Voz.** No hay serif ni una segunda sans. El tracking negativo se reserva al display; los rótulos en mayúsculas llevan tracking positivo.
+
+**La Regla del Tamaño Pequeño.** El cuerpo no sube de 14px en superficies de ventana. La legibilidad se gana con interlineado y contraste, no agrandando la interfaz.
 
 ## Layout
 
-Contenedor máximo 1280px (`max-w-7xl`), margen lateral 20px móvil, 32px sm, 48px lg. Retícula 12 columnas en lg.
+Una columna centrada de **máximo 1040 px** (`.win-column`) sobre el campo gris. La página ocupa `100dvh` con `overflow: hidden`; solo `main` hace scroll. El header y el footer quedan siempre visibles. Márgenes interiores de 8–16 px; en móvil, padding lateral de 12 px.
 
-**Home:** Hero 6/6 (declaración + compás) → DomainGrid 4 columnas xl / 2 md / 1 móvil (box shots en ventanas) → FeaturedProjects (product cards con fichas) → Approach → CtaBand.
+**Shell:** `body` (flex column) → `.win-column` (borde izquierdo/derecho `#cfcfcf`) → `Header` (nav-shelf) → `main` (flex 1, scroll) → `Footer` (barra de estado).
 
-**Domain Page:** Header con escena + estado → Grid productos (3 columnas lg, 2 md, 1 móvil) con ProductWindow → Exploration state para unidades upcoming.
+**Home:** banner azul a sangre con dos columnas (logo + titular + subhead + acciones + nota de estado; monitor SVG con menú OSD y dock de iconos). Debajo, tres tarjetas de franja en rejilla de 3 columnas (1 en móvil, 2 en tablet): producción, exploración, método.
 
-**Project Detail:** Header con ProductWindow → Facts table → Summary/Challenge/Approach → Capabilities grid → Aside tech stack + CTA → Next project.
+**Páginas interiores:** banner azul con titular y subtítulo → paneles de contenido `.win-panel` con cabecera gris y cuerpo blanco. Dominio: productos y estado de exploración. Proyectos: tarjetas y dominios próximos. Detalle: ficha, reto, enfoque, capacidades y siguiente proyecto. Contacto: datos directos + formulario. Privacidad: prosa a 72ch. Diseños: tres paneles de variantes.
 
-**Navegación:** Sticky header con pestañas metálicas (4 unidades) + mega-menu 4 columnas anclado a viewport. Móvil: panel opaco con acordeón.
+**Navegación:** una sola fila de enlaces de 12 px con subrayado azul en activo; logo-globo en Inicio; selector ES/EN a la derecha. En móvil los enlaces envuelven a dos líneas (comportamiento aceptado). No hay mega-menú ni menú flotante: en la home, los enlaces cambian de panel en el mismo sitio.
+
+**Breakpoints:** `sm` 640, `md` 768, `lg` 1024. La rejilla de franjas pasa de 1 → 2 → 3 columnas; las páginas interiores pasan de una a dos columnas en `lg`.
 
 ## Elevation & Depth
 
-Profundidad material y física: luz desde arriba, bisel oscuro abajo, sombra proyectada. Cristal = blanco translúcido con filo interior claro. Cromo = degradado vertical blanco → hielo → blanco → azul acero. Navy profundo en cierre y cuerpo de ventanas.
+El mundo es **plano**. La profundidad se consigue con filetes de un píxel, luz interior superior y degradados cortos de tres pasos, no con sombras grandes ni desenfoques.
 
 ### Shadow Vocabulary
 
-- **Cristal** (`inset 0 1px 0 #fff, inset 0 -1px 0 rgba(10,35,66,.08), 0 22px 46px -30px rgba(5,26,51,.55)`): paneles, tarjetas, fichas.
-- **Cromo** (`inset 0 1px 0 #fff, inset 0 -2px 5px rgba(5,26,51,.2), 0 26px 54px -34px rgba(5,26,51,.6)`): marcos, biseles, pedestales.
-- **Instrumento** (`inset 0 1px 0 rgba(183,230,248,.4), 0 26px 60px -34px rgba(5,26,51,.9)`): superficies navy.
-- **Flotante** (`0 16px 30px -22px rgba(5,26,51,.7)`): fichas de rumbo, avisos, badges.
-- **Box Shot** (`inset 0 2px 0 rgba(255,255,255,.3), inset 0 -3px 8px rgba(5,26,51,.4), 0 32px 64px -40px rgba(5,26,51,.85)`): renders 3D de cajas.
-- **Botón 3D** (`inset 0 2px 0 rgba(255,255,255,.4), inset 0 -3px 6px rgba(5,26,51,.35), 0 12px 24px -16px rgba(5,26,51,.7)`): botones Buy Now / Download Trial.
+- **Ventana** (`0 0 0 1px rgb(255 255 255 / 40%) inset`): filo interior de la columna-ventana.
+- **Nav-shelf** (`inset 0 1px 0 #ffffff`): luz superior de la barra de navegación y del footer.
+- **Panel** (`inset 0 1px 0 #ffffff` + borde `#d8d8d8`): separa el panel del papel sin elevarlo.
+- **Botón gel** (`inset 0 1px 0 rgb(255 255 255 / 45%)`, `inset 0 -1px 0 rgb(0 0 0 / 18%)`): luz arriba, bisel abajo.
+- **Campo** (`inset 1px 1px 2px rgb(0 0 0 / 8%)`): inputs hundidos.
+- **Menú OSD** (`inset 0 1px 0 rgb(255 255 255 / 22%)`, `2px 3px 8px rgb(10 25 45 / 45%)`): única sombra proyectada del sistema, dentro del arte del monitor.
 
 ### Named Rules
 
-**La Regla del Bisel.** Toda superficie recibe luz de arriba, bisel abajo, sombra proyectada. Un componente sin esa tríada no pertenece al mundo.
+**La Regla del Filete.** La separación se dibuja con una línea de 1 px. Si un bloque necesita una sombra grande para entenderse, la jerarquía está mal resuelta.
 
-**La Regla del Cromo.** Los marcos de ventana, remaches y barras de título usan el degradado cromo completo (4 stops). Los biseles internos usan `inset 0 1px 0 #fff` + `inset 0 -1px 0 rgba(10,35,66,.15)`.
+**La Regla de la Luz Superior.** Toda superficie recibe `inset 0 1px 0` blanco; los controles añaden un bisel oscuro inferior. No hay luz lateral ni halos de color.
 
 ## Shapes
 
-Radios: 8px (campos, badges), 12px (fichas, botones), 16px (tarjetas, paneles), 20px (ventanas producto, box shots), 9999px (píldoras, botones redondos). Compás = círculo perfecto con bisel cromado. Ventanas retro = 20px radio exterior, 14px interior, 5px marco cromo. Cortes rectos = separadores, reglas finas, tablas.
+Radios mínimos: **2 px** en controles e inputs, **3 px** en paneles, botones y marcos de ventana, **10 px** solo en píldoras de estado y puntos. El resto son esquinas rectas. Los iconos de lanzamiento son círculos glossy de 28–36 px dentro del dock; los controles de barra de título son rectángulos de 13×12 px. No hay cápsulas grandes, blobs ni clip-paths decorativos.
 
 ## Components
 
-### Navigation Tabs (Pestañas Metálicas)
+### Navigation Shelf (`.win-nav`)
 
-- 4 tabs fijas: Domótica, Industria, Agricultura, Salud
-- Fondo: degradado cromo vertical, borde inferior 2px dorado en active
-- Texto: navy, 13px, semibold, tracking 0.05em
-- Hover: fondo aero-claro, subrayado dorado
-- Active: filete dorado inferior 3px, texto aero
-- Remache dorado sutil en esquinas superiores
+- Fondo `linear-gradient(180deg, #fdfdfd, #f0f0f0 62%, #e6e6e6)`, borde inferior `#cfcfcf` y luz interior superior.
+- Enlaces de 12 px en `#5a5a5a`; hover azul con subrayado `#7fa4dd`; activo azul negrita con subrayado `#2a5db0`.
+- En la home los enlaces son botones que cambian el panel activo; fuera de la home son enlaces de ruta. El logo-globo solo aparece en Inicio.
 
-### Mega-menu (Soluciones)
+### Window Column (`.win-column`)
 
-- Panel 4 columnas anclado bajo header, una por área
-- Cada columna: escena 16:9 en ventana cromo, nombre, estado, descripción, 3 soluciones
-- Fondo: cristal helado opaco (no translúcido en menú)
-- Pie: nota, "Ver proyectos", "Cuéntanos tu caso"
-- Abre hover/teclado, cierra Escape/clic fuera/pérdida foco
+- Máximo 1040 px, centrada, fondo `#f7f7f7`, bordes laterales `#cfcfcf` y filo interior blanco al 40%.
+- Contiene header, `main` con scroll y footer; nunca se desplaza como un todo.
 
-### Hero
+### Banner (`.win-banner`)
 
-- Campo cielo con glow aqua radial superior-derecha, glow oro inferior-izquierda
-- Izquierda: eyebrow (punto latón), headline navy con cláusula en aero, subhead, botón primario navy+filete oro + secundario cristal, trust line con check
-- Derecha: CompassDial cromado (bisel, esfera aqua, rosa vientos grabada, aguja oro/norte, plata/sur, pomo cromo) + 4 bearing chips reales alrededor
-- Aguja gira 90° al señalado/enfocado en 700ms ease-out
+- Azul de tres pasos (`#2f6fd0` → `#2a63be` → `#1c4a94`) con un reflejo radial en la esquina superior derecha y dos barridos diagonales en `::after`.
+- Titular blanco con la cláusula de acento en `#ffe3a3`; subhead `#f4f8ff`; acciones a la izquierda y arte a la derecha.
+- Altura determinada por el contenido; no se fuerza a pantalla completa.
 
-### Domain Grid (Catálogo Multiproducto)
+### Window Panel (`.win-panel` / `WindowPanel`)
 
-- 4 tarjetas área (xl:4, md:2, móvil:1)
-- Cada tarjeta: ProductWindow con box shot 3D (SVG autorizado) → marco cromo 5px + remaches + barra título 3 luces + botones ventana
-- Overlay status badge (live/exploration) esquina superior-izquierda
-- Debajo escena: nombre área (Space Grotesk Title), descripción (Source Sans 3 Body), 3 soluciones como lista con puntos de estado (live=verde lleno, exploration=oro hueco)
-- Link "Ver área" con flecha
+- Fondo blanco, borde `1px #d8d8d8`, sin radio en las páginas interiores.
+- Cabecera propia: `linear-gradient(180deg, #fbfbfb, #efefef)`, borde inferior `#d8d8d8`, título de 15 px y `aside` opcional a la derecha.
+- Cuerpo con padding de 12–16 px. Es el contenedor por defecto de cualquier sección interior.
 
-### Product Window (Ventana de Producto / Box Shot)
+### Window Frame (`.window-frame` / `ProductWindow`)
 
-- Marco cromo 5px con 4 remaches (radial gradient blanco→hielo→cromo→azul acero)
-- Barra título: gradiente horizontal 3 luces (azul `#2b7fbe`, dorado `#e0b85a`, plata `#9dbdd4`) + 3 botones ventana [ _ ][ □ ][ X ] (9px redondos, sombras inset) + título centrado en pista cristal
-- Cuerpo: navy (`#0a2342`) con escena vectorial SectorScene (aspect-ratio 4/3)
-- Sheen superior: `linear-gradient(105deg, transparent, rgba(255,255,255,.22) 46%, transparent)`
-- Barra estado inferior: cromo gradiente + indicador verde pulso + controles ficticios (3 botones redondos cromo/oro)
+- Marco de 3 px con degradado blanco→gris, borde `#c9c9c9`, radio 3 px y filo interior `#f7f7f7`.
+- Barra de título azul (`#4a7fc4` → `#2a5db0`) con texto blanco de 11 px y tres controles: minimizar (azul claro), maximizar (azul muy claro), cerrar (rojo `#f4b48d` → `#c0562f`).
+- Barra de estado gris con un indicador verde de 7 px y tres controles decorativos de 11 px (uno dorado).
+- El cuerpo aloja `SectorScene` (SVG plano) o `MonitorArt`, nunca una captura raster.
 
-### Product Card (Ficha de Producto/Software)
+### Status Pill (`.win-status`)
 
-- Contenedor glass-panel redondeado 16px
-- Header: ProductWindow miniatura (aspect 16:10) + badge status
-- Título producto (Space Grotesk Title) + tagline (Body)
-- Resumen servicios (Body, 2-3 líneas)
-- Enlace "Ver suite del sistema" (aero, subrayado oro hover)
-- Botón 3D glossy: "Buy Now" / "Download Trial" (gradiente oro→oro-claro→oro, bisel superior blanco, filete inferior oro-oscuro, sombra profunda, hover: translateY(-2px) + brillo sweep)
-- Ficha técnica compacta (Mono): archivo, versión, tamaño, plataforma, checksum
-- Badges dorados flotantes: "ISO Medical Certified", "Industrial Grade", "100% Secure System" (sello con reflejo radial, texto navy, tracking ancho)
+- Píldora de 10 px, mayúsculas, tracking 0.04em, punto de 6 px.
+- Operativo: borde `#b8cfae`, fondo `#eef7ea`, texto `#35662f`, punto `#4c9a4c`.
+- Exploración: borde `#dcc79a`, fondo `#fdf6e6`, texto `#7a6320`, punto `#c79a33`.
+- Siempre refleja un dato real de `project.facts` o del contenido; nunca se inventa un estado.
 
-### Screenshot Frame (Marco Captura)
+### Gel Buttons (`.win-btn`)
 
-- Ventana retro completa: marco cromo + barra título 3 luces + botones [ _ ][ □ ][ X ] funcionales
-- Contenido: SectorScene o placeholder
-- Sheen superior, barra estado inferior
+- Radio 3 px, borde `#1f4b96`, PT Sans 12 px/700, padding 7×16 px.
+- Primario: azul de tres pasos con luz superior y bisel inferior; hover un paso más claro; activo invertido con sombra interior.
+- Dorado (`.win-btn-gold`): el único botón cálido; reservado a la acción principal del banner.
+- Claro (`.win-btn-light`): blanco→azul pálido, texto azul profundo; acciones secundarias y enlaces de tarjeta.
+- Plano (`.win-btn-plain`): gris claro para acciones terciarias.
+- Fantasma (`.win-btn-ghost`): enlace subrayado sin caja.
 
-### License Comparison Table (Tabla Comparativa)
+### Inputs (`.win-input`)
 
-- Tabla con bordes inset/outset (relieve físico)
-- Header: gradiente cromo, texto navy, tracking ancho
-- Filas: alternadas cielo/plata, hover highlight aero-suave
-- Columnas: Módulo (Mono), Licencia Básica, Profesional, Enterprise (badges píldora)
-- Checkmarks: círculos verde estado con pulso sutil
-- Footer: nota legal mono-sm
+- Fondo blanco, borde `#b8b8b8`, radio 2 px, texto de 12 px y sombra interior de 2 px.
+- Foco: borde azul `#2a5db0` más un anillo de 2 px al 22%. Placeholder `#9a9a9a`.
 
-### Badges (Insignias Flotantes)
+### Strip Card (`.win-strip-card`)
 
-- Forma: sello redondeado 12px o escudo pixel-art
-- Fondo: gradiente oro 135° (`#e0b85a` → `#f5dfa6` → `#e0b85a`)
-- Texto: navy, Label (600, 0.688rem, 0.16em tracking)
-- Reflejo: radial gradient blanco 30% esquina superior-izquierda
-- Sombra flotante + bisel inferior sutil
-- Variantes: "ISO Medical Certified" (salud), "Industrial Grade" (industria), "100% Secure System" (todos), "CE Marked" (médico), "FDA Compliant" (médico)
+- Fondo `#f3f3f3`, borde `#dcdcdc`, luz interior superior; sin radio.
+- Rótulo de 10 px, título de 17 px, cuerpo de 12.5 px y lista de enlaces con viñetas de 5 px (verde = live, dorado = abierto).
+- Arte de 72–84 px anclado arriba a la derecha; el texto reserva 102–122 px de padding derecho.
 
-### Compass Dial (Componente Firma)
+### Monitor Art & Dock
 
-- Bisel cromado 8px (gradiente 4 stops), esfera aqua con rosa vientos grabada navy
-- Marcas grado navy cada 15°, cardinales cada 90°
-- Aguja: oro norte (triángulo alargado con reflejo central), plata sur (contrapeso), pomo cromo central
-- 4 bearing chips reales alrededor (cristal, navy, radio 1/8 compás)
-- Interacción: hover/focus bearing → aguja gira 90° en 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94)
-- Móvil: max-w-[20rem], chips reacomodados
+- Monitor SVG con pantalla azul, barra "Panel de control", reloj, menú OSD navegable y tres filas de producto con punto verde.
+- Dock de lanzamiento rápido: banda blanca con borde `#b9c8dc`, iconos glossy circulares (casa, fábrica, brote, cruz) y etiquetas navy de 10 px.
 
-### Sector Scene (Componente Firma)
+### Footer Status Bar (`.win-footer`)
 
-- Ilustración vectorial plana SVG, sin degradados fotográficos: house, gym, clinic, agro, industry, lab
-- Paleta navy / aqua / dorado / verde aqua / rojo médico sobre cielo helado
-- 3 tamaños: ProductWindow (4/3), DomainGrid card (16:10), Mega-menu (16:9)
+- Fondo `#ededed` → `#e2e2e2`, borde superior `#cfcfcf`, luz interior.
+- Enlaces de 11 px en `#5f5f5f`; hover azul subrayado. Incluye copyright, navegación, email y privacidad.
 
 ## Do's and Don'ts
 
 ### Do:
 
-- **Do** reservar dorado para orientación, estado, foco, badges, botones acción principal.
-- **Do** dar a cada superficie luz arriba, bisel abajo, sombra proyectada.
-- **Do** usar cristal blanco y cromo para paneles; navy para instrumentos y cierre.
-- **Do** dibujar cada dominio con escena plana reconocible antes que interfaz genérica.
-- **Do** enlazar cada solución a destino real: proyecto, área o contacto.
-- **Do** mantener menú móvil y mega-menú opacos: legibilidad gana al vidrio.
-- **Do** usar Space Grotesk para display/headline/title, Source Sans 3 para body/label, JetBrains Mono para specs.
-- **Do** autor box shots SVG como renders 3D creíbles (perspectiva isométrica, biseles, reflejos).
-- **Do** implementar barras de título retro con 3 luces + botones [ _ ][ □ ][ X ] en todas las ventanas.
-- **Do** usar bordes inset/outset en tablas comparativas para relieve físico.
+- **Do** mantener una sola ventana centrada y dejar que solo `main` haga scroll.
+- **Do** separar superficies con filetes de 1 px y luz interior superior.
+- **Do** usar PT Sans en todos los niveles y JetBrains Mono solo en fichas técnicas.
+- **Do** reservar el azul para navegación, foco, enlaces y botón primario; el dorado para la acción principal del banner y las viñetas.
+- **Do** mostrar estados reales como píldoras verde/ámbar, con el valor que existe en el contenido.
+- **Do** reutilizar `WindowPanel`, `ProductWindow`, `.win-btn` y `.win-status` antes de crear una variante.
+- **Do** mantener el foco visible con un anillo azul de 2 px y objetivos táctiles de al menos 24 px.
+- **Do** respetar `prefers-reduced-motion`; el único movimiento autorado es el cambio de panel (`win-swap`, 220 ms).
 
 ### Don't:
 
-- **Don't** volver a papel cálido, latón envejecido, serif editorial.
-- **Don't** usar campo estelar decorativo, marquesinas, contadores visitas.
-- **Don't** usar sombras duras ni halos color como profundidad.
-- **Don't** usar monoespaciada como atajo de "técnico" fuera de fichas técnicas.
-- **Don't** ocultar área sin proyectos: se muestra en exploración con box shot placeholder.
-- **Don't** inventar capturas, precios, clientes, métricas, benchmarks.
-- **Don't** prometer productos que no existen: soluciones enlazan a capacidades reales, áreas exploración o contacto.
-- **Don't** usar una sola familia tipográfica para todo.
-- **Don't** omitir remaches en marcos cromo de ventanas/product windows.
-- **Don't** usar botones planos: botones de acción son 3D glossy con bisel y sombra.
-
-(End of file)
+- **Don't** reintroducir cromo brillante de gran radio, remaches, box shots 3D ni ventanas flotantes.
+- **Don't** usar sombras grandes, halos de color, desenfoques de fondo ni glassmorphism.
+- **Don't** volver al papel cálido, al latón envejecido ni a la serif editorial.
+- **Don't** inventar certificaciones, capturas, archivos `.exe`, versiones, checksums, precios, clientes o métricas.
+- **Don't** usar el dorado como color de cuerpo ni como fondo extenso.
+- **Don't** añadir un segundo sistema de botones o tarjetas junto a `.win-btn` / `.win-panel`.
+- **Don't** ocultar áreas sin producto: se muestran en exploración y tienen página propia.
+- **Don't** hacer que el header o el footer desaparezcan al hacer scroll.

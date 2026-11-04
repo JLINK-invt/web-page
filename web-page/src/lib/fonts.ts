@@ -1,16 +1,18 @@
-import { Source_Sans_3, Space_Grotesk, JetBrains_Mono } from 'next/font/google';
+import { PT_Sans, JetBrains_Mono } from 'next/font/google';
 
-export const frutiger = Source_Sans_3({
+export const frutiger = PT_Sans({
   subsets: ['latin'],
   variable: '--font-source-sans',
   display: 'swap',
+  weight: ['400', '700'],
+  style: ['normal', 'italic'],
 });
 
-export const spaceGrotesk = Space_Grotesk({
+export const spaceGrotesk = PT_Sans({
   subsets: ['latin'],
   variable: '--font-space-grotesk',
   display: 'swap',
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '700'],
 });
 
 export const jetbrainsMono = JetBrains_Mono({

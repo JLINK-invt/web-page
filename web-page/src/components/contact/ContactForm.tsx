@@ -8,7 +8,7 @@ import { buttonStyles } from '@/components/ui/Button';
 
 type Status = 'idle' | 'submitting' | 'success' | 'error' | 'fallback';
 
-export function ContactForm({ dict }: { dict: Dictionary }) {
+export function ContactForm({ dict, compact = false }: { dict: Dictionary; compact?: boolean }) {
   const [status, setStatus] = useState<Status>('idle');
   const [mailtoHref, setMailtoHref] = useState<string | null>(null);
 
@@ -82,11 +82,11 @@ export function ContactForm({ dict }: { dict: Dictionary }) {
   }
 
   const fieldClass =
-    'mt-1.5 w-full rounded-xl border border-line/80 bg-white/90 px-3.5 py-3 text-sm text-ink outline-none shadow-[inset_0_1px_2px_rgba(6,26,52,0.08)] transition-colors placeholder:text-muted focus:border-cosmos focus:ring-2 focus:ring-cosmos/20';
-  const labelClass = 'block text-[11px] font-semibold uppercase tracking-[0.16em] text-muted';
+    'mt-1 w-full rounded-[2px] border border-[#b8b8b8] bg-white px-2.5 py-1.5 text-[12px] text-[#333333] outline-none shadow-[inset_1px_1px_2px_rgba(0,0,0,0.08)] placeholder:text-[#9a9a9a] focus:border-[#2a5db0] focus:ring-2 focus:ring-[#2a5db0]/20';
+  const labelClass = 'block text-[11px] font-bold tracking-[0.08em] text-[#6b6b6b] uppercase';
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form onSubmit={handleSubmit} className={compact ? 'space-y-3' : 'space-y-5'}>
       <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
         <label htmlFor="company-website">{copy.honeypot}</label>
         <input id="company-website" name="_gotcha" type="text" tabIndex={-1} autoComplete="off" />
@@ -129,38 +129,42 @@ export function ContactForm({ dict }: { dict: Dictionary }) {
         </div>
       </div>
 
-      <div>
-        <label htmlFor="company" className={labelClass}>
-          {copy.company}
-        </label>
-        <input
-          id="company"
-          name="company"
-          type="text"
-          autoComplete="organization"
-          placeholder={copy.companyPlaceholder}
-          className={fieldClass}
-        />
-      </div>
+      {compact ? null : (
+        <div>
+          <label htmlFor="company" className={labelClass}>
+            {copy.company}
+          </label>
+          <input
+            id="company"
+            name="company"
+            type="text"
+            autoComplete="organization"
+            placeholder={copy.companyPlaceholder}
+            className={fieldClass}
+          />
+        </div>
+      )}
 
-      <div>
-        <label htmlFor="project" className={labelClass}>
-          {copy.project}{' '}
-          <span aria-hidden="true" className="text-brass">
-            *
-          </span>
-        </label>
-        <select id="project" name="project" required defaultValue="" className={fieldClass}>
-          <option value="" disabled>
-            {copy.projectPlaceholder}
-          </option>
-          {options.map((option) => (
-            <option key={option} value={option}>
-              {option}
+      {compact ? null : (
+        <div>
+          <label htmlFor="project" className={labelClass}>
+            {copy.project}{' '}
+            <span aria-hidden="true" className="text-brass">
+              *
+            </span>
+          </label>
+          <select id="project" name="project" required defaultValue="" className={fieldClass}>
+            <option value="" disabled>
+              {copy.projectPlaceholder}
             </option>
-          ))}
-        </select>
-      </div>
+            {options.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
 
       <div>
         <label htmlFor="message" className={labelClass}>
@@ -173,38 +177,38 @@ export function ContactForm({ dict }: { dict: Dictionary }) {
           id="message"
           name="message"
           required
-          rows={6}
+          rows={compact ? 4 : 6}
           placeholder={copy.messagePlaceholder}
-          className={`${fieldClass} min-h-32 resize-y`}
+          className={`${fieldClass} resize-y`}
         />
       </div>
 
-      <label className="text-muted flex items-start gap-3 text-xs leading-relaxed">
+      <label className="flex items-start gap-2 text-[12px] leading-relaxed text-[#6b6b6b]">
         <input
           type="checkbox"
           name="consent"
           required
-          className="border-line accent-ink mt-0.5 h-4 w-4 shrink-0 rounded"
+          className="mt-0.5 h-3.5 w-3.5 shrink-0 accent-[#2a5db0]"
         />
         <span>{copy.consent}</span>
       </label>
 
-      <div className="flex flex-col gap-4 pt-1 sm:flex-row sm:items-center">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
         <button
           type="submit"
           disabled={status === 'submitting'}
-          className={buttonStyles('primary', 'sm:min-w-40')}
+          className={compact ? 'win-btn' : buttonStyles('primary', 'sm:min-w-40')}
         >
           {status === 'submitting' ? copy.submitting : copy.submit}
         </button>
-        <p className="text-muted text-xs leading-relaxed">{copy.requiredHint}</p>
+        <p className="text-[12px] leading-relaxed text-[#6b6b6b]">{copy.requiredHint}</p>
       </div>
 
       {status === 'success' ? (
         <div
           role="status"
           aria-live="polite"
-          className="border-cosmos/20 bg-cosmos/5 text-cosmos rounded-md border px-4 py-3 text-sm"
+          className="rounded-[2px] border border-[#b8cfae] bg-[#eef7ea] px-3 py-2 text-[12px] text-[#35662f]"
         >
           <p className="font-semibold">{copy.successTitle}</p>
           <p className="mt-1">{copy.successBody}</p>
@@ -215,7 +219,7 @@ export function ContactForm({ dict }: { dict: Dictionary }) {
         <div
           role="status"
           aria-live="polite"
-          className="border-brass/30 bg-brass/10 text-ink rounded-md border px-4 py-3 text-sm"
+          className="rounded-[2px] border border-[#dcc79a] bg-[#fdf6e6] px-3 py-2 text-[12px] text-[#5c4715]"
         >
           <p>{copy.fallback}</p>
           {mailtoHref ? (
@@ -232,7 +236,7 @@ export function ContactForm({ dict }: { dict: Dictionary }) {
       {status === 'error' ? (
         <div
           role="alert"
-          className="border-brass/30 bg-brass/10 text-ink rounded-md border px-4 py-3 text-sm"
+          className="rounded-[2px] border border-[#dcc79a] bg-[#fdf6e6] px-3 py-2 text-[12px] text-[#5c4715]"
         >
           <p className="font-semibold">{copy.errorTitle}</p>
           <p className="mt-1">{copy.errorBody}</p>

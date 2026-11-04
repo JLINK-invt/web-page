@@ -1,181 +1,179 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-03T00:00:00.000Z",
+  "generatedAt": "2026-11-04T00:00:00.000Z",
   "title": "Design System: Cosmos Compass",
   "extensions": {
     "colorMeta": {
-      "aero-blue": {
+      "system-blue": {
         "role": "primary",
-        "displayName": "Aero",
-        "canonical": "#1769aa",
+        "displayName": "Azul sistema",
+        "canonical": "#2a5db0",
         "tonalRamp": [
-          "#04182f",
-          "#06294f",
-          "#0d4470",
-          "#1769aa",
-          "#3a8dc8",
-          "#72b6df",
-          "#b7e6f8",
-          "#eef7fd"
+          "#0d1f3d",
+          "#142f5c",
+          "#1f4b96",
+          "#2a5db0",
+          "#3f79cd",
+          "#6d9ee0",
+          "#cfe2fa",
+          "#eef3fa"
         ]
       },
-      "deep-navy": {
-        "role": "primary",
-        "displayName": "Navy",
-        "canonical": "#0a2342",
+      "desktop-gray": {
+        "role": "neutral",
+        "displayName": "Gris escritorio",
+        "canonical": "#e4e4e4",
         "tonalRamp": [
-          "#051a33",
-          "#0a2342",
-          "#0a2b4f",
-          "#144a75",
-          "#2f6b97",
-          "#6f9bb8",
-          "#b9d2e6",
-          "#eef7fd"
+          "#3a3a3a",
+          "#5f5f5f",
+          "#8f8f8f",
+          "#b4b4b4",
+          "#cfcfcf",
+          "#dcdcdc",
+          "#e4e4e4",
+          "#f7f7f7"
         ]
       },
-      "compass-gold": {
+      "panel-white": {
+        "role": "neutral",
+        "displayName": "Blanco panel",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#333333",
+          "#6b6b6b",
+          "#9a9a9a",
+          "#c9c9c9",
+          "#d8d8d8",
+          "#efefef",
+          "#f7f7f7",
+          "#ffffff"
+        ]
+      },
+      "status-gold": {
         "role": "secondary",
-        "displayName": "Oro Brújula",
+        "displayName": "Oro estado",
         "canonical": "#e0b85a",
         "tonalRamp": [
-          "#3d2603",
-          "#5f3c07",
-          "#8a5f14",
-          "#a9781f",
-          "#c99a3d",
+          "#3a2c0a",
+          "#5c4715",
+          "#7a6320",
+          "#8a6a1f",
+          "#c79a33",
           "#e0b85a",
-          "#f5dfa6",
-          "#fff3d4"
+          "#f6e2b4",
+          "#fff4d8"
         ]
       },
-      "aqua-glass": {
+      "status-green": {
         "role": "secondary",
-        "displayName": "Aqua Vidrio",
-        "canonical": "#4fb8e8",
+        "displayName": "Verde operativo",
+        "canonical": "#4c9a4c",
         "tonalRamp": [
-          "#062437",
-          "#08374f",
-          "#0d5179",
-          "#1769aa",
-          "#2b9ed4",
-          "#4fb8e8",
-          "#b7e6f8",
-          "#eef7fd"
+          "#1d3d1d",
+          "#2f6f2f",
+          "#35662f",
+          "#4c9a4c",
+          "#86df86",
+          "#b8e6b8",
+          "#eef7ea",
+          "#f6fbf4"
         ]
       },
-      "ice": {
+      "osd-navy": {
         "role": "neutral",
-        "displayName": "Cielo helado",
-        "canonical": "#eef7fd",
+        "displayName": "Azul OSD",
+        "canonical": "#1c3557",
         "tonalRamp": [
-          "#0a2342",
-          "#2f4d6b",
-          "#4b647c",
-          "#7f97ac",
-          "#b9d2e6",
-          "#d7e8f5",
-          "#eef7fd",
-          "#ffffff"
-        ]
-      },
-      "chrome": {
-        "role": "neutral",
-        "displayName": "Cromo",
-        "canonical": "#cfdce8",
-        "tonalRamp": [
-          "#203a52",
-          "#3f5d7a",
-          "#6685a1",
-          "#8eabc3",
-          "#b3c8d9",
-          "#cfdce8",
-          "#e8f2fa",
-          "#ffffff"
-        ]
-      },
-      "hairline": {
-        "role": "neutral",
-        "displayName": "Línea",
-        "canonical": "#b9d2e6",
-        "tonalRamp": [
-          "#173247",
-          "#2a4d68",
-          "#3f6b8b",
-          "#5d8bab",
-          "#85abc7",
-          "#b9d2e6",
-          "#dcecf8",
-          "#f2f9ff"
+          "#0f2038",
+          "#14273f",
+          "#1c3557",
+          "#2c4a78",
+          "#4a6d9b",
+          "#8aa5c4",
+          "#d6e2f2",
+          "#e8eef8"
         ]
       }
     },
     "typographyMeta": {
       "display": {
-        "displayName": "Source Sans 3 Display",
-        "purpose": "Titulares de portada y de página; la voz del instrumento."
+        "displayName": "PT Sans Display",
+        "purpose": "Titular del banner; máximo 19ch y una cláusula de acento en oro claro."
       },
       "headline": {
-        "displayName": "Source Sans 3 Headline",
-        "purpose": "Títulos de sección."
+        "displayName": "PT Sans Headline",
+        "purpose": "Título de panel y de página interior (19–21px)."
       },
       "title": {
-        "displayName": "Source Sans 3 Title",
-        "purpose": "Nombres de producto, área y tarjeta."
+        "displayName": "PT Sans Title",
+        "purpose": "Tarjetas, filas de proyecto y cabeceras de panel compartido (16–17px)."
       },
       "body": {
-        "displayName": "Source Sans 3 Body",
-        "purpose": "Prosa de lectura, 65–75 caracteres de medida."
+        "displayName": "PT Sans Body",
+        "purpose": "Prosa de 12–13.5px con medida de 65–75 caracteres en lectura."
       },
       "label": {
-        "displayName": "Instrument Label",
-        "purpose": "Estados, verbos de enlace y rótulos en mayúscula con 0.16em."
+        "displayName": "Rótulo de ventana",
+        "purpose": "Metadatos y cabeceras de lista en mayúsculas de 10px con 0.08em."
+      },
+      "mono": {
+        "displayName": "JetBrains Mono",
+        "purpose": "Pares etiqueta/valor de fichas técnicas; nunca prosa."
       }
     },
     "shadows": [
       {
-        "name": "glass-panel",
-        "value": "inset 0 1px 0 rgba(255,255,255,1), inset 0 -1px 0 rgba(10,35,66,0.08), 0 22px 46px -30px rgba(5,26,51,0.55)",
-        "purpose": "Paneles claros, tarjetas y fichas de rumbo."
+        "name": "window-column",
+        "value": "0 0 0 1px rgb(255 255 255 / 40%) inset",
+        "purpose": "Filo interior de la columna-ventana sobre el campo gris."
       },
       {
-        "name": "chrome-frame",
-        "value": "inset 0 1px 0 rgba(255,255,255,1), inset 0 -2px 5px rgba(5,26,51,0.2), 0 26px 54px -34px rgba(5,26,51,0.6)",
-        "purpose": "Marcos de las ventanas de producto y pedestales."
+        "name": "shelf",
+        "value": "inset 0 1px 0 #ffffff",
+        "purpose": "Luz superior de la barra de navegación y del footer."
       },
       {
-        "name": "deep-instrument",
-        "value": "inset 0 1px 0 rgba(183,230,248,0.4), 0 26px 60px -34px rgba(5,26,51,0.9)",
-        "purpose": "Superficies navy: cierre, compás y ventanas."
+        "name": "panel",
+        "value": "inset 0 1px 0 #ffffff",
+        "purpose": "Filo claro de los paneles blancos; el borde de 1px hace la separación."
       },
       {
-        "name": "floating-label",
-        "value": "0 16px 30px -22px rgba(5,26,51,0.7)",
-        "purpose": "Fichas de rumbo sobre la esfera y avisos."
+        "name": "gel-button",
+        "value": "inset 0 1px 0 rgb(255 255 255 / 45%), inset 0 -1px 0 rgb(0 0 0 / 18%)",
+        "purpose": "Luz arriba y bisel abajo de los botones azul, dorado y claro."
+      },
+      {
+        "name": "sunken-input",
+        "value": "inset 1px 1px 2px rgb(0 0 0 / 8%)",
+        "purpose": "Campos de formulario hundidos."
+      },
+      {
+        "name": "osd-menu",
+        "value": "inset 0 1px 0 rgb(255 255 255 / 22%), 2px 3px 8px rgb(10 25 45 / 45%)",
+        "purpose": "Única sombra proyectada del sistema, dentro del arte del monitor."
       }
     ],
     "motion": [
       {
-        "name": "bearing-turn",
-        "value": "transform 700ms cubic-bezier(0.22, 1, 0.36, 1)",
-        "purpose": "La aguja gira 90 grados hacia el rumbo señalado."
+        "name": "panel-swap",
+        "value": "win-swap 220ms ease-out",
+        "purpose": "El panel entrante sube 6px y aparece al cambiar de sección."
       },
       {
-        "name": "orbital-drift",
-        "value": "orbit 120s linear infinite",
-        "purpose": "Deriva lenta de los anillos de la esfera; se anula con prefers-reduced-motion."
+        "name": "gloss-lift",
+        "value": "transform 160ms ease-out, filter 160ms ease-out",
+        "purpose": "Los iconos del dock suben 2px y se aclaran al pasar el puntero."
       },
       {
-        "name": "lift",
-        "value": "transform 500ms cubic-bezier(0.22, 1, 0.36, 1)",
-        "purpose": "Las tarjetas y botones suben 2px al pasar el puntero."
+        "name": "reduced-motion",
+        "value": "animation-duration 0.01ms, transition-duration 0.01ms",
+        "purpose": "Se anula todo el movimiento cuando el sistema lo pide."
       }
     ],
     "breakpoints": [
       { "name": "sm", "value": "640px" },
       { "name": "md", "value": "768px" },
-      { "name": "lg", "value": "1024px" },
-      { "name": "xl", "value": "1280px" }
+      { "name": "lg", "value": "1024px" }
     ]
   },
   "components": [
@@ -183,122 +181,139 @@
       "name": "Botón primario",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Acción principal: navy con degradado aero, filo claro superior y filete dorado inferior.",
+      "description": "Acción principal del sistema: azul gel de tres pasos, borde azul profundo y bisel claro inferior.",
       "html": "<button class=\"ds-btn-primary\">Ver proyectos</button>",
-      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 9999px; padding: 12px 24px; font-family: var(--font-sans); font-size: 0.875rem; font-weight: 600; color: #ffffff; background-image: linear-gradient(180deg, #2f6b97 0%, #144a75 52%, #0a2b4f 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.45), inset 0 -2px 0 rgba(224,184,90,0.35), 0 18px 34px -22px rgba(5,26,51,0.9); border: 1px solid rgba(255,255,255,0.22); cursor: pointer; transition: transform 200ms ease, filter 200ms ease; } .ds-btn-primary:hover { transform: translateY(-2px); filter: brightness(1.08); } .ds-btn-primary:focus-visible { outline: 2px solid var(--color-cosmos); outline-offset: 4px; }"
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 7px 16px; border: 1px solid #1f4b96; border-radius: 3px; background-image: linear-gradient(180deg, #6d9ee0 0%, #3f79cd 48%, #2a5db0 100%); color: #ffffff; font-family: var(--font-display); font-size: 12px; font-weight: 700; line-height: 1.2; cursor: pointer; box-shadow: inset 0 1px 0 rgb(255 255 255 / 45%), inset 0 -1px 0 rgb(0 0 0 / 18%); } .ds-btn-primary:hover { background-image: linear-gradient(180deg, #7fade8 0%, #4a86da 48%, #3268bd 100%); } .ds-btn-primary:active { background-image: linear-gradient(180deg, #2a5db0 0%, #3f79cd 100%); box-shadow: inset 0 1px 2px rgb(0 0 0 / 25%); }"
     },
     {
-      "name": "Botón secundario",
+      "name": "Botón dorado",
       "kind": "button",
-      "refersTo": "button-secondary",
-      "description": "Acción de apoyo: cristal blanco con borde blanco sobre el cielo helado.",
-      "html": "<button class=\"ds-btn-secondary\">Hablemos</button>",
-      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 9999px; padding: 12px 24px; font-family: var(--font-sans); font-size: 0.875rem; font-weight: 600; color: #0a2342; background-color: rgba(255,255,255,0.92); border: 1px solid rgba(255,255,255,0.98); box-shadow: inset 0 1px 0 #ffffff, 0 14px 28px -24px rgba(5,26,51,0.9); cursor: pointer; transition: transform 200ms ease, background-color 200ms ease; } .ds-btn-secondary:hover { transform: translateY(-2px); background-color: #ffffff; } .ds-btn-secondary:focus-visible { outline: 2px solid var(--color-cosmos); outline-offset: 4px; }"
+      "refersTo": "button-gold",
+      "description": "Acción principal del banner. Único botón cálido del sistema.",
+      "html": "<button class=\"ds-btn-gold\">Ver sistemas en operación</button>",
+      "css": ".ds-btn-gold { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 7px 16px; border: 1px solid #96701c; border-radius: 3px; background-image: linear-gradient(180deg, #fbe9bd 0%, #efc974 46%, #d6a43b 100%); color: #3a2c0a; font-family: var(--font-display); font-size: 12px; font-weight: 700; line-height: 1.2; cursor: pointer; box-shadow: inset 0 1px 0 rgb(255 255 255 / 72%), inset 0 -1px 0 rgb(90 55 0 / 22%), 0 1px 2px rgb(10 30 60 / 26%); } .ds-btn-gold:hover { background-image: linear-gradient(180deg, #fff2d2 0%, #f6d68a 46%, #dfae48 100%); } .ds-btn-gold:active { background-image: linear-gradient(180deg, #d6a43b 0%, #efc974 100%); box-shadow: inset 0 1px 2px rgb(70 40 0 / 30%); }"
     },
     {
-      "name": "Botón inverso",
+      "name": "Botón claro",
       "kind": "button",
-      "refersTo": "button-inverse",
-      "description": "Acción sobre navy: blanco con brillo de cromo y filete dorado.",
-      "html": "<button class=\"ds-btn-inverse\">Iniciar conversación</button>",
-      "css": ".ds-btn-inverse { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 9999px; padding: 12px 24px; font-family: var(--font-sans); font-size: 0.875rem; font-weight: 600; color: #0a2342; background-image: linear-gradient(180deg, #ffffff 0%, #eef7fd 62%, #d7e8f5 100%); box-shadow: inset 0 1px 0 #ffffff, inset 0 -2px 0 rgba(224,184,90,0.45), 0 16px 30px -18px rgba(2,12,26,0.9); border: none; cursor: pointer; transition: transform 200ms ease; } .ds-btn-inverse:hover { transform: translateY(-2px); } .ds-btn-inverse:focus-visible { outline: 2px solid #b7e6f8; outline-offset: 4px; }"
+      "refersTo": "button-light",
+      "description": "Acción secundaria y enlace de tarjeta: blanco a azul pálido con texto azul profundo.",
+      "html": "<a class=\"ds-btn-light\" href=\"#\">Ver proyecto</a>",
+      "css": ".ds-btn-light { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 7px 16px; border: 1px solid #d6e2f2; border-radius: 3px; background-image: linear-gradient(180deg, #ffffff 0%, #f0f4fa 52%, #e1e9f4 100%); color: #1f4b96; font-family: var(--font-display); font-size: 12px; font-weight: 700; line-height: 1.2; text-decoration: none; cursor: pointer; box-shadow: inset 0 1px 0 #ffffff, inset 0 -1px 0 rgb(20 50 100 / 10%), 0 1px 2px rgb(10 30 60 / 22%); } .ds-btn-light:hover { color: #173d7d; background-image: linear-gradient(180deg, #ffffff 0%, #f8fbff 52%, #eaf0f9 100%); }"
     },
     {
       "name": "Campo de formulario",
       "kind": "input",
       "refersTo": "input",
-      "description": "Campo de contacto: blanco con sombra interior y foco en aero.",
+      "description": "Campo hundido de 2px de radio, texto de 12px y foco con anillo azul.",
       "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">Nombre</span><input class=\"ds-field-input\" type=\"text\" placeholder=\"Tu nombre\" /></label>",
-      "css": ".ds-field { display: block; font-family: var(--font-sans); } .ds-field-label { display: block; font-size: 0.688rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #4b647c; } .ds-field-input { margin-top: 6px; width: 100%; border-radius: 12px; padding: 12px 14px; font-size: 0.875rem; color: #0a2342; background-color: #ffffff; border: 1px solid #b9d2e6; box-shadow: inset 0 1px 2px rgba(5,26,51,0.08); } .ds-field-input::placeholder { color: rgba(75,100,124,0.72); } .ds-field-input:focus { outline: none; border-color: #1769aa; box-shadow: 0 0 0 2px rgba(23,105,170,0.2); }"
+      "css": ".ds-field { display: block; font-family: var(--font-sans); } .ds-field-label { display: block; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #666666; } .ds-field-input { margin-top: 6px; width: 100%; padding: 6px 8px; border: 1px solid #b8b8b8; border-radius: 2px; background-color: #ffffff; color: #333333; font-family: var(--font-sans); font-size: 12px; outline: none; box-shadow: inset 1px 1px 2px rgb(0 0 0 / 8%); } .ds-field-input::placeholder { color: #9a9a9a; } .ds-field-input:focus { border-color: #2a5db0; box-shadow: inset 1px 1px 2px rgb(0 0 0 / 8%), 0 0 0 2px rgb(42 93 176 / 22%); }"
     },
     {
-      "name": "Panel de cristal",
+      "name": "Panel de ventana",
       "kind": "card",
-      "refersTo": "glass-panel",
-      "description": "Tarjeta base: cristal helado con luz superior y bisel inferior.",
-      "html": "<article class=\"ds-card\"><h3 class=\"ds-card-title\">Entendemos la operación</h3><p class=\"ds-card-body\">Mapeamos el flujo real, los riesgos y las decisiones que hoy frenan al equipo.</p></article>",
-      "css": ".ds-card { border-radius: 16px; padding: 24px; background-image: linear-gradient(180deg, rgba(255,255,255,0.97) 0%, rgba(244,251,255,0.86) 54%, rgba(215,232,245,0.82) 100%); border: 1px solid rgba(255,255,255,0.96); box-shadow: inset 0 1px 0 #ffffff, inset 0 -1px 0 rgba(10,35,66,0.08), 0 22px 46px -30px rgba(5,26,51,0.55); font-family: var(--font-sans); } .ds-card-title { margin: 0; font-family: var(--font-display); font-size: 1.125rem; font-weight: 600; color: #0a2342; } .ds-card-body { margin: 8px 0 0; font-size: 0.875rem; line-height: 1.6; color: #4b647c; }"
+      "refersTo": "panel",
+      "description": "Superficie base blanca con borde hairline, cabecera gris y título de 15px.",
+      "html": "<section class=\"ds-panel\"><header class=\"ds-panel-header\"><h2 class=\"ds-panel-title\">Resumen</h2></header><div class=\"ds-panel-body\">Texto de contenido.</div></section>",
+      "css": ".ds-panel { background-color: #ffffff; border: 1px solid #d8d8d8; font-family: var(--font-sans); box-shadow: inset 0 1px 0 #ffffff; } .ds-panel-header { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 6px 12px; border-bottom: 1px solid #d8d8d8; background-image: linear-gradient(180deg, #fbfbfb 0%, #efefef 100%); } .ds-panel-title { margin: 0; color: #333333; font-family: var(--font-display); font-size: 15px; font-weight: 700; line-height: 1.15; } .ds-panel-body { padding: 12px 16px; color: #333333; font-size: 13px; line-height: 1.55; }"
     },
     {
-      "name": "Ficha de rumbo",
+      "name": "Tarjeta de franja",
+      "kind": "card",
+      "refersTo": "strip-card",
+      "description": "Bloque gris bajo el banner de la home, con arte arriba a la derecha y enlaces con viñeta de estado.",
+      "html": "<article class=\"ds-strip\"><p class=\"ds-strip-label\">En producción</p><h3 class=\"ds-strip-title\">Domótica: tres sistemas trabajando</h3><p class=\"ds-strip-body\">Smart House, Fitness Gym y Health Psychology operan todos los días.</p></article>",
+      "css": ".ds-strip { position: relative; padding: 12px 102px 12px 12px; background-color: #f3f3f3; border: 1px solid #dcdcdc; box-shadow: inset 0 1px 0 #ffffff; font-family: var(--font-sans); } .ds-strip-label { margin: 0; color: #666666; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; } .ds-strip-title { margin: 4px 0 0; color: #2f2f2f; font-family: var(--font-display); font-size: 17px; font-weight: 700; line-height: 1.18; text-wrap: balance; } .ds-strip-body { margin: 6px 0 0; color: #4a4a4a; font-size: 12.5px; line-height: 1.5; }"
+    },
+    {
+      "name": "Píldora de estado",
       "kind": "chip",
-      "refersTo": "bearing-chip",
-      "description": "Estado de un área: punto lleno para operativa, punto hueco para exploración.",
-      "html": "<span class=\"ds-chip\"><span class=\"ds-chip-dot\"></span>En exploración</span>",
-      "css": ".ds-chip { display: inline-flex; align-items: center; gap: 8px; border-radius: 12px; padding: 6px 12px; font-family: var(--font-sans); font-size: 0.688rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #4b647c; background-color: rgba(255,255,255,0.7); border: 1px dashed rgba(138,95,20,0.5); } .ds-chip-dot { width: 6px; height: 6px; border-radius: 9999px; border: 1px solid rgba(138,95,20,0.7); } .ds-chip.is-live { color: #1769aa; border-style: solid; border-color: rgba(23,105,170,0.25); background-color: rgba(23,105,170,0.08); } .ds-chip.is-live .ds-chip-dot { background-color: #1769aa; border-color: transparent; }"
+      "refersTo": "status-pill",
+      "description": "Estado real de un producto o área: verde para operativo, ámbar para exploración.",
+      "html": "<span class=\"ds-status\"><span class=\"ds-status-dot\"></span>Operativo</span>",
+      "css": ".ds-status { display: inline-flex; align-items: center; gap: 5px; padding: 2px 8px; border: 1px solid #b8cfae; border-radius: 10px; background-color: #eef7ea; color: #35662f; font-family: var(--font-sans); font-size: 10px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; } .ds-status-dot { width: 6px; height: 6px; border-radius: 50%; background-color: #4c9a4c; } .ds-status.is-exploration { border-color: #dcc79a; background-color: #fdf6e6; color: #7a6320; } .ds-status.is-exploration .ds-status-dot { background-color: #c79a33; }"
     },
     {
       "name": "Barra de navegación",
       "kind": "nav",
       "refersTo": "button-primary",
-      "description": "Barra pegajosa de cristal con logo, Inicio, Soluciones, Proyectos, Contacto e idioma.",
-      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link\" href=\"#\">Inicio</a><a class=\"ds-nav-link\" href=\"#\">Soluciones</a><a class=\"ds-nav-link\" href=\"#\">Proyectos</a><a class=\"ds-nav-link\" href=\"#\">Contacto</a></nav>",
-      "css": ".ds-nav { display: flex; align-items: center; gap: 24px; padding: 16px 24px; background-color: rgba(238,247,253,0.8); border-bottom: 1px solid rgba(255,255,255,0.9); box-shadow: inset 0 -1px 0 rgba(224,184,90,0.35); backdrop-filter: blur(18px); } .ds-nav-link { font-family: var(--font-sans); font-size: 0.8125rem; font-weight: 500; color: rgba(10,35,66,0.8); text-decoration: none; transition: color 200ms ease; } .ds-nav-link:hover { color: #1769aa; } .ds-nav-link:focus-visible { outline: 2px solid #1769aa; outline-offset: 3px; }"
+      "description": "Shelf de 2004 con enlaces de 12px, logo-globo en Inicio y selector de idioma.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link is-active\" href=\"#\">Inicio</a><a class=\"ds-nav-link\" href=\"#\">Domótica</a><a class=\"ds-nav-link\" href=\"#\">Proyectos</a><a class=\"ds-nav-link\" href=\"#\">Contacto</a></nav>",
+      "css": ".ds-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding: 4px 12px; background-image: linear-gradient(180deg, #fdfdfd 0%, #f0f0f0 62%, #e6e6e6 100%); border-bottom: 1px solid #cfcfcf; box-shadow: inset 0 1px 0 #ffffff; font-family: var(--font-sans); } .ds-nav-link { padding: 3px 2px; color: #5a5a5a; font-size: 12px; line-height: 1.4; text-decoration: none; border-bottom: 1px solid transparent; } .ds-nav-link:hover { color: #1f4b96; border-bottom-color: #7fa4dd; } .ds-nav-link.is-active { color: #1f4b96; font-weight: 700; border-bottom-color: #2a5db0; }"
     },
     {
       "name": "Ventana de producto",
       "kind": "custom",
-      "refersTo": "chrome-frame",
-      "description": "Marco de cromo con remaches, barra de tres luces y cuerpo navy con escena vectorial.",
-      "html": "<div class=\"ds-window\"><div class=\"ds-window-bar\"><span></span><span></span><span></span></div><div class=\"ds-window-body\"></div></div>",
-      "css": ".ds-window { border-radius: 20px; padding: 5px; background-image: linear-gradient(180deg, #ffffff 0%, #d7e8f5 34%, #f7fcff 50%, #8eabc3 100%); box-shadow: inset 0 1px 0 #ffffff, inset 0 -2px 5px rgba(5,26,51,0.2), 0 26px 54px -34px rgba(5,26,51,0.6); } .ds-window-bar { display: flex; gap: 6px; padding: 9px 12px; background-image: linear-gradient(180deg, #ffffff 0%, #dcecf8 100%); border-radius: 14px 14px 0 0; } .ds-window-bar span { width: 8px; height: 8px; border-radius: 9999px; background-color: #4fb8e8; } .ds-window-bar span:nth-child(2) { background-color: #e0b85a; } .ds-window-bar span:nth-child(3) { background-color: #b9d2e6; } .ds-window-body { aspect-ratio: 4 / 3; border-radius: 0 0 14px 14px; overflow: hidden; background-color: #0a2342; }"
+      "refersTo": "window-frame",
+      "description": "Marco de 3px, barra de título azul con tres controles, cuerpo SVG y barra de estado gris.",
+      "html": "<div class=\"ds-window\"><div class=\"ds-window-bar\"><span class=\"ds-window-title\">Smart House</span><span class=\"ds-window-controls\"><i></i><i></i><i class=\"close\"></i></span></div><div class=\"ds-window-body\"></div><div class=\"ds-window-status\"><span class=\"ds-status-dot\"></span>EN LÍNEA</div></div>",
+      "css": ".ds-window { padding: 3px; border: 1px solid #c9c9c9; border-radius: 3px; background-image: linear-gradient(180deg, #ffffff 0%, #e9e9e9 100%); box-shadow: inset 0 1px 0 #ffffff; overflow: hidden; font-family: var(--font-sans); } .ds-window-bar { display: flex; align-items: center; gap: 8px; margin: -3px -3px 0; padding: 5px 9px; background-image: linear-gradient(180deg, #4a7fc4 0%, #2a5db0 100%); border-bottom: 1px solid #1f4b96; } .ds-window-title { margin-right: auto; color: #ffffff; font-size: 10.5px; font-weight: 700; letter-spacing: 0.02em; } .ds-window-controls { display: flex; gap: 3px; } .ds-window-controls i { width: 13px; height: 12px; border: 1px solid #1f4b96; border-radius: 2px; background-image: linear-gradient(180deg, #eef4fc 0%, #b4c9e6 100%); } .ds-window-controls i.close { background-image: linear-gradient(180deg, #f4b48d 0%, #c0562f 100%); border-color: #8f3d20; } .ds-window-body { aspect-ratio: 4 / 3; background-color: #f7f7f7; } .ds-window-status { display: flex; align-items: center; gap: 5px; margin: 0 -3px -3px; padding: 5px 9px; border-top: 1px solid #cfcfcf; background-image: linear-gradient(180deg, #eeeeee 0%, #dddddd 100%); color: #5f5f5f; font-size: 10px; }"
     },
     {
-      "name": "Rótulo de rumbo",
+      "name": "Banner azul",
       "kind": "custom",
-      "refersTo": "bearing-chip",
-      "description": "Etiqueta flotante sobre la esfera; al señalarla, la aguja dorada gira hacia ese rumbo.",
-      "html": "<a class=\"ds-bearing\" href=\"#\"><span class=\"ds-bearing-name\">Domótica</span><span class=\"ds-bearing-state\">Activo</span></a>",
-      "css": ".ds-bearing { display: inline-flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 12px; border-radius: 12px; text-decoration: none; background-color: rgba(244,251,255,0.94); border: 1px solid #ffffff; box-shadow: 0 16px 30px -22px rgba(5,26,51,0.7), inset 0 1px 0 #ffffff; backdrop-filter: blur(12px); } .ds-bearing-name { font-family: var(--font-display); font-size: 0.813rem; font-weight: 600; color: #0a2342; } .ds-bearing-state { font-family: var(--font-sans); font-size: 0.625rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #1769aa; } .ds-bearing:hover { transform: translateY(-2px); } .ds-bearing:focus-visible { outline: 2px solid #1769aa; outline-offset: 3px; }"
+      "refersTo": "banner",
+      "description": "Cabecera glossy de las páginas interiores: azul de tres pasos con un reflejo diagonal y texto blanco.",
+      "html": "<div class=\"ds-banner\"><h1>Hablemos de tu operación.</h1><p>Cuéntanos qué proceso quieres ordenar.</p></div>",
+      "css": ".ds-banner { position: relative; overflow: hidden; padding: 24px; border-bottom: 1px solid #1f4b96; background-image: radial-gradient(85% 78% at 90% 0%, rgb(255 255 255 / 34%) 0%, rgb(255 255 255 / 0%) 62%), linear-gradient(150deg, #2f6fd0 0%, #2a63be 44%, #1c4a94 100%); color: #ffffff; font-family: var(--font-sans); } .ds-banner h1 { margin: 0; font-family: var(--font-display); font-size: clamp(1.5rem, 2.6vw, 2rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; } .ds-banner p { margin: 6px 0 0; max-width: 62ch; color: #f4f8ff; font-size: 13px; line-height: 1.55; }"
     }
   ],
   "narrative": {
-    "northStar": "Aero chrome",
-    "overview": "Cosmos Compass se ve como un sitio de producto de 2003 reconstruido con disciplina de 2026: cielo azul helado, cristal blanco, marcos de cromo y una brújula de mesa que orienta entre cuatro áreas. La nostalgia aporta el material (brillo, bisel, cromo, bokeh); la funcionalidad moderna aporta jerarquía, espaciado, foco y respuesta. El navy sostiene el texto y los instrumentos; el plateado construye marcos; el dorado se reserva a la aguja, al rumbo activo y a los filetes finos; el blanco helado es el suelo. Nada de papel cálido, serif editorial ni campo estelar decorativo.",
+    "northStar": "The 2004 Desktop Window",
+    "overview": "Cosmos Compass se ve como una sola ventana de aplicación de escritorio de 2004 sobre un campo gris: barra de menú, área de contenido con scroll propio y barra de estado. El material es Windows XP/Luna —azul gel, filetes de un píxel, degradados de tres pasos, tipografía de 10–13px— aplicado con la disciplina de 2026: jerarquía, foco visible, contraste AA y teclado. No hay ventanas flotantes decorativas ni un sistema operativo simulado: hay una ventana, centrada, de 1040px como máximo. Los datos de producto son reales; no hay capturas inventadas, precios, clientes ni certificaciones falsas.",
     "keyCharacteristics": [
-      "Cielo azul helado, cristal blanco, cromo plateado, navy y dorado.",
-      "Un compás de mesa con bisel cromado, esfera aqua y aguja dorada.",
-      "Cuatro áreas siempre visibles, con estado y soluciones propias.",
-      "Escenas vectoriales planas dentro de ventanas cromadas; nunca capturas inventadas.",
-      "Source Sans 3 en todos los niveles y movimiento mecánico breve."
+      "Una columna-ventana de 1040px sobre campo gris, con nav-shelf, main con scroll interno y footer de estado.",
+      "Paneles blancos cuadrados con borde hairline y cabecera gris; sin sombras grandes.",
+      "Barras de título azules con controles de 13×12px y barra de estado gris.",
+      "Botones gel azul, dorado y claro; el dorado solo para la acción principal del banner.",
+      "Banner azul glossy en cada página interior con un único reflejo diagonal.",
+      "PT Sans en todos los niveles; JetBrains Mono solo en fichas técnicas.",
+      "Estados reales como píldoras verde y ámbar."
     ],
     "rules": [
       {
-        "name": "La Regla del Dorado",
-        "body": "El dorado marca orientación, estado o foco: la aguja, el rumbo activo, el filete de un botón, el subrayado de un enlace. Nunca es color de cuerpo de texto sobre claro; para eso existe el oro oscuro.",
+        "name": "La Regla del Gris",
+        "body": "El suelo es gris de escritorio, no blanco. La ventana se distingue del campo por un filete y una sombra de un píxel, no por una elevación grande.",
         "section": "colors"
       },
       {
-        "name": "La Regla del Cielo",
-        "body": "El suelo es cielo helado, no papel. Las superficies oscuras son instrumentos (compás, ventanas, cierre), no decoración.",
+        "name": "La Regla del Azul",
+        "body": "El azul pertenece a la barra de título, al foco, a los enlaces y al botón primario. No se usa como fondo de bloques de texto ni como decoración de sección.",
+        "section": "colors"
+      },
+      {
+        "name": "La Regla del Dorado Escaso",
+        "body": "El dorado aparece en la acción principal del banner, en las viñetas de estado y en detalles de arte. Nunca es texto de cuerpo ni fondo extenso.",
         "section": "colors"
       },
       {
         "name": "La Regla de una Sola Voz",
-        "body": "No hay monoespaciada ni serif: la medida se comunica con el tamaño del rótulo, no con una fuente de consola. El tracking negativo se reserva a los titulares.",
+        "body": "No hay serif ni una segunda sans. El tracking negativo se reserva al display; los rótulos en mayúsculas llevan tracking positivo.",
         "section": "typography"
       },
       {
-        "name": "La Regla del Bisel",
-        "body": "Toda superficie recibe luz de arriba y bisel oscuro abajo. Un componente sin esa tríada no pertenece al mundo.",
+        "name": "La Regla del Filete",
+        "body": "La separación se dibuja con una línea de 1px. Si un bloque necesita una sombra grande para entenderse, la jerarquía está mal resuelta.",
         "section": "elevation"
       }
     ],
     "dos": [
-      "Do reservar el dorado para orientación, estado y foco.",
-      "Do dar a cada superficie luz de arriba, bisel abajo y sombra proyectada.",
-      "Do usar cristal blanco y cromo para los paneles; navy para los instrumentos y el cierre.",
-      "Do dibujar cada dominio con una escena plana reconocible antes que con una interfaz genérica.",
-      "Do enlazar cada solución a un destino real: proyecto, área o contacto.",
-      "Do mantener el menú móvil y el mega-menú opacos: la legibilidad gana al vidrio."
+      "Do mantener una sola ventana centrada y dejar que solo main haga scroll.",
+      "Do separar superficies con filetes de 1px y luz interior superior.",
+      "Do usar PT Sans en todos los niveles y JetBrains Mono solo en fichas técnicas.",
+      "Do reservar el azul para navegación, foco, enlaces y botón primario; el dorado para la acción principal y las viñetas.",
+      "Do mostrar estados reales como píldoras verde/ámbar.",
+      "Do reutilizar WindowPanel, ProductWindow, .win-btn y .win-status antes de crear una variante.",
+      "Do mantener el foco visible con un anillo azul de 2px y objetivos táctiles de al menos 24px."
     ],
     "donts": [
+      "Don't reintroducir cromo brillante, remaches, box shots 3D ni ventanas flotantes.",
+      "Don't usar sombras grandes, halos de color, desenfoques de fondo ni glassmorphism.",
       "Don't volver al papel cálido, al latón envejecido ni a la serif editorial.",
-      "Don't usar campo estelar decorativo, marquesinas ni contadores de visitas.",
-      "Don't usar sombras duras ni halos de color como profundidad.",
-      "Don't usar monoespaciada como atajo de \"técnico\".",
-      "Don't ocultar un área sin proyectos: se muestra en exploración y tiene su propia página.",
-      "Don't inventar capturas, precios, clientes o métricas."
+      "Don't inventar certificaciones, capturas, archivos .exe, versiones, checksums, precios, clientes o métricas.",
+      "Don't usar el dorado como color de cuerpo ni como fondo extenso.",
+      "Don't añadir un segundo sistema de botones o tarjetas junto a .win-btn / .win-panel.",
+      "Don't ocultar áreas sin producto: se muestran en exploración y tienen página propia."
     ]
   }
 }

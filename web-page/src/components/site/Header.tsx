@@ -1,114 +1,79 @@
 'use client';
 
 import Link from 'next/link';
-import { site } from '@/content/site';
-import { solutionAreas, solutionHref } from '@/content/solutions';
-import { getDictionary, type Locale } from '@/lib/i18n';
-import { href } from '@/lib/routes';
-import { ButtonLink } from '@/components/ui/Button';
-import { Container } from '@/components/ui/Container';
-import { LocaleSwitcher } from './LocaleSwitcher';
-import { Logo } from './Logo';
-import { MobileNav, type NavItem } from './MobileNav';
-import { SolutionsMenu, type MenuArea } from './SolutionsMenu';
+import { usePathname } from 'next/navigation';
+import { getDictionary, locales, type Locale } from '@/lib/i18n';
+import { href, switchLocalePath } from '@/lib/routes';
+import { cn } from '@/lib/cn';
+import { navItems } from '@/components/window/navItems';
+import { useWindow, type PanelId } from './WindowProvider';
+
+function GlobeIcon() {
+  return (
+    <svg viewBox="0 0 16 16" aria-hidden="true" className="h-3.5 w-3.5">
+      <circle cx="8" cy="8" r="6.4" fill="#5b9bd8" stroke="#2a5db0" strokeWidth="1" />
+      <ellipse cx="8" cy="8" rx="2.8" ry="6.4" fill="none" stroke="#ffffff" strokeWidth="0.9" />
+      <path d="M1.9 6.2h12.2M1.9 9.8h12.2" stroke="#ffffff" strokeWidth="0.9" />
+    </svg>
+  );
+}
+
+function routeFor(locale: Locale, panel: PanelId): string {
+  if (panel === 'home') return href(locale, 'home');
+  if (panel === 'projects') return href(locale, 'projects');
+  if (panel === 'contact') return href(locale, 'contact');
+  if (panel === 'method') return `${href(locale, 'home')}#method`;
+  return href(locale, 'domain', panel);
+}
 
 export function Header({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale);
-  const nav: NavItem[] = [
-    { label: dict.nav.home, href: href(locale, 'home') },
-    { label: dict.nav.projects, href: href(locale, 'projects') },
-    { label: dict.nav.contact, href: href(locale, 'contact') },
-  ];
-
-  const areas: MenuArea[] = solutionAreas.map((area) => ({
-    id: area.id,
-    label: area.name[locale],
-    description: area.description[locale],
-    href: solutionHref(locale, area.href),
-    scene: area.scene,
-    status: area.status,
-    statusLabel: area.status === 'active' ? dict.common.active : dict.common.exploration,
-    solutions: area.solutions.map((solution) => ({
-      id: solution.id,
-      label: solution.name[locale],
-      description: solution.description[locale],
-      href: solutionHref(locale, solution.href),
-      status: solution.status,
-    })),
-  }));
+  const pathname = usePathname();
+  const isHome = pathname === href(locale, 'home');
+  const { active, setActive } = useWindow();
+  const items = navItems(dict);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.95),inset_0_-1px_0_rgba(224,184,90,0.35),0_14px_30px_-26px_rgba(5,26,51,0.65)]">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 bg-[rgba(238,247,253,0.8)] backdrop-blur-xl"
-      />
-      <Container className="flex h-16 items-center gap-6 sm:h-20">
-        <div className="flex flex-1 items-center">
-          <Link href={href(locale, 'home')} aria-label={site.name} className="text-ink">
-            <Logo />
-          </Link>
-        </div>
-
-        <nav aria-label={dict.nav.menu} className="hidden items-center gap-6 lg:flex">
-          <Link
-            href={href(locale, 'home')}
-            className="group text-ink/80 hover:text-cosmos relative rounded-md px-1 py-1 text-[13px] font-medium transition-colors"
-          >
-            {dict.nav.home}
-            <span
-              aria-hidden="true"
-              className="bg-gold absolute inset-x-1 -bottom-0.5 h-px origin-left scale-x-0 transition-transform duration-200 group-hover:scale-x-100"
-            />
-          </Link>
-
-          <SolutionsMenu
-            label={dict.nav.solutions}
-            solutionsLabel={dict.nav.solutionsList}
-            areas={areas}
-            menuNote={dict.nav.menuNote}
-            projectsHref={href(locale, 'projects')}
-            projectsLabel={dict.nav.allProjects}
-            contactHref={href(locale, 'contact')}
-            contactLabel={dict.nav.tellUs}
-          />
-
-          {nav.slice(1).map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="group text-ink/80 hover:text-cosmos relative rounded-md px-1 py-1 text-[13px] font-medium transition-colors"
-            >
-              {item.label}
-              <span
-                aria-hidden="true"
-                className="bg-gold absolute inset-x-1 -bottom-0.5 h-px origin-left scale-x-0 transition-transform duration-200 group-hover:scale-x-100"
-              />
-            </Link>
-          ))}
+    <header className="win-nav shrink-0">
+      <div className="flex min-h-9 flex-wrap items-center gap-x-4 gap-y-1 px-3 py-1">
+        <nav
+          aria-label={dict.nav.menu}
+          className="flex min-w-0 flex-1 flex-wrap items-center gap-x-4"
+        >
+          {items.map((item) =>
+            isHome ? (
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => setActive(item.id)}
+                aria-current={active === item.id ? 'true' : undefined}
+                className={cn('win-nav-link', active === item.id && 'is-active')}
+              >
+                {item.id === 'home' ? <GlobeIcon /> : null}
+                {item.label}
+              </button>
+            ) : (
+              <Link key={item.id} href={routeFor(locale, item.id)} className="win-nav-link">
+                {item.id === 'home' ? <GlobeIcon /> : null}
+                {item.label}
+              </Link>
+            )
+          )}
         </nav>
 
-        <div className="hidden flex-1 items-center justify-end gap-3 lg:flex">
-          <LocaleSwitcher locale={locale} label={dict.a11y.switchLanguage} />
-          <ButtonLink href={href(locale, 'contact')} className="px-5 py-2.5">
-            {dict.nav.cta}
-          </ButtonLink>
+        <div className="flex items-center gap-2">
+          {locales.map((item) => (
+            <Link
+              key={item}
+              href={switchLocalePath(pathname, item)}
+              hrefLang={item}
+              className={cn('win-nav-link', item === locale && 'is-active')}
+            >
+              {item.toUpperCase()}
+            </Link>
+          ))}
         </div>
-
-        <MobileNav
-          locale={locale}
-          nav={nav}
-          areas={areas}
-          solutionsLabel={dict.nav.solutions}
-          menuNote={dict.nav.menuNote}
-          cta={dict.nav.cta}
-          ctaHref={href(locale, 'contact')}
-          label={dict.a11y.openMenu}
-          closeLabel={dict.a11y.closeMenu}
-          navLabel={dict.nav.menu}
-          languageLabel={dict.a11y.switchLanguage}
-        />
-      </Container>
+      </div>
     </header>
   );
 }
