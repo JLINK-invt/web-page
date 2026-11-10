@@ -1,0 +1,30 @@
+import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
+import { getDictionary, isLocale } from '@/lib/i18n';
+import { buildMetadata } from '@/lib/seo';
+import { DesignVariantPage } from '@/components/pages/DesignVariantPage';
+
+type PageProps = {
+  params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale } = await params;
+  if (!isLocale(locale) || locale !== 'es') return {};
+
+  const dict = getDictionary(locale);
+
+  return buildMetadata({
+    locale,
+    route: 'designs',
+    title: dict.designs.labels.planetario,
+    description: dict.designs.descriptions.planetario,
+  });
+}
+
+export default async function Page({ params }: PageProps) {
+  const { locale } = await params;
+  if (!isLocale(locale) || locale !== 'es') notFound();
+
+  return <DesignVariantPage locale={locale} dict={getDictionary(locale)} variant="planetario" />;
+}
