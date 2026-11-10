@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { site } from '@/content/site';
+import { getContactProjectOptions } from '@/content/contactOptions';
 import { getDictionary, type Locale } from '@/lib/i18n';
 import { href } from '@/lib/routes';
 import { ContactForm } from '@/components/contact/ContactForm';
@@ -7,6 +8,7 @@ import { WindowPanel } from '@/components/window/WindowPanel';
 
 export function ContactPage({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale);
+  const projectOptions = getContactProjectOptions(locale);
 
   return (
     <div className="flex flex-col gap-2 p-2">
@@ -23,7 +25,7 @@ export function ContactPage({ locale }: { locale: Locale }) {
 
       <div className="grid gap-2 lg:grid-cols-[0.8fr_1.2fr]">
         <WindowPanel title={dict.contact.direct.title} titleId="contact-direct">
-          <p className="text-[12.5px] leading-[1.55] text-[#5f5f5f]">
+          <p className="text-[12.5px] leading-[1.55] text-[#45505d]">
             {dict.contact.direct.subtitle}
           </p>
 
@@ -56,7 +58,7 @@ export function ContactPage({ locale }: { locale: Locale }) {
           titleId="contact-form"
           aside={<span>{dict.window.contactPanel.note}</span>}
         >
-          <ContactForm dict={dict} />
+          <ContactForm dict={dict} projectOptions={projectOptions} />
         </WindowPanel>
       </div>
     </div>

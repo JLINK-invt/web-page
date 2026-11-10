@@ -8,14 +8,21 @@ import { buttonStyles } from '@/components/ui/Button';
 
 type Status = 'idle' | 'submitting' | 'success' | 'error' | 'fallback';
 
-export function ContactForm({ dict, compact = false }: { dict: Dictionary; compact?: boolean }) {
+export function ContactForm({
+  dict,
+  compact = false,
+  projectOptions = [],
+}: {
+  dict: Dictionary;
+  compact?: boolean;
+  projectOptions?: string[];
+}) {
   const [status, setStatus] = useState<Status>('idle');
   const [mailtoHref, setMailtoHref] = useState<string | null>(null);
 
   const formId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID?.trim() || site.formspreeId;
   const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || site.email;
   const copy = dict.contact.form;
-  const options = Object.values(copy.projectOptions);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -82,8 +89,8 @@ export function ContactForm({ dict, compact = false }: { dict: Dictionary; compa
   }
 
   const fieldClass =
-    'mt-1 w-full rounded-[2px] border border-[#b8b8b8] bg-white px-2.5 py-1.5 text-[12px] text-[#333333] outline-none shadow-[inset_1px_1px_2px_rgba(0,0,0,0.08)] placeholder:text-[#9a9a9a] focus:border-[#2a5db0] focus:ring-2 focus:ring-[#2a5db0]/20';
-  const labelClass = 'block text-[11px] font-bold tracking-[0.08em] text-[#6b6b6b] uppercase';
+    'mt-1 w-full rounded-sm border border-[#aebccf] bg-[linear-gradient(180deg,#fbfdff_0%,#f1f6fb_100%)] px-3 py-2 text-[12px] text-[#23303f] outline-none shadow-[inset_1px_1px_3px_rgba(8,26,52,0.12)] placeholder:text-[#5c6b80] focus:border-[#2a5db0] focus:ring-[2px] focus:ring-[#2a5db0]/25';
+  const labelClass = 'block text-[11px] font-bold tracking-[0.08em] text-[#47525f] uppercase';
 
   return (
     <form onSubmit={handleSubmit} className={compact ? 'space-y-3' : 'space-y-5'}>
@@ -149,19 +156,18 @@ export function ContactForm({ dict, compact = false }: { dict: Dictionary; compa
         <div>
           <label htmlFor="project" className={labelClass}>
             {copy.project}{' '}
-            <span aria-hidden="true" className="text-brass">
-              *
+            <span className="text-brass font-normal tracking-normal normal-case">
+              ({copy.projectOptional})
             </span>
           </label>
-          <select id="project" name="project" required defaultValue="" className={fieldClass}>
-            <option value="" disabled>
-              {copy.projectPlaceholder}
-            </option>
-            {options.map((option) => (
+          <select id="project" name="project" defaultValue="" className={fieldClass}>
+            <option value="">{copy.projectPlaceholder}</option>
+            {projectOptions.map((option) => (
               <option key={option} value={option}>
                 {option}
               </option>
             ))}
+            <option value={copy.projectOther}>{copy.projectOther}</option>
           </select>
         </div>
       )}
@@ -183,7 +189,7 @@ export function ContactForm({ dict, compact = false }: { dict: Dictionary; compa
         />
       </div>
 
-      <label className="flex items-start gap-2 text-[12px] leading-relaxed text-[#6b6b6b]">
+      <label className="flex items-start gap-2 text-[12px] leading-relaxed text-[#47525f]">
         <input
           type="checkbox"
           name="consent"
@@ -201,14 +207,14 @@ export function ContactForm({ dict, compact = false }: { dict: Dictionary; compa
         >
           {status === 'submitting' ? copy.submitting : copy.submit}
         </button>
-        <p className="text-[12px] leading-relaxed text-[#6b6b6b]">{copy.requiredHint}</p>
+        <p className="text-[12px] leading-relaxed text-[#47525f]">{copy.requiredHint}</p>
       </div>
 
       {status === 'success' ? (
         <div
           role="status"
           aria-live="polite"
-          className="rounded-[2px] border border-[#b8cfae] bg-[#eef7ea] px-3 py-2 text-[12px] text-[#35662f]"
+          className="rounded-full border border-[#b8cfae] bg-[linear-gradient(180deg,#f3faef_0%,#e4f1de_100%)] px-3 py-1.5 text-[12px] text-[#2f5c29]"
         >
           <p className="font-semibold">{copy.successTitle}</p>
           <p className="mt-1">{copy.successBody}</p>
@@ -219,7 +225,7 @@ export function ContactForm({ dict, compact = false }: { dict: Dictionary; compa
         <div
           role="status"
           aria-live="polite"
-          className="rounded-[2px] border border-[#dcc79a] bg-[#fdf6e6] px-3 py-2 text-[12px] text-[#5c4715]"
+          className="rounded-full border border-[#dcc79a] bg-[linear-gradient(180deg,#fefaf0_0%,#f8eed7_100%)] px-3 py-1.5 text-[12px] text-[#6f591b]"
         >
           <p>{copy.fallback}</p>
           {mailtoHref ? (
@@ -236,7 +242,7 @@ export function ContactForm({ dict, compact = false }: { dict: Dictionary; compa
       {status === 'error' ? (
         <div
           role="alert"
-          className="rounded-[2px] border border-[#dcc79a] bg-[#fdf6e6] px-3 py-2 text-[12px] text-[#5c4715]"
+          className="rounded-full border border-[#dcc79a] bg-[linear-gradient(180deg,#fefaf0_0%,#f8eed7_100%)] px-3 py-1.5 text-[12px] text-[#6f591b]"
         >
           <p className="font-semibold">{copy.errorTitle}</p>
           <p className="mt-1">{copy.errorBody}</p>

@@ -18,15 +18,15 @@ export function ScreenshotFrame({
   return (
     <div className={cn('screenshot-frame', className)} style={{ aspectRatio }}>
       <div className="window-titlebar">
-        <div className="window-titlebar-controls">
-          <span className="window-btn window-btn-close" aria-label="Close" />
-          <span className="window-btn window-btn-minimize" aria-label="Minimize" />
-          <span className="window-btn window-btn-maximize" aria-label="Maximize" />
-        </div>
+        <div style={{ width: '50px' }} aria-hidden="true" />
         <div className="window-title">
           <span className="window-title-text">{title}</span>
         </div>
-        <div style={{ width: '45px' }} aria-hidden="true" />
+        <div className="window-titlebar-controls">
+          <span className="window-btn window-btn-minimize" aria-label="Minimize" />
+          <span className="window-btn window-btn-maximize" aria-label="Maximize" />
+          <span className="window-btn window-btn-close" aria-label="Close" />
+        </div>
       </div>
       <div className="bg-[{colors.ink}] relative" style={{ aspectRatio: '4/3' }}>
         <SectorScene name={scene} className="h-full w-full" />

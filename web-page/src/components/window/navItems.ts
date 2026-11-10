@@ -8,8 +8,7 @@ export function navItems(dict: Dictionary): { id: PanelId; label: string }[] {
     { id: 'industrial', label: dict.common.industrial },
     { id: 'agriculture', label: dict.common.agriculture },
     { id: 'medical', label: dict.common.medical },
-    { id: 'projects', label: dict.nav.projects },
-    { id: 'method', label: dict.window.navMethod },
+    { id: 'method', label: dict.nav.company },
     { id: 'contact', label: dict.nav.contact },
   ];
 }

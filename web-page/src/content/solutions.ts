@@ -31,7 +31,7 @@ export const solutionAreas: SolutionArea[] = [
     id: 'domotics',
     name: { es: 'Domótica', en: 'Domotics' },
     description: {
-      es: 'Software a medida para operar dispositivos, accesos y espacios con evidencia de cada acción.',
+      es: 'Software para operar dispositivos, accesos y espacios de trabajo personal.',
       en: 'Custom software to operate devices, access and spaces with evidence for every action.',
     },
     scene: 'house',
@@ -50,7 +50,7 @@ export const solutionAreas: SolutionArea[] = [
       },
       {
         id: 'fitness-gym',
-        name: { es: 'Fitness Gym', en: 'Fitness Gym' },
+        name: { es: 'Fitness Center', en: 'Fitness Center' },
         description: {
           es: 'Caja, accesos, socios e inventario en una operación local-first.',
           en: 'Cash, access, members and inventory in a local-first operation.',
@@ -60,7 +60,7 @@ export const solutionAreas: SolutionArea[] = [
       },
       {
         id: 'health-psychology',
-        name: { es: 'Health Psychology', en: 'Health Psychology' },
+        name: { es: 'Health consultory', en: 'Health consultory' },
         description: {
           es: 'Agenda, historias clínicas y seguimiento con aislamiento por organización.',
           en: 'Scheduling, clinical records and follow-up with per-organization isolation.',

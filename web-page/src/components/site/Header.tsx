@@ -2,10 +2,12 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { getDictionary, locales, type Locale } from '@/lib/i18n';
-import { href, switchLocalePath } from '@/lib/routes';
+import { getDictionary, type Locale } from '@/lib/i18n';
+import type { DomainId } from '@/types/content';
+import { domainHref, href } from '@/lib/routes';
 import { cn } from '@/lib/cn';
 import { navItems } from '@/components/window/navItems';
+import { AreaLink } from '@/components/window/AreaLink';
 import { useWindow, type PanelId } from './WindowProvider';
 
 function GlobeIcon() {
@@ -18,12 +20,17 @@ function GlobeIcon() {
   );
 }
 
+function isDomainPanel(panel: PanelId): panel is DomainId {
+  return (
+    panel === 'domotics' || panel === 'agriculture' || panel === 'industrial' || panel === 'medical'
+  );
+}
+
 function routeFor(locale: Locale, panel: PanelId): string {
   if (panel === 'home') return href(locale, 'home');
-  if (panel === 'projects') return href(locale, 'projects');
   if (panel === 'contact') return href(locale, 'contact');
   if (panel === 'method') return `${href(locale, 'home')}#method`;
-  return href(locale, 'domain', panel);
+  return domainHref(locale, panel);
 }
 
 export function Header({ locale }: { locale: Locale }) {
@@ -34,12 +41,9 @@ export function Header({ locale }: { locale: Locale }) {
   const items = navItems(dict);
 
   return (
-    <header className="win-nav shrink-0">
+    <header className="win-nav shrink-0" role="toolbar" aria-label={dict.nav.menu}>
       <div className="flex min-h-9 flex-wrap items-center gap-x-4 gap-y-1 px-3 py-1">
-        <nav
-          aria-label={dict.nav.menu}
-          className="flex min-w-0 flex-1 flex-wrap items-center gap-x-4"
-        >
+        <nav className="flex min-w-0 flex-1 flex-wrap items-center gap-x-4">
           {items.map((item) =>
             isHome ? (
               <button
@@ -52,6 +56,10 @@ export function Header({ locale }: { locale: Locale }) {
                 {item.id === 'home' ? <GlobeIcon /> : null}
                 {item.label}
               </button>
+            ) : isDomainPanel(item.id) ? (
+              <AreaLink key={item.id} locale={locale} id={item.id} className="win-nav-link">
+                {item.label}
+              </AreaLink>
             ) : (
               <Link key={item.id} href={routeFor(locale, item.id)} className="win-nav-link">
                 {item.id === 'home' ? <GlobeIcon /> : null}
@@ -60,19 +68,6 @@ export function Header({ locale }: { locale: Locale }) {
             )
           )}
         </nav>
-
-        <div className="flex items-center gap-2">
-          {locales.map((item) => (
-            <Link
-              key={item}
-              href={switchLocalePath(pathname, item)}
-              hrefLang={item}
-              className={cn('win-nav-link', item === locale && 'is-active')}
-            >
-              {item.toUpperCase()}
-            </Link>
-          ))}
-        </div>
       </div>
     </header>
   );

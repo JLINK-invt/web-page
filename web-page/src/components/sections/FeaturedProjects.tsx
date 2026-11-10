@@ -1,7 +1,7 @@
 import type { Dictionary } from '@/content/dictionaries';
 import { getFeaturedProjects } from '@/content/projects';
 import type { Locale } from '@/lib/i18n';
-import { href } from '@/lib/routes';
+import { homeProductsHref } from '@/lib/routes';
 import Link from 'next/link';
 import { Container } from '@/components/ui/Container';
 import { SectionHeading } from '@/components/ui/SectionHeading';
@@ -17,7 +17,7 @@ export function FeaturedProjects({ locale, dict }: { locale: Locale; dict: Dicti
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading title={dict.home.projects.title} subtitle={dict.home.projects.subtitle} />
           <Link
-            href={href(locale, 'projects')}
+            href={homeProductsHref(locale)}
             className="text-cosmos hover:text-ink shrink-0 text-[12px] font-semibold tracking-[0.16em] uppercase transition-colors"
           >
             {dict.home.projects.cta}

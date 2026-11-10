@@ -5,7 +5,7 @@ import type { Dictionary } from '@/content/dictionaries';
 import { domains } from '@/content/domains';
 import { getFeaturedProjects } from '@/content/projects';
 import type { Locale } from '@/lib/i18n';
-import { designsHref, href } from '@/lib/routes';
+import { designsHref, homeProductsHref, href } from '@/lib/routes';
 import { cn } from '@/lib/cn';
 import { ButtonLink } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
@@ -114,7 +114,7 @@ export function DesignVariantPage({
               {dict.home.hero.subtitle}
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <ButtonLink href={href(locale, 'projects')}>{dict.home.hero.primaryCta}</ButtonLink>
+              <ButtonLink href={homeProductsHref(locale)}>{dict.home.hero.primaryCta}</ButtonLink>
               <ButtonLink href={href(locale, 'contact')} variant="secondary">
                 {dict.home.hero.secondaryCta}
               </ButtonLink>

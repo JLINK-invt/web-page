@@ -1,7 +1,7 @@
 import type { Dictionary } from '@/content/dictionaries';
 import type { Locale } from '@/lib/i18n';
 import { domains } from '@/content/domains';
-import { href } from '@/lib/routes';
+import { href, homeProductsHref } from '@/lib/routes';
 import { ButtonLink } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 import { cn } from '@/lib/cn';
@@ -45,14 +45,6 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
       <Container className="relative grid gap-10 py-12 sm:py-16 lg:grid-cols-12 lg:gap-12 lg:py-24">
         {/* Left column - Content: Clear product positioning */}
         <div className="flex flex-col justify-center lg:col-span-7">
-          <p className="text-muted flex items-center gap-2.5 text-[11px] font-semibold tracking-[0.22em] uppercase">
-            <span
-              aria-hidden="true"
-              className="relative h-1.5 w-1.5 rounded-full bg-gradient-to-br from-[#e0b85a] to-[#c9963a] shadow-[0_1px_2px_rgba(224,184,90,0.5),inset_0_1px_0_rgba(255,255,255,0.4)]"
-            />
-            {dict.home.hero.eyebrow}
-          </p>
-
           <h1 className="font-display text-ink mt-4 max-w-2xl text-[clamp(2.6rem,5.5vw,4.5rem)] leading-[0.94] font-semibold tracking-[-0.02em] text-balance">
             {renderTitle(dict.home.hero.title, dict.home.hero.titleAccent)}
           </h1>
@@ -64,7 +56,7 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           {/* Everaldo gel buttons - cleaner, more crystalline */}
           <div className="mt-10 flex flex-wrap items-center gap-3">
             <ButtonLink
-              href={href(locale, 'projects')}
+              href={homeProductsHref(locale)}
               className={cn(
                 'relative overflow-hidden rounded-xl',
                 'bg-gradient-to-b from-[#4fa8e0] via-[#3d90d0] to-[#2b78c0]',

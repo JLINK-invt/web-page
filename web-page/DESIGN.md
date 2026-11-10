@@ -1,360 +1,170 @@
----
-name: Cosmos Compass
-description: 'Sitio de producto con la estética de una aplicación de escritorio Windows XP/Luna de 2004: campo gris, una sola ventana centrada, filetes de un píxel, tipografía pequeña y controles azul gel.'
-colors:
-  paper: '#f7f7f7'
-  field: '#e4e4e4'
-  ink: '#333333'
-  muted: '#6b6b6b'
-  line: '#d3d3d3'
-  panel: '#ffffff'
-  panel-soft: '#f2f2f2'
-  panel-sunken: '#fafafa'
-  blue: '#2a5db0'
-  blue-deep: '#1f4b96'
-  blue-bright: '#3f79cd'
-  blue-pale: '#eef3fa'
-  gold: '#e0b85a'
-  gold-deep: '#8a6a1f'
-  gold-light: '#f6e2b4'
-  gold-ink: '#3a2c0a'
-  green: '#4c9a4c'
-  green-deep: '#2f6f2f'
-  green-wash: '#eef7ea'
-  green-ink: '#35662f'
-  amber-wash: '#fdf6e6'
-  amber-ink: '#7a6320'
-  chrome: '#dcdcdc'
-  chrome-deep: '#8f8f8f'
-  osd-top: '#2c4a78'
-  osd-bottom: '#1c3557'
-  osd-active: '#4f86d6'
-  banner-hi: '#2f6fd0'
-  banner-mid: '#2a63be'
-  banner-lo: '#1c4a94'
-  banner-accent: '#ffe3a3'
-  titlebar-hi: '#4a7fc4'
-  nav-hover: '#7fa4dd'
-  blue-gel-hi: '#6d9ee0'
-  gold-gel-hi: '#fbe9bd'
-  gold-gel-mid: '#efc974'
-  gold-gel-lo: '#d6a43b'
-  gold-border: '#96701c'
-  panel-border: '#d8d8d8'
-  shelf-border: '#cfcfcf'
-  frame-border: '#c9c9c9'
-  input-border: '#b8b8b8'
-  status-green-border: '#b8cfae'
-  status-amber-border: '#dcc79a'
-  status-amber-dot: '#c79a33'
-  close-hi: '#f4b48d'
-  close-lo: '#c0562f'
-  status-red: '#b8442c'
-typography:
-  display:
-    fontFamily: 'PT Sans, Tahoma, Verdana, ui-sans-serif, system-ui, sans-serif'
-    fontSize: 'clamp(1.85rem, 3.6vw, 3.15rem)'
-    fontWeight: 700
-    lineHeight: 1.04
-    letterSpacing: '-0.025em'
-  headline:
-    fontFamily: 'PT Sans, Tahoma, Verdana, ui-sans-serif, system-ui, sans-serif'
-    fontSize: '21px'
-    fontWeight: 700
-    lineHeight: 1.15
-    letterSpacing: '-0.01em'
-  title:
-    fontFamily: 'PT Sans, Tahoma, Verdana, ui-sans-serif, system-ui, sans-serif'
-    fontSize: '17px'
-    fontWeight: 700
-    lineHeight: 1.18
-    letterSpacing: '-0.01em'
-  body:
-    fontFamily: 'PT Sans, Tahoma, Verdana, ui-sans-serif, system-ui, sans-serif'
-    fontSize: '13px'
-    fontWeight: 400
-    lineHeight: 1.5
-    letterSpacing: '0em'
-  label:
-    fontFamily: 'PT Sans, Tahoma, Verdana, ui-sans-serif, system-ui, sans-serif'
-    fontSize: '11px'
-    fontWeight: 400
-    lineHeight: 1.4
-    letterSpacing: '0.08em'
-  mono:
-    fontFamily: 'JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, monospace'
-    fontSize: '11px'
-    fontWeight: 400
-    lineHeight: 1.5
-    letterSpacing: '0em'
-rounded:
-  control: '2px'
-  panel: '3px'
-  pill: '10px'
-spacing:
-  hair: '2px'
-  xs: '4px'
-  sm: '8px'
-  md: '12px'
-  lg: '16px'
-  xl: '24px'
-components:
-  button-primary:
-    backgroundColor: 'linear-gradient(180deg, #6d9ee0 0%, #3f79cd 48%, #2a5db0 100%)'
-    textColor: '#ffffff'
-    rounded: '{rounded.panel}'
-    padding: '7px 16px'
-  button-gold:
-    backgroundColor: 'linear-gradient(180deg, #fbe9bd 0%, #efc974 46%, #d6a43b 100%)'
-    textColor: '{colors.gold-ink}'
-    rounded: '{rounded.panel}'
-    padding: '7px 16px'
-  button-light:
-    backgroundColor: 'linear-gradient(180deg, #ffffff 0%, #f0f4fa 52%, #e1e9f4 100%)'
-    textColor: '{colors.blue-deep}'
-    rounded: '{rounded.panel}'
-    padding: '7px 16px'
-  panel:
-    backgroundColor: '{colors.panel}'
-    textColor: '{colors.ink}'
-    rounded: '0'
-    padding: '12px 16px'
-  strip-card:
-    backgroundColor: '{colors.panel-soft}'
-    textColor: '{colors.ink}'
-    rounded: '0'
-    padding: '12px 16px'
-  input:
-    backgroundColor: '{colors.panel}'
-    textColor: '{colors.ink}'
-    rounded: '{rounded.control}'
-    padding: '6px 8px'
-  status-pill:
-    backgroundColor: '{colors.green-wash}'
-    textColor: '{colors.green-ink}'
-    rounded: '{rounded.pill}'
-    padding: '2px 8px'
-  window-frame:
-    backgroundColor: 'linear-gradient(180deg, #ffffff 0%, #e9e9e9 100%)'
-    textColor: '{colors.ink}'
-    rounded: '{rounded.panel}'
-    padding: '3px'
-  titlebar:
-    backgroundColor: 'linear-gradient(180deg, #4a7fc4 0%, #2a5db0 100%)'
-    textColor: '#ffffff'
-    rounded: '0'
-    padding: '8px 9px'
-  statusbar:
-    backgroundColor: 'linear-gradient(180deg, #eeeeee 0%, #dddddd 100%)'
-    textColor: '{colors.muted}'
-    rounded: '0'
-    padding: '5px 9px'
----
+# Cosmos Compass — Design System (v2)
 
-# Design System: Cosmos Compass — Luna Window
+## Visual era
 
-## Overview
+Windows Vista / Windows 7 Aero (2007–2009). Aurora wallpaper behind a single rounded glass window (1040px), dark glass title bar with the brand and the language switch, translucent panels with a specular top edge, glossy rounded buttons, soft layered shadows, Segoe UI. In-place panel navigation with 220ms rise.
 
-**Creative North Star: "The 2004 Desktop Window"**
+The chrome is real: the title bar holds the logotype and the ES/EN switch (both functional). There are no fake window buttons.
 
-Cosmos Compass se presenta como una única ventana de aplicación de escritorio sobre un campo gris: barra de menú arriba, área de contenido con scroll propio, barra de estado al pie. El material es el de Windows XP/Luna —azul gel, filetes de un píxel, degradados de tres pasos, tipografía de 10–13 px— aplicado con la disciplina de 2026: jerarquía clara, foco visible, contraste AA y navegación por teclado.
+The four business units are not separate pages: they are panels inside this same window, reached from the nav shelf, the unit tiles or the monitor OSD. The panel is kept in the URL hash (`/es#domotics`), and the old unit URLs (`/es/domotica`, `/en/industrial`, …) answer 308 to that canonical URL.
 
-El sitio no imita un sistema operativo entero ni dibuja ventanas flotantes decorativas. Hay **una** ventana, siempre centrada, de 1040 px como máximo; dentro, cada superficie es un panel plano con cabecera gris y borde hairline. Los datos de producto son reales; no hay capturas inventadas, precios, clientes ni certificaciones falsas.
+## Color tokens
 
-**Key Characteristics:**
+### Global
 
-- Una sola columna-ventana sobre campo gris, con nav-shelf, main con scroll interno y footer de estado.
-- Paneles blancos cuadrados con borde `#d8d8d8`; cabeceras en gradiente gris claro y títulos de 15–21 px.
-- Azul de barra de título (`#2a5db0`) con controles cuadrados de 13×12 px; barra de estado gris con indicador verde.
-- Botones gel de tres pasos: azul primario, dorado para la acción principal del banner, claro para acciones secundarias.
-- Banner azul glossy en cada página interior, con titular blanco y un solo reflejo diagonal.
-- Tipografía PT Sans para todo (display, títulos, cuerpo, rótulos) y JetBrains Mono solo para fichas técnicas.
-- Estados como píldoras funcionales: verde "Operativo" / ámbar "En exploración"; nunca como decoración.
+| Token                  | Value                                                                       | Use                                       |
+| ---------------------- | --------------------------------------------------------------------------- | ----------------------------------------- |
+| `--aurora-deep`        | `#072744`                                                                   | Wallpaper base (deep blue)                |
+| `--aurora-mid`         | `#0d4763`                                                                   | Wallpaper middle                          |
+| `--aurora-green-deep`  | `#14654e`                                                                   | Wallpaper wave (emerald)                  |
+| `--aurora-green`       | `#7fd8a6`                                                                   | Green bloom on the wallpaper              |
+| `--aurora-warm`        | `#ffd08a`                                                                   | Warm bloom on the wallpaper               |
+| `--glass-tint`         | `rgb(255 255 255 / 58%)`                                                    | Translucent surfaces                      |
+| `--glass-tint-strong`  | `rgb(255 255 255 / 74%)`                                                    | Panels over the wallpaper                 |
+| `--glass-edge`         | `rgb(255 255 255 / 72%)`                                                    | Glass borders                             |
+| `--glass-inner`        | `inset 0 1px 0 rgb(255 255 255 / 82%)`                                      | Specular top edge                         |
+| `--aero-blur`          | `18px`                                                                      | `backdrop-filter` blur of the window      |
+| `--aero-saturate`      | `150%`                                                                      | `backdrop-filter` saturation              |
+| `--shadow-aero-1`      | `0 2px 6px rgb(6 26 52 / 16%), 0 12px 26px -14px rgb(6 26 52 / 34%)`        | Panels                                    |
+| `--shadow-aero-2`      | `0 8px 20px -10px rgb(6 26 52 / 34%), 0 30px 60px -28px rgb(3 18 40 / 48%)` | Floating cards                            |
+| `--shadow-aero-window` | `0 30px 80px -30px rgb(2 16 36 / 62%), 0 4px 14px rgb(2 16 36 / 18%)`       | The glass window                          |
+| `--ink`                | `#253b59`                                                                   | Primary text                              |
+| `--ink-muted`          | `#47525f`                                                                   | Secondary text                            |
+| `--system-blue`        | `#2a5db0`                                                                   | Title bars, focus, links, primary buttons |
+| `--gold`               | `#e0b85a`                                                                   | Hero primary CTA, live status             |
+| `--green`              | `#4c9a4c`                                                                   | Live/success pills                        |
+| `--amber`              | `#7a6320`                                                                   | Exploration/warning pills                 |
 
-## Colors
+### Unit themes (per-area)
 
-Tres familias: gris de escritorio, azul de sistema y blanco de panel. El dorado es acento escaso; el verde y el ámbar solo comunican estado.
+| Unit        | `--unit-primary` | `--unit-shade` (deep) | `--unit-surface` | `--unit-accent` | `--unit-ink` | `--unit-glyph` |
+| ----------- | ---------------- | --------------------- | ---------------- | --------------- | ------------ | -------------- |
+| Domótica    | `#0686d4`        | `#0a4f86`             | `#ffffff`        | `#10b981`       | `#0f172a`    | `#ffffff`      |
+| Industria   | `#f97316`        | `#9a4210`             | `#9ca3af`        | `#374151`       | `#1f2937`    | `#3b1603`      |
+| Agricultura | `#15803d`        | `#0d5730`             | `#f5f5dc`        | `#eab308`       | `#14532d`    | `#ffffff`      |
+| Salud       | `#38bdf8`        | `#0369a1`             | `#ffffff`        | `#0284c7`       | `#0c4a6e`    | `#0b3d5c`      |
 
-### Primary
-
-- **Azul sistema** (`#2a5db0`): barras de título, botones primarios, enlaces, foco y énfasis.
-- **Azul profundo** (`#1f4b96`): hover de enlaces, bordes de control, texto sobre botón claro.
-- **Azul brillante** (`#3f79cd`): paso medio de los degradados gel y hover de botón.
-
-### Secondary
-
-- **Dorado** (`#e0b85a`): acción principal del banner, viñetas de área, filetes de foco y detalles de arte.
-- **Oro profundo** (`#8a6a1f`): texto dorado pequeño sobre claro (contraste AA) y bordes de viñeta.
-- **Oro claro** (`#f6e2b4`): paso superior del botón dorado y reflejos.
-- **Verde estado** (`#4c9a4c`) / **verde texto** (`#35662f`): indicador "Operativo".
-- **Ámbar estado** (`#7a6320`) sobre `#fdf6e6`: indicador "En exploración".
-
-### Neutral
-
-- **Campo** (`#e4e4e4`, degradado a `#dedede`): escritorio detrás de la ventana.
-- **Papel** (`#f7f7f7`): suelo de la ventana y de las páginas interiores.
-- **Blanco panel** (`#ffffff`): superficies de contenido.
-- **Gris panel** (`#f2f2f2`): cabeceras de panel y barras de herramientas.
-- **Gris hundido** (`#fafafa`): filas y cajas dentro de un panel.
-- **Tinta** (`#333333`): texto principal.
-- **Apagado** (`#6b6b6b`): texto secundario y barras de estado.
-- **Línea** (`#d3d3d3` → `#d8d8d8`): bordes hairline.
-- **Cromo** (`#dcdcdc` → `#8f8f8f`): controles y marcos de ventana.
-- **OSD** (`#2c4a78` → `#1c3557`): menú del monitor del hero.
-
-### Named Rules
-
-**La Regla del Gris.** El suelo es gris de escritorio, no blanco. La ventana se distingue del campo por un filete y una sombra de un píxel, no por una elevación grande.
-
-**La Regla del Azul.** El azul pertenece a la barra de título, al foco, a los enlaces y al botón primario. No se usa como fondo de bloques de texto ni como decoración de sección.
-
-**La Regla del Dorado Escaso.** El dorado aparece en la acción principal del banner, en las viñetas de estado y en detalles de arte. Nunca es texto de cuerpo ni fondo extenso.
+- `--unit-shade` replaces `--unit-deep` for CTA backgrounds (button uses shade for AA contrast with white text).
+- `--unit-glyph` is the icon stroke color inside the orb (white for 3, dark brown for Industria).
 
 ## Typography
 
-**Una sola familia:** PT Sans (con Tahoma/Verdana como respaldo) para display, titulares, cuerpo y rótulos. **JetBrains Mono** aparece únicamente en fichas técnicas y metadatos de producto. La jerarquía se construye con tamaño, peso y caja, no con familias distintas.
+| Role             | Font           | Size                            | Weight | Line-height | Letter-spacing |
+| ---------------- | -------------- | ------------------------------- | ------ | ----------- | -------------- |
+| Display headline | Segoe UI       | `clamp(1.85rem, 3.2vw, 2.9rem)` | 700    | 1.05        | -0.025em       |
+| Subhead          | Segoe UI       | 13.5px                          | 400    | 1.6         | —              |
+| Body / UI        | Segoe UI       | 12–13px                         | 400    | 1.5–1.6     | —              |
+| Micro / labels   | Segoe UI       | 11px                            | 400    | 1.35–1.45   | —              |
+| Status / pills   | Segoe UI       | 11px                            | 600    | 1.0         | —              |
+| Monospace facts  | JetBrains Mono | 12px                            | 400    | 1.5         | —              |
 
-### Hierarchy
+`--font-sans` is `'Segoe UI', PT Sans, Tahoma, Verdana, system-ui`; `--font-display` is `'Segoe UI Semibold', 'Segoe UI', Space Grotesk`. PT Sans stays as the web-font fallback of the era, so the site still reads correctly on Linux and macOS. JetBrains Mono is kept for product facts.
 
-- **Display** (700, `clamp(1.85rem, 3.6vw, 3.15rem)`, 1.04, -0.025em): titular del hero, máximo ~19ch.
-- **Headline** (700, 21px, 1.15): título de panel o de página interior; el mismo rol a 19px en `.win-title`.
-- **Title** (700, 16–17px, 1.18): tarjetas, filas de proyecto, cabeceras de panel compartido.
-- **Body** (400, 12–13.5px, 1.5–1.65): prosa; medida de 65–75 caracteres en páginas de lectura.
-- **Label** (400, 11px, 0.08em, mayúsculas): rótulos de campo, metadatos, cabeceras de lista.
-- **Mono** (400, 11px, 1.5): pares etiqueta/valor de las fichas de producto.
+## Spacing scale (single-value ramp)
 
-### Named Rules
+Base unit = 4px → steps: 2, 4, 6, 8, 12, 16, 24, 32, 48, 64. No arbitrary values.
 
-**La Regla de una Sola Voz.** No hay serif ni una segunda sans. El tracking negativo se reserva al display; los rótulos en mayúsculas llevan tracking positivo.
+## Radii
 
-**La Regla del Tamaño Pequeño.** El cuerpo no sube de 14px en superficies de ventana. La legibilidad se gana con interlineado y contraste, no agrandando la interfaz.
+One ladder, defined in `@theme` as `--radius-*` (Tailwind v4 generates `rounded-sm/md/lg/…` from it):
 
-## Layout
+| Token          | Value | Use                                             |
+| -------------- | ----- | ----------------------------------------------- |
+| `--radius-xs`  | 4px   | Window buttons, small controls                  |
+| `--radius-sm`  | 7px   | Buttons, inputs, mini windows                   |
+| `--radius-md`  | 10px  | Panels, nav ribbon, OSD                         |
+| `--radius-lg`  | 14px  | The window, sections, unit tiles, product cards |
+| `--radius-xl`  | 18px  | Floating carousel cards                         |
+| `--radius-2xl` | 24px  | Reserved for large art                          |
 
-Una columna centrada de **máximo 1040 px** (`.win-column`) sobre el campo gris. La página ocupa `100dvh` con `overflow: hidden`; solo `main` hace scroll. El header y el footer quedan siempre visibles. Márgenes interiores de 8–16 px; en móvil, padding lateral de 12 px.
+No literal pixel radii remain in the markup; the only `rounded-[50%]` values are the orbs.
 
-**Shell:** `body` (flex column) → `.win-column` (borde izquierdo/derecho `#cfcfcf`) → `Header` (nav-shelf) → `main` (flex 1, scroll) → `Footer` (barra de estado).
+## Shadows
 
-**Home:** banner azul a sangre con dos columnas (logo + titular + subhead + acciones + nota de estado; monitor SVG con menú OSD y dock de iconos). Debajo, tres tarjetas de franja en rejilla de 3 columnas (1 en móvil, 2 en tablet): producción, exploración, método.
+- **Window**: `0 30px 80px -30px rgba(2,16,36,0.62), 0 4px 14px rgba(2,16,36,0.18)` + `inset 0 1px 0 rgba(255,255,255,0.82)`
+- **Panel**: `0 2px 6px rgba(6,26,52,0.16), 0 12px 26px -14px rgba(6,26,52,0.34)`
+- **Floating product cards**: `0 2px 6px rgba(12,28,52,0.10), 0 18px 34px -20px rgba(12,28,52,0.42)`
+- **Buttons**: `inset 0 1px 0 rgba(255,255,255,0.62), 0 2px 4px rgba(10,30,60,0.22), 0 8px 18px -12px rgba(10,30,60,0.55)`
 
-**Páginas interiores:** banner azul con titular y subtítulo → paneles de contenido `.win-panel` con cabecera gris y cuerpo blanco. Dominio: productos y estado de exploración. Proyectos: tarjetas y dominios próximos. Detalle: ficha, reto, enfoque, capacidades y siguiente proyecto. Contacto: datos directos + formulario. Privacidad: prosa a 72ch. Diseños: tres paneles de variantes.
+## Motion
 
-**Navegación:** una sola fila de enlaces de 12 px con subrayado azul en activo; logo-globo en Inicio; selector ES/EN a la derecha. En móvil los enlaces envuelven a dos líneas (comportamiento aceptado). No hay mega-menú ni menú flotante: en la home, los enlaces cambian de panel en el mismo sitio.
+- Panel swap: `win-swap` 220ms ease-out (transform + opacity rise)
+- Hover lift: `translateY(-0.5px)` 150ms on dock icons & unit tiles
+- Orb pulse: `scale(1.04)` 150ms on hover
+- OSD item highlight: instant on panel change
+- `prefers-reduced-motion: reduce` disables all transforms and smooth scroll
 
-**Breakpoints:** `sm` 640, `md` 768, `lg` 1024. La rejilla de franjas pasa de 1 → 2 → 3 columnas; las páginas interiores pasan de una a dos columnas en `lg`.
+## Focus & accessibility
 
-## Elevation & Depth
+- Focus ring: `2px solid #2a5db0` with 2px offset, removed only for mouse (`:focus-visible`)
+- All interactive elements reachable by keyboard; panel navigation via monitor OSD or dock
+- WCAG AA contrast verified with `impeccable detect` on `/es`, `/es/contacto`, `/es/proyectos/smart-house` and `/es/disenos/planetario`:
+  - White on primary blue `#3f7cc9`: 4.8:1 (buttons and active nav pill)
+  - Light text on the glass window: ≥ 4.5:1
+  - Muted text `#47525f` on the window glass: ≥ 4.5:1
+  - Unit shade on white: ≥ 4.5:1 per unit (Domótica `#0a4f86`, Industria `#9a4210`, Agricultura `#0d5730`, Salud `#0369a1`)
+  - Unit glyph on primary: ≥ 3:1 (non-text decorative)
+  - The two `nested-cards` warnings on `/es` are intentional: the product is a window with panels, and panels hold cards.
+  - Salud is the only unit with a light primary, so its banner uses its own tones (`--unit-banner-top #1476ae`, `--unit-banner-mid #0c5f92`) to keep white body text at AA (4.96:1). Its orb glyph is dark (`#0b3d5c`) for contrast on the light blue.
 
-El mundo es **plano**. La profundidad se consigue con filetes de un píxel, luz interior superior y degradados cortos de tres pasos, no con sombras grandes ni desenfoques.
+## Breakpoints
 
-### Shadow Vocabulary
+- Desktop only (≥1024px) for this iteration. Mobile wraps nav to two lines; panel stack is single-column inside the window. No responsive grid changes beyond the 1040px max-width.
 
-- **Ventana** (`0 0 0 1px rgb(255 255 255 / 40%) inset`): filo interior de la columna-ventana.
-- **Nav-shelf** (`inset 0 1px 0 #ffffff`): luz superior de la barra de navegación y del footer.
-- **Panel** (`inset 0 1px 0 #ffffff` + borde `#d8d8d8`): separa el panel del papel sin elevarlo.
-- **Botón gel** (`inset 0 1px 0 rgb(255 255 255 / 45%)`, `inset 0 -1px 0 rgb(0 0 0 / 18%)`): luz arriba, bisel abajo.
-- **Campo** (`inset 1px 1px 2px rgb(0 0 0 / 8%)`): inputs hundidos.
-- **Menú OSD** (`inset 0 1px 0 rgb(255 255 255 / 22%)`, `2px 3px 8px rgb(10 25 45 / 45%)`): única sombra proyectada del sistema, dentro del arte del monitor.
+## Layout grid
 
-### Named Rules
+- Window column: `max-width: 1040px`, `height: calc(100dvh - 28px)`, `margin: 14px auto`, radius 14px, centered over the Aurora wallpaper, only `<main>` scrolls.
+- Home banner: `grid` two columns (`1.05fr` / `0.95fr`), 8px gap, 24px horizontal padding, 28px vertical (lg: 40/28).
+- Dock shelf: `grid` 4 columns, `max-width: 860px`, gap 6px.
+- Product carousel: horizontal scroll-snap list, `gap: 12px`, cards `248px` wide, scrollable with prev/next arrows.
+- Unit page: banner (3px top rule), header strip, grid `1.35fr / 0.65fr`, art thumbnail max 220px.
 
-**La Regla del Filete.** La separación se dibuja con una línea de 1 px. Si un bloque necesita una sombra grande para entenderse, la jerarquía está mal resuelta.
+## Components reference
 
-**La Regla de la Luz Superior.** Toda superficie recibe `inset 0 1px 0` blanco; los controles añaden un bisel oscuro inferior. No hay luz lateral ni halos de color.
+### `.win-banner` (hero de la portada)
 
-## Shapes
+Sección `.win-section.win-section-hero`: degradado azul `#1c5c9c → #2b71b9 → #3d89cc` con dos halos radiales suaves, radio **24px** (`--radius-2xl`) para que el redondeo se lea de inmediato, canto claro de 1px (`rgb(255 255 255 / 30%)`) y sombra en dos capas (`0 12px 30px -10px`, `0 34px 64px -32px`). Encima sólo hay **un** brillo diagonal muy ancho y suave (`.win-hero-bg`, sin `backdrop-filter`): nada de bandas diagonales duras ni doble capa difuminada. Contenido: marca, titular con acento dorado, subtítulo, CTA (dorado + claro), nota en vivo, teaser de empresa y el monitor "Panel de control".
 
-Radios mínimos: **2 px** en controles e inputs, **3 px** en paneles, botones y marcos de ventana, **10 px** solo en píldoras de estado y puntos. El resto son esquinas rectas. Los iconos de lanzamiento son círculos glossy de 28–36 px dentro del dock; los controles de barra de título son rectángulos de 13×12 px. No hay cápsulas grandes, blobs ni clip-paths decorativos.
+### `.win-monitor`
 
-## Components
+SVG monitor frame (dark bezel `#1a1a2e`, screen `#0d1f3a`), clock top-right, OSD list (menu items = panels), active highlight (`#2a5db0` background, white text), product rows below OSD. Click OSD item → panel swap.
 
-### Navigation Shelf (`.win-nav`)
+### `.win-dock`
 
-- Fondo `linear-gradient(180deg, #fdfdfd, #f0f0f0 62%, #e6e6e6)`, borde inferior `#cfcfcf` y luz interior superior.
-- Enlaces de 12 px en `#5a5a5a`; hover azul con subrayado `#7fa4dd`; activo azul negrita con subrayado `#2a5db0`.
-- En la home los enlaces son botones que cambian el panel activo; fuera de la home son enlaces de ruta. El logo-globo solo aparece en Inicio.
+Glass shelf (`border-top: 1px solid rgba(255,255,255,0.70)`), 4 unit tiles.
 
-### Window Column (`.win-column`)
+### `.win-titlebar-app`
 
-- Máximo 1040 px, centrada, fondo `#f7f7f7`, bordes laterales `#cfcfcf` y filo interior blanco al 40%.
-- Contiene header, `main` con scroll y footer; nunca se desplaza como un todo.
+Dark glass bar at the top of the window: brand mark + `Cosmos Compass` + window subtitle on the left, ES/EN switch on the right (`.win-locale-switch`, active locale as a white capsule).
 
-### Banner (`.win-banner`)
+### `.win-tile` (unit tile)
 
-- Azul de tres pasos (`#2f6fd0` → `#2a63be` → `#1c4a94`) con un reflejo radial en la esquina superior derecha y dos barridos diagonales en `::after`.
-- Titular blanco con la cláusula de acento en `#ffe3a3`; subhead `#f4f8ff`; acciones a la izquierda y arte a la derecha.
-- Altura determinada por el contenido; no se fuerza a pantalla completa.
+Rounded 14px (`rounded-lg`), `px-2 py-2`, centered column: orb (56px, glossy sphere in `var(--unit-primary)`, `color: var(--unit-glyph)`), glyph 30px, label (12.5px bold, `--unit-ink`), description (11px, muted). Hover: `translateY(-0.5px)` + orb `scale(1.04)`.
 
-### Window Panel (`.win-panel` / `WindowPanel`)
+### `.win-float` (product carousel section)
 
-- Fondo blanco, borde `1px #d8d8d8`, sin radio en las páginas interiores.
-- Cabecera propia: `linear-gradient(180deg, #fbfbfb, #efefef)`, borde inferior `#d8d8d8`, título de 15 px y `aside` opcional a la derecha.
-- Cuerpo con padding de 12–16 px. Es el contenedor por defecto de cualquier sección interior.
+Relative, `win-float-sheen` pseudo (top gradient sheen), header with title/subhead + prev/next arrows (Win95-style 3D buttons), scroll-snap list.
 
-### Window Frame (`.window-frame` / `ProductWindow`)
+### `.win-carousel` card
 
-- Marco de 3 px con degradado blanco→gris, borde `#c9c9c9`, radio 3 px y filo interior `#f7f7f7`.
-- Barra de título azul (`#4a7fc4` → `#2a5db0`) con texto blanco de 11 px y tres controles: minimizar (azul claro), maximizar (azul muy claro), cerrar (rojo `#f4b48d` → `#c0562f`).
-- Barra de estado gris con un indicador verde de 7 px y tres controles decorativos de 11 px (uno dorado).
-- El cuerpo aloja `SectorScene` (SVG plano) o `MonitorArt`, nunca una captura raster.
+248px wide, `rounded-xl` (18px), `win-float` glass surface with a top sheen, `p-2.5`. Top: orb (40px, unit primary bg, unit glyph color) + initials (13px bold), name (14px bold). Tagline (11.5px). CTA button (light glossy, full width).
 
-### Status Pill (`.win-status`)
+### `.unit-banner`
 
-- Píldora de 10 px, mayúsculas, tracking 0.04em, punto de 6 px.
-- Operativo: borde `#b8cfae`, fondo `#eef7ea`, texto `#35662f`, punto `#4c9a4c`.
-- Exploración: borde `#dcc79a`, fondo `#fdf6e6`, texto `#7a6320`, punto `#c79a33`.
-- Siempre refleja un dato real de `project.facts` o del contenido; nunca se inventa un estado.
+Gradient in the unit color with a specular edge, header strip (glass, unit name 21px, action buttons: unit btn with shade bg + white text, ghost contact), content grid.
 
-### Gel Buttons (`.win-btn`)
+### `.win-btn-unit`
 
-- Radio 3 px, borde `#1f4b96`, PT Sans 12 px/700, padding 7×16 px.
-- Primario: azul de tres pasos con luz superior y bisel inferior; hover un paso más claro; activo invertido con sombra interior.
-- Dorado (`.win-btn-gold`): el único botón cálido; reservado a la acción principal del banner.
-- Claro (`.win-btn-light`): blanco→azul pálido, texto azul profundo; acciones secundarias y enlaces de tarjeta.
-- Plano (`.win-btn-plain`): gris claro para acciones terciarias.
-- Fantasma (`.win-btn-ghost`): enlace subrayado sin caja.
+Gradient from `var(--unit-shade)` to a darker shade, white text, glossy top edge, hover lifts 1px.
 
-### Inputs (`.win-input`)
+### `.win-btn-gold` / `.win-btn-light` / `.win-btn-ghost`
 
-- Fondo blanco, borde `#b8b8b8`, radio 2 px, texto de 12 px y sombra interior de 2 px.
-- Foco: borde azul `#2a5db0` más un anillo de 2 px al 22%. Placeholder `#9a9a9a`.
+All buttons use `rounded-sm` (7px) with a specular `inset 0 1px 0` edge and a two-layer shadow. Gold: warm gradient with dark ink. Light: white-blue gradient with blue text. Ghost: transparent, blue text, underlined.
 
-### Strip Card (`.win-strip-card`)
+### `.win-title`, `.win-label`, `.win-link`
 
-- Fondo `#f3f3f3`, borde `#dcdcdc`, luz interior superior; sin radio.
-- Rótulo de 10 px, título de 17 px, cuerpo de 12.5 px y lista de enlaces con viñetas de 5 px (verde = live, dorado = abierto).
-- Arte de 72–84 px anclado arriba a la derecha; el texto reserva 102–122 px de padding derecho.
+Title: 21px bold, ink. Label: 11px uppercase, tracking-wider, muted. Link: blue, underline on hover.
 
-### Monitor Art & Dock
+## Provenance
 
-- Monitor SVG con pantalla azul, barra "Panel de control", reloj, menú OSD navegable y tres filas de producto con punto verde.
-- Dock de lanzamiento rápido: banda blanca con borde `#b9c8dc`, iconos glossy circulares (casa, fábrica, brote, cruz) y etiquetas navy de 10 px.
-
-### Footer Status Bar (`.win-footer`)
-
-- Fondo `#ededed` → `#e2e2e2`, borde superior `#cfcfcf`, luz interior.
-- Enlaces de 11 px en `#5f5f5f`; hover azul subrayado. Incluye copyright, navegación, email y privacidad.
-
-## Do's and Don'ts
-
-### Do:
-
-- **Do** mantener una sola ventana centrada y dejar que solo `main` haga scroll.
-- **Do** separar superficies con filetes de 1 px y luz interior superior.
-- **Do** usar PT Sans en todos los niveles y JetBrains Mono solo en fichas técnicas.
-- **Do** reservar el azul para navegación, foco, enlaces y botón primario; el dorado para la acción principal del banner y las viñetas.
-- **Do** mostrar estados reales como píldoras verde/ámbar, con el valor que existe en el contenido.
-- **Do** reutilizar `WindowPanel`, `ProductWindow`, `.win-btn` y `.win-status` antes de crear una variante.
-- **Do** mantener el foco visible con un anillo azul de 2 px y objetivos táctiles de al menos 24 px.
-- **Do** respetar `prefers-reduced-motion`; el único movimiento autorado es el cambio de panel (`win-swap`, 220 ms).
-
-### Don't:
-
-- **Don't** reintroducir cromo brillante de gran radio, remaches, box shots 3D ni ventanas flotantes.
-- **Don't** usar sombras grandes, halos de color, desenfoques de fondo ni glassmorphism.
-- **Don't** volver al papel cálido, al latón envejecido ni a la serif editorial.
-- **Don't** inventar certificaciones, capturas, archivos `.exe`, versiones, checksums, precios, clientes o métricas.
-- **Don't** usar el dorado como color de cuerpo ni como fondo extenso.
-- **Don't** añadir un segundo sistema de botones o tarjetas junto a `.win-btn` / `.win-panel`.
-- **Don't** ocultar áreas sin producto: se muestran en exploración y tienen página propia.
-- **Don't** hacer que el header o el footer desaparezcan al hacer scroll.
+This document reflects the state after the home redesign (2026-11-04), after unifying the four business units as panels of the home window (2026-11-05) and after the Vista/Win7 Aero visual pass with the glass title bar (2026-11-06). Reference screenshots of the home design: `~/backups/web-page/home-design-2026-11-06/shots/`. All `pnpm check` (lint, stylelint, typecheck, build) pass.

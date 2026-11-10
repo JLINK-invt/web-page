@@ -23,8 +23,20 @@ export const designVariantSlugs: Record<string, Record<Locale, string>> = {
   skeuomorphic: { es: 'esquemorfo', en: 'skeuomorphic' },
 };
 
+/**
+ * Las áreas no tienen ruta propia: viven como paneles dentro de la ventana de
+ * la home. La URL canónica de un área es `/{locale}#{id}`.
+ */
 export function domainHref(locale: Locale, id: DomainId): string {
-  return `/${locale}/${domainSlugs[id][locale]}`;
+  return `/${locale}#${id}`;
+}
+
+/**
+ * La home es una ventana: los productos viven en el carrusel dentro de
+ * `main`, no en una ruta propia. `/#productos` apunta al ancla real.
+ */
+export function homeProductsHref(locale: Locale): string {
+  return `${href(locale, 'home')}#productos`;
 }
 
 export function designsHref(locale: Locale, variant?: string): string {

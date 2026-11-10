@@ -7,14 +7,16 @@ export function CtaBand({
   title,
   subtitle,
   button,
+  tone = 'default',
 }: {
   locale: Locale;
   title: string;
   subtitle: string;
   button: string;
+  tone?: 'default' | 'unit';
 }) {
   return (
-    <section className="win-banner mt-2">
+    <section className={tone === 'unit' ? 'unit-banner mt-2' : 'win-banner mt-2'}>
       <div className="mx-auto flex w-full max-w-[1040px] flex-col gap-4 px-4 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-6">
         <div>
           <h2 className="font-display text-[18px] leading-snug font-bold text-white">{title}</h2>

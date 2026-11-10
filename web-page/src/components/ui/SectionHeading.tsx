@@ -15,7 +15,7 @@ export function SectionHeading({
     <div className={cn('max-w-2xl', align === 'center' && 'mx-auto text-center', className)}>
       <h2 className="win-title text-[16px] leading-snug">{title}</h2>
       {subtitle ? (
-        <p className="mt-1.5 text-[12.5px] leading-[1.55] text-[#5f5f5f]">{subtitle}</p>
+        <p className="mt-1.5 text-[12.5px] leading-[1.55] text-[#45505d]">{subtitle}</p>
       ) : null}
     </div>
   );

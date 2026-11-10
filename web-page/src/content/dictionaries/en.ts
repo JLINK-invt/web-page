@@ -9,11 +9,6 @@ export const en = {
       description:
         'We design custom software to organize operations across domotics, agriculture, industry and health. Solutions built on the real process, not industry packages.',
     },
-    projects: {
-      title: 'Projects',
-      description:
-        'Active products and new verticals in exploration. See how we solve real operations with purpose-built software.',
-    },
     contact: {
       title: 'Contact',
       description:
@@ -32,44 +27,23 @@ export const en = {
       'We do not sell an industry package: we build the software and design the solution with your team.',
     allProjects: 'View projects',
     tellUs: "Let's talk",
-    projects: 'Projects',
     contact: 'Contact',
+    company: 'Studio',
     cta: "Let's talk",
     menu: 'Menu',
     close: 'Close',
     language: 'Language',
   },
   window: {
-    navMethod: 'Method',
     screenTitle: 'Control panel',
     osdTitle: 'Selector',
     clock: '09:41',
-    live: {
-      label: 'In production',
-      title: 'Domotics: three systems at work',
-      body: 'Smart House, Fitness Gym and Health Psychology run every day in homes, gyms and clinics.',
-      cta: 'See the products',
-    },
-    exploration: {
-      label: 'In exploration',
-      title: 'Three areas to open',
-      body: 'Agriculture, Industry and Health: the method is the same, each one still needs its first case.',
-      cta: 'Propose a case',
-    },
-    method: {
-      label: 'Method',
-      title: 'The problem first, the system after',
-      body: 'We map the operation, build the core and run it with evidence.',
-      cta: 'See the three steps',
-    },
-    projects: {
-      note: 'Agriculture, Industry and Health remain in exploration: there is no public product to show yet.',
-    },
     unit: {
       openPage: 'Open the area page',
       solutionsTitle: 'What we build here',
-      statusLive: 'In operation',
-      statusExploration: 'In exploration',
+      workingTitle: 'We are working on the first product of this unit.',
+      workingBody:
+        'We have not published products here yet. We are mapping real operations in this sector to build the system it needs: if you operate in this industry, tell us what you want to put in order.',
       contact: 'Tell us your case',
     },
     contactPanel: {
@@ -79,15 +53,13 @@ export const en = {
   },
   common: {
     viewProjects: 'View projects',
-    viewProject: 'View project',
+    viewProject: 'View product',
     talkToUs: "Let's talk",
     comingSoon: 'Coming soon',
     active: 'Active',
     exploration: 'In exploration',
-    backToProjects: 'Back to projects',
     email: 'Email',
     project: 'project',
-    projects: 'projects',
     status: 'Status',
     stack: 'Stack',
     domotics: 'Domotics',
@@ -97,13 +69,12 @@ export const en = {
   },
   home: {
     hero: {
-      eyebrow: 'Software for real operations',
       title: 'Systems that put real work in order.',
       titleAccent: 'in order',
       subtitle:
         'We build custom software to put operations in order across domotics, agriculture, industry and health. Fewer parallel spreadsheets, fewer ownerless data points and fewer blind decisions.',
-      note: 'Three products in operation. Four areas on the map.',
-      primaryCta: 'See systems at work',
+      note: 'We map the operation, build the system and run it with evidence.',
+      primaryCta: 'See the products',
       secondaryCta: "Let's talk",
       valuesLabel: 'How we work',
       value1: 'Domain-first: we map the real process before writing code',
@@ -111,6 +82,19 @@ export const en = {
       value3: 'Custom software, not industry packages',
       value4: 'We ship, measure, and iterate with evidence',
       valuesNote: 'Four principles. Every project.',
+    },
+    units: {
+      domotics: 'Devices, access and spaces',
+      industrial: 'Line, logistics and quality',
+      agriculture: 'Crops, alerts and traceability',
+      medical: 'Scheduling, records and documents',
+    },
+    company: {
+      teaser:
+        'We are a software studio that works on real operations: we map the process, order the domain and build the system with your team, not an industry package.',
+      title: 'Studio and method.',
+      body: 'Cosmos Compass builds custom software for four real operations: domotics, agriculture, industry and health. We do not resell third-party products: we write the system your operation needs, put it in place and keep it running with evidence.',
+      cta: 'Learn more',
     },
     domains: {
       title: 'Four areas. Custom software in each one.',
@@ -123,9 +107,10 @@ export const en = {
       customCta: "Let's talk",
     },
     projects: {
-      title: 'Systems already at work.',
+      label: 'Products',
+      title: 'Software already at work.',
       subtitle:
-        'Three products in operation. Not demos: they handle cash, access, scheduling, devices and audit every day.',
+        'Smart House, Fitness Center and Health consultory: custom systems for homes, gyms and clinics.',
       cta: 'View all projects',
     },
     approach: {
@@ -159,20 +144,6 @@ export const en = {
       button: "Let's talk about your case",
     },
   },
-  projects: {
-    title: 'Active products and areas in exploration.',
-    subtitle:
-      'We started with domotics, where we already operate three products. Agriculture, industry and health are the areas we are opening.',
-    domoticsTitle: 'Domotics',
-    domoticsHeading: 'Products in operation',
-    domoticsSubtitle: 'Custom software to operate devices, access, cash and scheduling.',
-    upcomingTitle: 'In exploration',
-    upcomingHeading: 'Areas we want to open',
-    upcomingSubtitle:
-      "If you operate in agriculture, industry or health, let's talk: we are looking for the first case to open each area.",
-    statusLive: 'Active',
-    statusUpcoming: 'Coming soon',
-  },
   project: {
     challenge: 'The challenge',
     approach: 'Our approach',
@@ -183,8 +154,49 @@ export const en = {
     ctaButton: "Let's talk",
     ctaButtonBuy: 'Buy now',
     ctaButtonDemo: 'Request demo',
+    customTitle: "Not what you're looking for?",
+    customSubtitle:
+      'We offer custom development for your operation. Tell us your case and we will design the solution you need.',
+    customButton: 'Request custom development',
+    paymentTitle: 'Payment methods',
+    paymentMethods: {
+      online: 'Online payment (card)',
+      transfer: 'Bank deposit / Transfer',
+      transferNote: 'Send proof of payment',
+      paypal: 'PayPal',
+      mercadolibre: 'MercadoLibre',
+    },
+    payment: {
+      selectMethod: 'Choose how to pay',
+      amount: 'Total to pay',
+      card: {
+        title: 'Card (Stripe)',
+        description: 'Secure credit/debit card payment',
+      },
+      transfer: {
+        title: 'Bank Transfer / Deposit',
+        description: 'Bank deposit, send proof of payment',
+        instructions: 'Bank details',
+        uploadProof: 'Upload proof',
+        pending: 'Proof received, we verify in 24h',
+      },
+      paypal: {
+        title: 'PayPal',
+        description: 'Pay with your PayPal account',
+      },
+      mercadopago: {
+        title: 'MercadoLibre / MercadoPago',
+        description: 'Installments or balance',
+      },
+      success: 'Payment confirmed!',
+      cancel: 'Payment cancelled',
+      error: 'An error occurred, please try again',
+      confirmEmailSent: 'We sent the confirmation to your email.',
+    },
     next: 'Next project',
     live: 'In operation',
+    tutorialsTitle: 'Tutorials & guides',
+    tutorialsSubtitle: 'Learn to configure and get the most out of your system.',
     specsTitle: 'Technical specifications',
     screenshots: 'System screenshots',
     viewSuite: 'View system suite',
@@ -222,16 +234,9 @@ export const en = {
       company: 'Company',
       companyPlaceholder: 'Company name',
       project: 'Project of interest',
-      projectPlaceholder: 'Choose an option',
-      projectOptions: {
-        smartHouse: 'Smart House',
-        fitnessGym: 'Fitness Gym',
-        healthPsychology: 'Health Psychology',
-        agriculture: 'Agriculture',
-        industrial: 'Industrial',
-        medical: 'Medical',
-        other: 'Other',
-      },
+      projectPlaceholder: 'Not specified',
+      projectOptional: 'Optional',
+      projectOther: 'Other',
       message: 'Message',
       messagePlaceholder: 'Briefly tell us what you want to solve.',
       consent: 'I agree that Cosmos Compass may use this data to reply to my inquiry.',
@@ -262,7 +267,7 @@ export const en = {
     sections: [
       {
         title: 'What data we receive',
-        body: 'Name, email, company, project of interest and the message you choose to send. We do not ask for sensitive data.',
+        body: 'Name, email, company, project of interest (optional) and the message you choose to send. We do not ask for sensitive data.',
       },
       {
         title: 'What we use it for',
@@ -283,15 +288,7 @@ export const en = {
     ],
   },
   domain: {
-    productsTitle: 'Products in operation',
-    explorationTitle: 'This unit is in exploration.',
-    explorationBody:
-      'We have not published products in this unit yet. We are looking for the first case: if you operate in this sector, tell us what needs ordering and we map the operation before building.',
-    explorationCta: 'Propose a case',
-    explorationNote:
-      'The method is the same one we use in the units with products: understand the operation, order the domain and build on a secure foundation.',
-    statusActive: 'In operation',
-    statusExploration: 'In exploration',
+    productsTitle: 'Products',
   },
   designs: {
     title: 'Three design directions.',

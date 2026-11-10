@@ -22,6 +22,12 @@ export interface ProjectFact {
   value: LocalizedText;
 }
 
+export interface ProjectTutorial {
+  title: LocalizedText;
+  description: LocalizedText;
+  steps: LocalizedList;
+}
+
 export interface Project {
   slug: ProjectSlug;
   name: string;
@@ -35,4 +41,7 @@ export interface Project {
   capabilities: LocalizedList;
   stack: LocalizedList;
   facts: ProjectFact[];
+  tutorials?: ProjectTutorial[];
+  price?: number;
+  currency?: string;
 }

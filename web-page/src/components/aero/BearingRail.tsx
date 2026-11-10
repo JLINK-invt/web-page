@@ -66,7 +66,7 @@ export function BearingRail({
                 <span className="text-muted text-[12px] leading-relaxed">
                   {localize(domain.description, locale)}
                 </span>
-                <span className="text-cosmos mt-2 inline-flex items-center gap-1.5 text-[10px] font-semibold tracking-[0.16em] uppercase">
+                <span className="text-cosmos mt-2 inline-flex items-center gap-1.5 text-[11px] font-semibold tracking-[0.16em] uppercase">
                   {live ? labels.explore : labels.exploration}
                   <ArrowIcon className="transition-transform group-hover:translate-x-1" />
                 </span>

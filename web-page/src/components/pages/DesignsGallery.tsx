@@ -137,7 +137,7 @@ export function DesignsGallery({ locale, dict }: { locale: Locale; dict: Diction
                 <span className="mx-auto mt-3 block h-32 w-32 border border-[#e0e0e0] bg-[#f6f6f6] p-1">
                   <Thumb />
                 </span>
-                <p className="mt-1 flex-1 text-[12px] leading-[1.55] text-[#5f5f5f]">
+                <p className="mt-1 flex-1 text-[12px] leading-[1.55] text-[#45505d]">
                   {dict.designs.descriptions[card.variant]}
                 </p>
                 <Link

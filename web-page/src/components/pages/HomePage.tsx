@@ -5,16 +5,15 @@ import type { Locale } from '@/lib/i18n';
 import { getDictionary } from '@/lib/i18n';
 import { useWindow, type PanelId } from '@/components/site/WindowProvider';
 import {
+  CompanyPanel,
   ContactPanel,
   HomePanel,
-  MethodPanel,
-  ProjectsPanel,
   UnitPanel,
+  scrollToProducts,
 } from '@/components/window/WindowPanels';
 
 const panelIds: PanelId[] = [
   'home',
-  'projects',
   'method',
   'contact',
   'domotics',
@@ -23,17 +22,34 @@ const panelIds: PanelId[] = [
   'medical',
 ];
 
+function panelFromHash(): PanelId | null {
+  const hash = window.location.hash.replace('#', '');
+  return panelIds.includes(hash as PanelId) ? (hash as PanelId) : null;
+}
+
 export function HomePage({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale);
   const { active, setActive } = useWindow();
   const previous = useRef(active);
 
   useEffect(() => {
-    const hash = window.location.hash.replace('#', '');
-    if (panelIds.includes(hash as PanelId)) {
-      setActive(hash as PanelId);
-    }
-  }, [setActive]);
+    const sync = () => {
+      const panel = panelFromHash();
+      if (panel) {
+        setActive(panel);
+        return;
+      }
+
+      if (window.location.hash.replace('#', '') === 'productos') {
+        if (active !== 'home') setActive('home');
+        requestAnimationFrame(scrollToProducts);
+      }
+    };
+
+    sync();
+    window.addEventListener('hashchange', sync);
+    return () => window.removeEventListener('hashchange', sync);
+  }, [active, setActive]);
 
   useEffect(() => {
     if (previous.current === active) return;
@@ -45,8 +61,7 @@ export function HomePage({ locale }: { locale: Locale }) {
 
   const panel = (): React.ReactNode => {
     if (active === 'home') return <HomePanel locale={locale} dict={dict} />;
-    if (active === 'projects') return <ProjectsPanel locale={locale} dict={dict} />;
-    if (active === 'method') return <MethodPanel locale={locale} dict={dict} />;
+    if (active === 'method') return <CompanyPanel locale={locale} dict={dict} />;
     if (active === 'contact') return <ContactPanel locale={locale} dict={dict} />;
     return <UnitPanel locale={locale} dict={dict} domainId={active} />;
   };

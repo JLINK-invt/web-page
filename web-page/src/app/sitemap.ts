@@ -10,7 +10,6 @@ const routes: {
   priority: number;
 }[] = [
   { key: 'home', changeFrequency: 'weekly', priority: 1 },
-  { key: 'projects', changeFrequency: 'monthly', priority: 0.9 },
   { key: 'contact', changeFrequency: 'monthly', priority: 0.7 },
   { key: 'privacy', changeFrequency: 'monthly', priority: 0.3 },
 ];

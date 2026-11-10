@@ -4,7 +4,7 @@
   --color-paper: #f7f7f7;
   --color-sand: #e4e4e4;
   --color-ink: #333;
-  --color-muted: #6b6b6b;
+  --color-muted: #47525f;
   --color-line: #d3d3d3;
   --color-cosmos: #2a5db0;
   --color-brass: #7a6320;
@@ -29,9 +29,41 @@
   --color-window-title-silver: #b4b4b4;
   --color-status-green: #3f8f3f;
   --color-status-red: #b8442c;
-  --font-sans: var(--font-source-sans), tahoma, verdana, ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-space-grotesk), tahoma, verdana, ui-sans-serif, system-ui, sans-serif;
+  --font-sans:
+    'Segoe UI', var(--font-source-sans), tahoma, verdana, ui-sans-serif, system-ui, sans-serif;
+  --font-display:
+    'Segoe UI Semibold', 'Segoe UI', var(--font-space-grotesk), tahoma, verdana, ui-sans-serif,
+    system-ui, sans-serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, sfmono-regular, menlo, monospace;
+
+  /* Aero scale: one radius ladder for the whole system (Windows 7 era). */
+  --radius-xs: 4px;
+  --radius-sm: 7px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-2xl: 24px;
+}
+
+:root {
+  /* Aero glass */
+  --glass-tint: rgb(255 255 255 / 58%);
+  --glass-tint-strong: rgb(255 255 255 / 74%);
+  --glass-tint-soft: rgb(238 246 255 / 42%);
+  --glass-edge: rgb(255 255 255 / 72%);
+  --glass-edge-strong: rgb(255 255 255 / 92%);
+  --glass-inner: inset 0 1px 0 rgb(255 255 255 / 82%);
+  --glass-inner-soft: inset 0 1px 0 rgb(255 255 255 / 45%);
+  --aero-blur: 18px;
+  --aero-saturate: 150%;
+  --shadow-aero-1: 0 2px 6px rgb(6 26 52 / 16%), 0 12px 26px -14px rgb(6 26 52 / 34%);
+  --shadow-aero-2: 0 8px 20px -10px rgb(6 26 52 / 34%), 0 30px 60px -28px rgb(3 18 40 / 48%);
+  --shadow-aero-window: 0 30px 80px -30px rgb(2 16 36 / 62%), 0 4px 14px rgb(2 16 36 / 18%);
+  --aurora-deep: #072744;
+  --aurora-mid: #0d4763;
+  --aurora-green-deep: #14654e;
+  --aurora-green: #7fd8a6;
+  --aurora-warm: #ffd08a;
 }
 
 @layer base {
@@ -50,8 +82,18 @@
     height: 100dvh;
     overflow: hidden;
     flex-direction: column;
-    background-color: #e4e4e4;
-    background-image: linear-gradient(180deg, #e9e9e9 0%, #dedede 100%);
+    background-color: var(--aurora-deep);
+    background-image:
+      radial-gradient(92% 64% at 16% 90%, rgb(118 214 150 / 28%) 0%, rgb(118 214 150 / 0%) 62%),
+      radial-gradient(68% 46% at 88% 6%, rgb(255 202 124 / 32%) 0%, rgb(255 202 124 / 0%) 66%),
+      radial-gradient(84% 64% at 52% 44%, rgb(118 146 255 / 20%) 0%, rgb(118 146 255 / 0%) 72%),
+      linear-gradient(
+        162deg,
+        #050f24 0%,
+        var(--aurora-deep) 36%,
+        var(--aurora-mid) 76%,
+        var(--aurora-green-deep) 100%
+      );
     color: var(--color-ink);
     font-family: var(--font-sans);
     font-size: 13px;
@@ -115,71 +157,248 @@
 
 @layer components {
   /* ---------------------------------------------------------------------
-     The 2004 window: a fixed column on a gray field, hairline borders,
-     small type, blue gel controls.
+     The Aero window: one glass shell over the desktop, rounded surfaces,
+     specular highlights, soft layered shadows.
      --------------------------------------------------------------------- */
 
   .win-column {
-    background-color: #f7f7f7;
-    border-left: 1px solid #cfcfcf;
-    border-right: 1px solid #cfcfcf;
-    box-shadow: 0 0 0 1px rgb(255 255 255 / 40%) inset;
+    position: relative;
+    height: calc(100dvh - 28px);
+    margin: 14px auto;
+    overflow: hidden;
+    border: 1px solid var(--glass-edge);
+    border-radius: var(--radius-lg);
+    background-image: linear-gradient(
+      180deg,
+      rgb(255 255 255 / 88%) 0%,
+      rgb(241 247 255 / 80%) 42%,
+      rgb(229 239 251 / 72%) 100%
+    );
+    box-shadow: var(--glass-inner), var(--shadow-aero-window);
+    backdrop-filter: blur(var(--aero-blur)) saturate(var(--aero-saturate));
+  }
+
+  .win-titlebar-app {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 12px;
+    border-bottom: 1px solid rgb(255 255 255 / 26%);
+    background-image:
+      linear-gradient(180deg, rgb(255 255 255 / 22%) 0%, rgb(255 255 255 / 0%) 48%),
+      linear-gradient(
+        180deg,
+        rgb(18 62 106 / 92%) 0%,
+        rgb(11 44 82 / 90%) 52%,
+        rgb(6 26 54 / 92%) 100%
+      );
+    color: #fff;
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 22%);
+  }
+
+  .win-titlebar-app .win-logo-mark {
+    display: grid;
+    place-items: center;
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgb(255 255 255 / 45%);
+    border-radius: var(--radius-sm);
+    background-image: radial-gradient(
+      circle at 34% 26%,
+      rgb(255 255 255 / 70%),
+      rgb(255 255 255 / 0%) 58%
+    );
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 45%);
+  }
+
+  .win-titlebar-app-title {
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    text-shadow: 0 1px 2px rgb(3 16 34 / 60%);
+  }
+
+  .win-locale-switch {
+    display: inline-flex;
+    gap: 2px;
+    padding: 2px;
+    border: 1px solid rgb(255 255 255 / 28%);
+    border-radius: var(--radius-sm);
+    background-color: rgb(0 0 0 / 22%);
+    box-shadow: inset 0 1px 2px rgb(0 0 0 / 30%);
+  }
+
+  .win-locale-switch a {
+    padding: 2px 8px;
+    border-radius: var(--radius-xs);
+    color: rgb(255 255 255 / 82%);
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+      background-color 140ms ease-out,
+      color 140ms ease-out;
+  }
+
+  .win-locale-switch a:hover {
+    background-color: rgb(255 255 255 / 16%);
+    color: #fff;
+  }
+
+  .win-locale-switch a.is-active {
+    background-image: linear-gradient(
+      180deg,
+      rgb(255 255 255 / 96%) 0%,
+      rgb(214 232 250 / 88%) 100%
+    );
+    color: #123c72;
+    text-shadow: none;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 25%);
   }
 
   .win-nav {
-    background-image: linear-gradient(180deg, #fdfdfd 0%, #f0f0f0 62%, #e6e6e6 100%);
-    border-bottom: 1px solid #cfcfcf;
-    box-shadow: inset 0 1px 0 #fff;
+    margin: 10px 12px 0;
+    border: 1px solid var(--glass-edge);
+    border-radius: var(--radius-md);
+    background-image: linear-gradient(
+      180deg,
+      rgb(255 255 255 / 88%) 0%,
+      rgb(241 248 255 / 72%) 46%,
+      rgb(224 236 249 / 62%) 100%
+    );
+    box-shadow: var(--glass-inner), var(--shadow-aero-1);
+    backdrop-filter: blur(12px) saturate(var(--aero-saturate));
+  }
+
+  .win-section {
+    margin: 18px 12px 14px;
+    overflow: hidden;
+    border: 1px solid var(--glass-edge);
+    border-radius: var(--radius-lg);
+    background-image: linear-gradient(
+      180deg,
+      rgb(255 255 255 / 88%) 0%,
+      rgb(246 250 255 / 76%) 52%,
+      rgb(232 241 251 / 66%) 100%
+    );
+    box-shadow: var(--glass-inner), var(--shadow-aero-1);
+  }
+
+  .win-section-hero {
+    overflow: hidden;
+    border-radius: var(--radius-2xl);
+    border-color: rgb(255 255 255 / 30%);
+    background-color: #2b71b9;
+    background-image:
+      radial-gradient(100% 70% at 90% 5%, rgb(216 240 255 / 58%) 0%, rgb(216 240 255 / 0%) 55%),
+      radial-gradient(130% 90% at 100% 100%, rgb(140 196 255 / 68%) 0%, rgb(140 196 255 / 0%) 65%),
+      linear-gradient(165deg, #1c5c9c 0%, #2b71b9 46%, #3d89cc 100%);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 38%),
+      0 12px 30px -10px rgb(6 26 52 / 45%),
+      0 34px 64px -32px rgb(2 16 36 / 60%);
+  }
+
+  .win-hero-bg {
+    background-image: linear-gradient(
+      118deg,
+      rgb(255 255 255 / 0%) 34%,
+      rgb(255 255 255 / 11%) 50%,
+      rgb(255 255 255 / 0%) 66%
+    );
+  }
+
+  .win-hero-scrim {
+    background-image: linear-gradient(
+      90deg,
+      rgb(9 33 84 / 62%) 0%,
+      rgb(9 33 84 / 40%) 40%,
+      rgb(9 33 84 / 0%) 68%
+    );
   }
 
   .win-nav-link {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 3px 2px;
-    color: #5a5a5a;
+    padding: 4px 10px;
+    border: 1px solid transparent;
+    border-radius: var(--radius-full, 999px);
+    color: #46566a;
     font-size: 12px;
     line-height: 1.4;
     text-decoration: none;
-    border-bottom: 1px solid transparent;
     cursor: pointer;
     background: none;
-    border-left: 0;
-    border-right: 0;
-    border-top: 0;
+    transition:
+      background-color 140ms ease-out,
+      color 140ms ease-out,
+      box-shadow 140ms ease-out;
   }
 
   .win-nav-link:hover {
-    color: #1f4b96;
-    border-bottom-color: #7fa4dd;
+    color: #14386e;
+    background-color: rgb(255 255 255 / 70%);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 90%);
   }
 
+  .win-nav-link:active,
   .win-nav-link.is-active {
-    color: #1f4b96;
+    color: #fff;
     font-weight: 700;
-    border-bottom-color: #2a5db0;
+    border-color: rgb(19 62 126 / 60%);
+    background-image: linear-gradient(180deg, #3f7cc9 0%, #2a63b0 46%, #1c4a8c 100%);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 55%),
+      0 2px 6px rgb(20 58 116 / 32%);
+    text-shadow: 0 1px 1px rgb(8 30 66 / 45%);
+  }
+
+  .win-nav-link:focus-visible {
+    outline: 1px dotted #123c72;
+    outline-offset: 2px;
   }
 
   .win-footer {
-    background-image: linear-gradient(180deg, #ededed 0%, #e2e2e2 100%);
-    border-top: 1px solid #cfcfcf;
-    box-shadow: inset 0 1px 0 #fff;
+    margin: 0 12px 12px;
+    border: 1px solid var(--glass-edge);
+    border-radius: var(--radius-md);
+    background-image: linear-gradient(
+      180deg,
+      rgb(255 255 255 / 78%) 0%,
+      rgb(238 245 253 / 62%) 100%
+    );
+    box-shadow:
+      var(--glass-inner-soft),
+      0 6px 16px -12px rgb(6 26 52 / 40%);
+    backdrop-filter: blur(10px) saturate(var(--aero-saturate));
   }
 
   .win-footer-link {
-    color: #5f5f5f;
+    color: #4d5c6e;
     font-size: 11px;
     text-decoration: none;
   }
 
   .win-footer-link:hover {
-    color: #1f4b96;
+    color: #14386e;
     text-decoration: underline;
   }
 
   .win-panel {
-    background-color: #fff;
-    border: 1px solid #d8d8d8;
+    overflow: hidden;
+    border: 1px solid rgb(255 255 255 / 78%);
+    border-radius: var(--radius-md);
+    background-image: linear-gradient(
+      180deg,
+      rgb(255 255 255 / 94%) 0%,
+      rgb(250 253 255 / 86%) 100%
+    );
+    box-shadow:
+      var(--glass-inner),
+      0 2px 6px rgb(6 26 52 / 8%),
+      0 14px 30px -20px rgb(6 26 52 / 40%);
   }
 
   .win-label {
@@ -216,8 +435,9 @@
     overflow: hidden;
     background-image:
       radial-gradient(85% 78% at 90% 0%, rgb(255 255 255 / 34%) 0%, rgb(255 255 255 / 0%) 62%),
-      linear-gradient(150deg, #2f6fd0 0%, #2a63be 44%, #1c4a94 100%);
-    border-bottom: 1px solid #1f4b96;
+      linear-gradient(150deg, #2f6cc9 0%, #2457a6 44%, #14386f 100%);
+    border-bottom: 1px solid rgb(10 40 92 / 55%);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 28%);
   }
 
   .win-banner::after {
@@ -243,11 +463,15 @@
   .win-strip-card {
     position: relative;
     height: 100%;
-    background-color: #f3f3f3;
+    background-image: linear-gradient(
+      180deg,
+      rgb(255 255 255 / 92%) 0%,
+      rgb(240 246 253 / 82%) 100%
+    );
   }
 
   .win-strip-title {
-    color: #2f2f2f;
+    color: #1f3350;
     font-family: var(--font-display);
     font-size: 17px;
     font-weight: 700;
@@ -281,22 +505,244 @@
     box-shadow: 0 0 0 2px rgb(0 0 0 / 14%);
   }
 
-  /* Quick-launch shelf under the monitor: white chrome on the blue banner,
+  /* Quick-launch shelf under the monitor: glass ribbon on the blue banner,
      so the glossy icons and navy labels both stay legible. */
   .win-dock {
-    background-image: linear-gradient(180deg, #fff 0%, #eef3fa 55%, #dfe8f4 100%);
+    border-top: 1px solid rgb(255 255 255 / 70%);
+    background-image: linear-gradient(
+      180deg,
+      rgb(255 255 255 / 92%) 0%,
+      rgb(238 245 253 / 78%) 55%,
+      rgb(216 230 245 / 66%) 100%
+    );
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 90%),
+      0 6px 16px -12px rgb(6 26 52 / 45%);
   }
 
-  /* Gel buttons, 2004: square-ish, blue, with a light top edge. */
+  /* ---------------------------------------------------------------------
+     Unit orbs: the glossy 2004 launcher sphere, painted in the color of
+     the business unit it opens.
+     --------------------------------------------------------------------- */
+  .unit-orb {
+    background-image:
+      radial-gradient(circle at 32% 24%, rgb(255 255 255 / 88%) 0%, rgb(255 255 255 / 0%) 44%),
+      linear-gradient(
+        158deg,
+        color-mix(in srgb, var(--unit-primary) 86%, #fff) 0%,
+        var(--unit-primary) 46%,
+        var(--unit-shade) 100%
+      );
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 68%),
+      inset 0 -7px 14px rgb(6 18 31 / 20%),
+      0 6px 14px rgb(8 26 52 / 32%),
+      0 14px 28px -14px color-mix(in srgb, var(--unit-primary) 70%, transparent);
+  }
+
+  /* Floating aero surface: rounded, lifted off the paper with a soft
+     shadow and a glass sheen. Used for the product carousel cards. */
+  .win-float {
+    border: 1px solid var(--glass-edge);
+    border-radius: var(--radius-xl);
+    background-image: linear-gradient(
+      180deg,
+      rgb(255 255 255 / 96%) 0%,
+      rgb(247 251 255 / 88%) 58%,
+      rgb(233 242 252 / 82%) 100%
+    );
+    box-shadow:
+      var(--glass-inner),
+      0 2px 6px rgb(12 28 52 / 10%),
+      0 18px 34px -20px rgb(12 28 52 / 42%);
+  }
+
+  .win-float-sheen {
+    position: absolute;
+    inset: 0 0 auto;
+    height: 52%;
+    border-radius: 17px 17px 0 0;
+    background-image: linear-gradient(
+      180deg,
+      rgb(255 255 255 / 78%) 0%,
+      rgb(255 255 255 / 0%) 100%
+    );
+    pointer-events: none;
+  }
+
+  /* Carousel: a row of floating cards that scroll by snapping. */
+  .win-carousel {
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: #c2c8d2 #eef1f6;
+  }
+
+  .win-carousel > * {
+    scroll-snap-align: start;
+  }
+
+  /* Product Shelf: horizontal scroll of bordered project cards */
+  .product-shelf {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    gap: 16px;
+    margin: 0 12px;
+    padding: 12px 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .product-shelf::-webkit-scrollbar {
+    display: none;
+  }
+
+  .product-card {
+    flex: 1 1 0;
+    min-width: 320px;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 16px;
+    padding: 12px 16px;
+    min-height: 170px;
+    border: 1px solid rgb(255 255 255 / 78%);
+    border-radius: var(--radius-lg);
+    background-image: linear-gradient(
+      180deg,
+      rgb(255 255 255 / 96%) 0%,
+      rgb(248 252 255 / 88%) 100%
+    );
+    box-shadow:
+      var(--glass-inner),
+      0 2px 6px rgb(6 26 52 / 8%),
+      0 14px 28px -20px rgb(6 26 52 / 38%);
+    text-decoration: none;
+    color: inherit;
+    transition:
+      border-color 150ms,
+      box-shadow 150ms,
+      transform 150ms;
+  }
+
+  .product-card:hover {
+    border-color: rgb(255 255 255 / 95%);
+    box-shadow:
+      var(--glass-inner),
+      0 4px 10px rgb(6 26 52 / 12%),
+      0 22px 40px -22px rgb(6 26 52 / 46%);
+    transform: translateY(-1px);
+  }
+
+  .product-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 0;
+    min-width: 0;
+  }
+
+  .product-status {
+    font-size: 11px;
+    line-height: 1;
+    color: #5b6d80;
+    font-weight: 500;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .product-status.soon {
+    color: #8a6716;
+  }
+
+  .product-title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #1f2a3a;
+    margin-bottom: 6px;
+    letter-spacing: -0.015em;
+  }
+
+  .product-desc {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: #4a5a6a;
+    max-width: 280px;
+  }
+
+  .product-visual {
+    flex: 0 0 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .product-visual .product-orb {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background-image:
+      radial-gradient(circle at 30% 30%, rgb(255 255 255 / 70%) 0%, rgb(255 255 255 / 0%) 45%),
+      linear-gradient(
+        158deg,
+        color-mix(in srgb, var(--orb-primary) 86%, #fff) 0%,
+        var(--orb-primary) 46%,
+        var(--orb-shade) 100%
+      );
+    box-shadow:
+      inset 0 2px 0 rgb(255 255 255 / 60%),
+      inset 0 -8px 16px rgb(6 18 31 / 20%),
+      0 4px 14px rgb(8 26 52 / 30%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+      transform 150ms ease-out,
+      box-shadow 150ms ease-out;
+  }
+
+  .product-card:hover .product-visual .product-orb {
+    transform: scale(1.03);
+    box-shadow:
+      inset 0 2px 0 rgb(255 255 255 / 70%),
+      inset 0 -10px 20px rgb(6 18 31 / 25%),
+      0 6px 20px rgb(8 26 52 / 35%);
+  }
+
+  /* Banner of a business unit, painted with that unit's color. */
+  .unit-banner {
+    background-image:
+      radial-gradient(85% 78% at 90% 0%, rgb(255 255 255 / 30%) 0%, rgb(255 255 255 / 0%) 62%),
+      linear-gradient(
+        150deg,
+        var(--unit-banner-top, color-mix(in srgb, var(--unit-primary) 74%, #0b1c2e)) 0%,
+        var(--unit-banner-mid, color-mix(in srgb, var(--unit-primary) 60%, #0b1c2e)) 48%,
+        var(--unit-shade) 100%
+      );
+    border-bottom: 1px solid color-mix(in srgb, var(--unit-shade) 80%, #000);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 26%);
+  }
+
+  .unit-rule {
+    border-color: color-mix(in srgb, var(--unit-primary) 34%, #d8d8d8);
+  }
+
+  /* Aero buttons: rounded, glossy, with a specular top edge. */
   .win-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 6px;
-    padding: 7px 16px;
-    border: 1px solid #1f4b96;
-    border-radius: 3px;
-    background-image: linear-gradient(180deg, #3272d2 0%, #2a63be 48%, #1f4b96 100%);
+    padding: 7px 18px;
+    border: 1px solid #173f7d;
+    border-radius: var(--radius-sm);
+    background-image: linear-gradient(180deg, #3f7cc9 0%, #2a63b0 46%, #1c4a8c 100%);
     color: #fff;
     font-family: var(--font-display);
     font-size: 12px;
@@ -305,69 +751,92 @@
     text-decoration: none;
     cursor: pointer;
     box-shadow:
-      inset 0 1px 0 rgb(255 255 255 / 45%),
-      inset 0 -1px 0 rgb(0 0 0 / 18%);
+      inset 0 1px 0 rgb(255 255 255 / 62%),
+      inset 0 -1px 0 rgb(0 0 0 / 20%),
+      0 2px 4px rgb(10 30 60 / 22%),
+      0 8px 18px -12px rgb(10 30 60 / 55%);
+    transition:
+      background-image 140ms ease-out,
+      box-shadow 140ms ease-out,
+      transform 140ms ease-out;
   }
 
   .win-btn:hover {
-    background-image: linear-gradient(180deg, #2f6fd0 0%, #2a63be 48%, #24549e 100%);
+    background-image: linear-gradient(180deg, #4c8ad6 0%, #336cc0 46%, #2455a0 100%);
     color: #fff;
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 68%),
+      inset 0 -1px 0 rgb(0 0 0 / 20%),
+      0 4px 8px rgb(10 30 60 / 24%),
+      0 12px 22px -12px rgb(10 30 60 / 60%);
+    transform: translateY(-1px);
   }
 
   .win-btn:active {
-    background-image: linear-gradient(180deg, #2a5db0 0%, #3f79cd 100%);
-    box-shadow: inset 0 1px 2px rgb(0 0 0 / 25%);
+    background-image: linear-gradient(180deg, #2a5db0 0%, #4d8ade 100%);
+    box-shadow: inset 0 1px 3px rgb(0 0 0 / 28%);
+    transform: translateY(0);
   }
 
   .win-btn-gold {
     border-color: #96701c;
-    background-image: linear-gradient(180deg, #fbe9bd 0%, #efc974 46%, #d6a43b 100%);
+    background-image: linear-gradient(180deg, #fff0c8 0%, #f2cf7d 46%, #d29f36 100%);
     color: #3a2c0a;
     box-shadow:
-      inset 0 1px 0 rgb(255 255 255 / 72%),
+      inset 0 1px 0 rgb(255 255 255 / 85%),
       inset 0 -1px 0 rgb(90 55 0 / 22%),
-      0 1px 2px rgb(10 30 60 / 26%);
+      0 2px 4px rgb(10 30 60 / 22%),
+      0 8px 18px -12px rgb(90 55 0 / 50%);
   }
 
   .win-btn-gold:hover {
-    background-image: linear-gradient(180deg, #fff2d2 0%, #f6d68a 46%, #dfae48 100%);
+    background-image: linear-gradient(180deg, #fff7dd 0%, #f7dc9a 46%, #dfae48 100%);
     color: #2e2206;
+    transform: translateY(-1px);
   }
 
   .win-btn-gold:active {
-    background-image: linear-gradient(180deg, #d6a43b 0%, #efc974 100%);
-    box-shadow: inset 0 1px 2px rgb(70 40 0 / 30%);
+    background-image: linear-gradient(180deg, #d29f36 0%, #f2cf7d 100%);
+    box-shadow: inset 0 1px 3px rgb(70 40 0 / 32%);
+    transform: translateY(0);
   }
 
   .win-btn-light {
-    border-color: #d6e2f2;
-    background-image: linear-gradient(180deg, #fff 0%, #f0f4fa 52%, #e1e9f4 100%);
+    border-color: #c3d5ec;
+    background-image: linear-gradient(180deg, #fff 0%, #f1f6fc 52%, #dce7f5 100%);
     color: #1f4b96;
     box-shadow:
       inset 0 1px 0 #fff,
-      inset 0 -1px 0 rgb(20 50 100 / 10%),
-      0 1px 2px rgb(10 30 60 / 22%);
+      inset 0 -1px 0 rgb(20 50 100 / 12%),
+      0 2px 4px rgb(10 30 60 / 18%),
+      0 8px 18px -12px rgb(10 30 60 / 45%);
   }
 
   .win-btn-light:hover {
-    background-image: linear-gradient(180deg, #fff 0%, #f8fbff 52%, #eaf0f9 100%);
+    background-image: linear-gradient(180deg, #fff 0%, #f9fcff 52%, #e7eff9 100%);
     color: #173d7d;
+    transform: translateY(-1px);
   }
 
   .win-btn-light:active {
-    background-image: linear-gradient(180deg, #dfe7f2 0%, #f2f6fb 100%);
-    box-shadow: inset 0 1px 2px rgb(20 50 100 / 18%);
+    background-image: linear-gradient(180deg, #dbe5f2 0%, #f2f6fb 100%);
+    box-shadow: inset 0 1px 3px rgb(20 50 100 / 20%);
+    transform: translateY(0);
   }
 
   .win-btn-plain {
-    background-image: linear-gradient(180deg, #fff 0%, #eee 100%);
-    border-color: #bcbcbc;
-    color: #3a3a3a;
+    background-image: linear-gradient(180deg, #fff 0%, #eef1f6 100%);
+    border-color: #b6c2d2;
+    border-radius: var(--radius-sm);
+    color: #3a4a5c;
+    box-shadow:
+      inset 0 1px 0 #fff,
+      0 2px 4px rgb(10 30 60 / 16%);
   }
 
   .win-btn-plain:hover {
-    background-image: linear-gradient(180deg, #fff 0%, #f6f6f6 100%);
-    border-color: #9c9c9c;
+    background-image: linear-gradient(180deg, #fff 0%, #f4f7fb 100%);
+    border-color: #93a5bb;
     color: #1f4b96;
   }
 
@@ -386,50 +855,84 @@
     color: #1f4b96;
   }
 
+  /* Primary action painted with the color of the business unit. The shade
+     carries the contrast so white labels stay readable on every unit. */
+  .win-btn-unit {
+    border-color: color-mix(in srgb, var(--unit-shade) 78%, #000);
+    border-radius: var(--radius-sm);
+    background-image: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--unit-shade) 76%, #fff) 0%,
+      var(--unit-shade) 52%,
+      color-mix(in srgb, var(--unit-shade) 76%, #000) 100%
+    );
+    color: #fff;
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 58%),
+      inset 0 -1px 0 rgb(0 0 0 / 22%),
+      0 2px 4px rgb(10 30 60 / 24%),
+      0 8px 18px -12px color-mix(in srgb, var(--unit-shade) 70%, transparent);
+  }
+
+  .win-btn-unit:hover {
+    background-image: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--unit-shade) 88%, #fff) 0%,
+      color-mix(in srgb, var(--unit-shade) 92%, #fff) 52%,
+      var(--unit-shade) 100%
+    );
+    color: #fff;
+    transform: translateY(-1px);
+  }
+
   .win-input {
     width: 100%;
-    padding: 6px 8px;
-    border: 1px solid #b8b8b8;
-    border-radius: 2px;
-    background-color: #fff;
-    color: #333;
+    padding: 6px 10px;
+    border: 1px solid #aebccf;
+    border-radius: var(--radius-sm);
+    background-image: linear-gradient(180deg, #fbfdff 0%, #f1f6fb 100%);
+    color: #23303f;
     font-family: var(--font-sans);
     font-size: 12px;
     caret-color: #1f4b96;
     outline: none;
-    box-shadow: inset 1px 1px 2px rgb(0 0 0 / 8%);
+    box-shadow:
+      inset 1px 1px 3px rgb(8 26 52 / 12%),
+      0 1px 0 rgb(255 255 255 / 80%);
   }
 
   .win-input:focus {
     border-color: #2a5db0;
     box-shadow:
-      inset 1px 1px 2px rgb(0 0 0 / 8%),
-      0 0 0 2px rgb(42 93 176 / 22%);
+      inset 1px 1px 3px rgb(8 26 52 / 10%),
+      0 0 0 3px rgb(42 93 176 / 22%),
+      0 0 10px rgb(42 93 176 / 28%);
   }
 
   .win-input::placeholder {
-    color: #6b6b6b;
+    color: #5c6b80;
   }
 
   .win-status {
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    padding: 2px 8px;
+    padding: 2px 9px;
     border: 1px solid #b8cfae;
-    border-radius: 10px;
-    background-color: #eef7ea;
-    color: #35662f;
+    border-radius: 999px;
+    background-image: linear-gradient(180deg, #f3faef 0%, #e4f1de 100%);
+    color: #2f5c29;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.04em;
     text-transform: uppercase;
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 85%);
   }
 
   .win-status.exploration {
     border-color: #dcc79a;
-    background-color: #fdf6e6;
-    color: #7a6320;
+    background-image: linear-gradient(180deg, #fefaf0 0%, #f8eed7 100%);
+    color: #6f591b;
   }
 
   .win-status-dot {
@@ -437,27 +940,30 @@
     height: 6px;
     border-radius: 50%;
     background-color: #4c9a4c;
+    box-shadow: 0 0 6px rgb(76 154 76 / 60%);
   }
 
   .win-status.exploration .win-status-dot {
     background-color: #c79a33;
+    box-shadow: 0 0 6px rgb(199 154 51 / 60%);
   }
 
   /* The on-screen display menu of the monitor in the masthead. */
   .win-osd {
-    background-image: linear-gradient(180deg, #2c4a78 0%, #1c3557 100%);
-    border: 1px solid #0f2038;
-    border-radius: 3px;
+    background-image: linear-gradient(180deg, rgb(44 74 120 / 88%) 0%, rgb(20 44 78 / 90%) 100%);
+    border: 1px solid rgb(255 255 255 / 26%);
+    border-radius: var(--radius-md);
     color: #e8eef8;
     box-shadow:
-      inset 0 1px 0 rgb(255 255 255 / 22%),
-      2px 3px 8px rgb(10 25 45 / 45%);
+      inset 0 1px 0 rgb(255 255 255 / 32%),
+      0 10px 24px -8px rgb(6 20 40 / 60%);
+    backdrop-filter: blur(10px) saturate(var(--aero-saturate));
   }
 
   .win-osd-item {
     display: block;
     width: 100%;
-    padding: 2px 8px;
+    padding: 1.5px 8px;
     border: 0;
     background: none;
     color: #d6e2f2;
@@ -511,37 +1017,59 @@
   }
 
   /* ---------------------------------------------------------------------
-     Inner surfaces inherit the same world: flat panels, hairline borders,
-     2004 controls. The old aero classes are kept as names and re-cut.
+     Inner surfaces inherit the same world: rounded glass panels, soft
+     shadows, aero controls.
      --------------------------------------------------------------------- */
 
   .glass-panel,
   .aero-glass {
-    background-color: #fff;
-    border: 1px solid #d8d8d8;
-    border-radius: 3px;
-    box-shadow: inset 0 1px 0 #fff;
+    background-image: linear-gradient(
+      180deg,
+      rgb(255 255 255 / 94%) 0%,
+      rgb(246 250 255 / 84%) 100%
+    );
+    border: 1px solid rgb(255 255 255 / 78%);
+    border-radius: var(--radius-md);
+    box-shadow:
+      var(--glass-inner),
+      0 2px 6px rgb(6 26 52 / 10%),
+      0 14px 28px -20px rgb(6 26 52 / 40%);
   }
 
   .glass-panel-deep {
-    background-image: linear-gradient(180deg, #2c4a78 0%, #1c3557 100%);
-    border: 1px solid #14273f;
-    border-radius: 3px;
+    background-image: linear-gradient(180deg, rgb(44 74 120 / 92%) 0%, rgb(20 44 78 / 94%) 100%);
+    border: 1px solid rgb(255 255 255 / 22%);
+    border-radius: var(--radius-md);
     color: #e8eef8;
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 26%),
+      0 14px 30px -16px rgb(6 20 40 / 60%);
   }
 
   .chrome-frame,
   .aero-chrome {
-    background-image: linear-gradient(180deg, #fff 0%, #eee 100%);
-    border: 1px solid #c9c9c9;
-    border-radius: 3px;
-    box-shadow: inset 0 1px 0 #fff;
+    background-image: linear-gradient(
+      180deg,
+      rgb(255 255 255 / 96%) 0%,
+      rgb(238 245 253 / 88%) 100%
+    );
+    border: 1px solid rgb(255 255 255 / 80%);
+    border-radius: var(--radius-md);
+    box-shadow:
+      var(--glass-inner),
+      0 2px 6px rgb(6 26 52 / 12%),
+      0 16px 30px -20px rgb(6 26 52 / 46%);
   }
 
   .chrome-frame-deep {
-    background-image: linear-gradient(180deg, #fff 0%, #e8e8e8 100%);
-    border: 1px solid #bdbdbd;
-    border-radius: 3px;
+    background-image: linear-gradient(
+      180deg,
+      rgb(255 255 255 / 92%) 0%,
+      rgb(232 240 250 / 82%) 100%
+    );
+    border: 1px solid rgb(255 255 255 / 78%);
+    border-radius: var(--radius-md);
+    box-shadow: var(--glass-inner);
   }
 
   .aero-rivet {
@@ -561,20 +1089,33 @@
   .window-frame,
   .screenshot-frame {
     position: relative;
-    background-image: linear-gradient(180deg, #fff 0%, #e9e9e9 100%);
-    border: 1px solid #c9c9c9;
-    border-radius: 3px;
+    background-image: linear-gradient(
+      180deg,
+      rgb(255 255 255 / 96%) 0%,
+      rgb(238 245 253 / 88%) 100%
+    );
+    border: 1px solid rgb(255 255 255 / 80%);
+    border-radius: var(--radius-md);
     padding: 3px;
-    box-shadow: inset 0 1px 0 #fff;
+    box-shadow:
+      var(--glass-inner),
+      0 2px 6px rgb(6 26 52 / 12%),
+      0 16px 30px -20px rgb(6 26 52 / 46%);
     overflow: hidden;
+  }
+
+  .window-frame {
+    background-image: none;
+    border: 0;
+    padding: 0;
   }
 
   .window-frame::before {
     content: '';
     position: absolute;
     inset: 3px;
-    border-radius: 2px;
-    background: #f7f7f7;
+    border-radius: 7px;
+    background: transparent;
     z-index: 0;
   }
 
@@ -583,41 +1124,47 @@
     align-items: center;
     justify-content: space-between;
     gap: 8px;
-    background-image: linear-gradient(180deg, #4a7fc4 0%, #2a5db0 100%);
-    padding: 3px 7px;
+    background-image:
+      linear-gradient(180deg, rgb(255 255 255 / 26%) 0%, rgb(255 255 255 / 0%) 52%),
+      linear-gradient(180deg, #427ec6 0%, #2a5eaa 52%, #1a4285 100%);
+    padding: 6px 8px;
     color: #fff;
-    border-bottom: 1px solid #1f4b96;
+    border-bottom: 1px solid rgb(12 44 92 / 55%);
+    border-radius: 7px 7px 0 0;
     margin: -3px -3px 0;
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 40%);
   }
 
   .window-titlebar-controls {
     display: flex;
     flex: none;
     align-items: center;
-    gap: 3px;
+    gap: 4px;
   }
 
   .window-btn {
-    width: 13px;
-    height: 12px;
+    width: 14px;
+    height: 13px;
     flex: none;
-    border: 1px solid #1f4b96;
-    border-radius: 2px;
-    background-image: linear-gradient(180deg, #dfe9f7 0%, #a9c1e2 100%);
-    box-shadow: inset 0 1px 0 rgb(255 255 255 / 70%);
+    border: 1px solid rgb(18 56 110 / 70%);
+    border-radius: var(--radius-xs);
+    background-image: linear-gradient(180deg, #f2f7fd 0%, #c3d7ee 100%);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 85%),
+      0 1px 2px rgb(10 30 60 / 22%);
   }
 
   .window-btn-close {
-    background-image: linear-gradient(180deg, #f4b48d 0%, #c0562f 100%);
+    background-image: linear-gradient(180deg, #f7c0a0 0%, #d0653c 100%);
     border-color: #8f3d20;
   }
 
   .window-btn-minimize {
-    background-image: linear-gradient(180deg, #e4eefb 0%, #9db8dc 100%);
+    background-image: linear-gradient(180deg, #eaf2fd 0%, #adc5e6 100%);
   }
 
   .window-btn-maximize {
-    background-image: linear-gradient(180deg, #eef4fc 0%, #b4c9e6 100%);
+    background-image: linear-gradient(180deg, #f2f7fd 0%, #c0d3ec 100%);
   }
 
   .window-title {
@@ -647,10 +1194,24 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-image: linear-gradient(180deg, #eee 0%, #ddd 100%);
-    border-top: 1px solid #cfcfcf;
+    background-image: linear-gradient(
+      180deg,
+      rgb(246 250 254 / 96%) 0%,
+      rgb(226 235 246 / 90%) 100%
+    );
+    border-top: 1px solid rgb(255 255 255 / 80%);
     padding: 5px 9px;
     margin: 0 -3px -3px;
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 70%);
+  }
+
+  .window-frame .window-titlebar {
+    margin: 0;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+  }
+
+  .window-frame .window-statusbar {
+    margin: 0;
   }
 
   .status-indicator {
@@ -669,9 +1230,10 @@
   .status-control {
     width: 11px;
     height: 11px;
-    border-radius: 2px;
+    border-radius: var(--radius-xs);
     background-image: linear-gradient(180deg, #fff 0%, #d4d4d4 100%);
     border: 1px solid #b4b4b4;
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 85%);
   }
 
   .status-control.gold {
@@ -680,7 +1242,7 @@
 
   .box-shot {
     background-color: #2c4a78;
-    border-radius: 3px;
+    border-radius: var(--radius-md);
     box-shadow: inset 0 1px 0 rgb(255 255 255 / 20%);
     position: relative;
     overflow: hidden;
@@ -695,12 +1257,15 @@
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    padding: 3px 8px;
+    padding: 3px 9px;
     border: 1px solid #c79a33;
-    border-radius: 2px;
-    background-image: linear-gradient(180deg, #f8e9c4 0%, #e6c47c 100%);
-    color: #5c4715;
-    font-size: 10px;
+    border-radius: 999px;
+    background-image: linear-gradient(180deg, #fdf1d4 0%, #e6c47c 100%);
+    color: #55410f;
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 80%),
+      0 1px 3px rgb(90 55 0 / 18%);
+    font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -722,10 +1287,10 @@
     align-items: center;
     justify-content: center;
     gap: 7px;
-    padding: 8px 18px;
-    border: 1px solid #1f4b96;
-    border-radius: 3px;
-    background-image: linear-gradient(180deg, #3272d2 0%, #2a63be 48%, #1f4b96 100%);
+    padding: 8px 20px;
+    border: 1px solid #173f7d;
+    border-radius: var(--radius-sm);
+    background-image: linear-gradient(180deg, #3f7cc9 0%, #2a63b0 46%, #1c4a8c 100%);
     color: #fff;
     font-family: var(--font-display);
     font-size: 12px;
@@ -733,19 +1298,21 @@
     text-decoration: none;
     cursor: pointer;
     box-shadow:
-      inset 0 1px 0 rgb(255 255 255 / 45%),
-      inset 0 -1px 0 rgb(0 0 0 / 18%);
+      inset 0 1px 0 rgb(255 255 255 / 62%),
+      inset 0 -1px 0 rgb(0 0 0 / 20%),
+      0 2px 4px rgb(10 30 60 / 22%),
+      0 8px 18px -12px rgb(10 30 60 / 55%);
   }
 
   .btn-3d-glossy:hover {
-    background-image: linear-gradient(180deg, #7fade8 0%, #4a86da 48%, #3268bd 100%);
+    background-image: linear-gradient(180deg, #4c8ad6 0%, #336cc0 46%, #2455a0 100%);
     color: #fff;
   }
 
   .btn-3d-glossy.secondary {
-    background-image: linear-gradient(180deg, #fff 0%, #eee 100%);
-    border-color: #bcbcbc;
-    color: #3a3a3a;
+    background-image: linear-gradient(180deg, #fff 0%, #eef1f6 100%);
+    border-color: #b6c2d2;
+    color: #3a4a5c;
   }
 
   .btn-3d-glossy::before {
@@ -756,17 +1323,21 @@
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
-    border: 1px solid #d8d8d8;
-    border-radius: 3px;
+    border: 1px solid rgb(255 255 255 / 80%);
+    border-radius: var(--radius-md);
     overflow: hidden;
-    background: #fff;
+    background: rgb(255 255 255 / 96%);
+    box-shadow:
+      var(--glass-inner),
+      0 2px 6px rgb(6 26 52 / 10%),
+      0 14px 28px -20px rgb(6 26 52 / 40%);
   }
 
   .license-table th {
     background-image: linear-gradient(180deg, #4a7fc4 0%, #2a5db0 100%);
     padding: 8px 12px;
     color: #fff;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -850,5 +1421,33 @@
 
   .engraved-dark {
     color: rgb(232 238 248 / 78%);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Mobile shell: below the desktop breakpoint the Aero window stops being a
+   fixed viewport. The page scrolls as a document and the footer follows the
+   content instead of eating a band of every screen.
+   --------------------------------------------------------------------------- */
+@media (width <= 1023px) {
+  html {
+    height: auto;
+  }
+
+  body {
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+  }
+
+  .win-column {
+    height: auto;
+    min-height: calc(100dvh - 28px);
+  }
+
+  main {
+    flex: 0 0 auto;
+    min-height: 0;
+    overflow: visible;
   }
 }

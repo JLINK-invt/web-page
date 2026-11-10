@@ -23,7 +23,7 @@ export function WindowPanel({
           {title}
         </h2>
         {aside ? (
-          <div className="ml-auto flex flex-wrap items-center gap-2 text-[12px] text-[#6b6b6b]">
+          <div className="ml-auto flex flex-wrap items-center gap-2 text-[12px] text-[#47525f]">
             {aside}
           </div>
         ) : null}

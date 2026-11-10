@@ -7,6 +7,9 @@ settings:
 importers:
   .:
     dependencies:
+      '@types/stripe':
+        specifier: ^8.0.417
+        version: 8.0.417(@types/node@22.20.5)
       next:
         specifier: 16.4.3
         version: 16.4.3(@babel/core@7.29.7)(@types/node@22.20.5)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -16,6 +19,9 @@ importers:
       react-dom:
         specifier: 19.2.4
         version: 19.2.4(react@19.2.4)
+      stripe:
+        specifier: ^23.1.0
+        version: 23.1.0(@types/node@22.20.5)
     devDependencies:
       '@tailwindcss/postcss':
         specifier: 4.3.3
@@ -1035,6 +1041,13 @@ packages:
       {
         integrity: sha512-N0rFCuH9YoxG9/m61l9MfpJKfmLOVU0em7ipIz6TRgSSkvReLB9vL85GB+yr8Bs5leqpvg96JSwF4ZS1s4viQg==,
       }
+
+  '@types/stripe@8.0.417':
+    resolution:
+      {
+        integrity: sha512-PTuqskh9YKNENnOHGVJBm4sM0zE8B1jZw1JIskuGAPkMB+OH236QeN8scclhYGPA4nG6zTtPXgwpXdp+HPDTVw==,
+      }
+    deprecated: This is a stub types definition. stripe provides its own type definitions, so you do not need this installed.
 
   '@typescript-eslint/eslint-plugin@8.72.1':
     resolution:
@@ -3718,6 +3731,18 @@ packages:
       }
     engines: { node: '>=8' }
 
+  stripe@23.1.0:
+    resolution:
+      {
+        integrity: sha512-fVUfMSfTPoukfoV//MUKAx2+YxyKmYaYtnAL9VkfnHfaPNQylFdWZMD+zgUFerI8rjbaiER8Vzj2XEUQ2AhAsQ==,
+      }
+    engines: { node: '>=20' }
+    peerDependencies:
+      '@types/node': '>=20'
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+
   styled-jsx@5.1.6:
     resolution:
       {
@@ -4582,6 +4607,12 @@ snapshots:
   '@types/react@19.3.0':
     dependencies:
       csstype: 3.2.3
+
+  '@types/stripe@8.0.417(@types/node@22.20.5)':
+    dependencies:
+      stripe: 23.1.0(@types/node@22.20.5)
+    transitivePeerDependencies:
+      - '@types/node'
 
   '@typescript-eslint/eslint-plugin@8.72.1(@typescript-eslint/parser@8.72.1(eslint@9.39.5(jiti@2.7.0))(typescript@5.9.3))(eslint@9.39.5(jiti@2.7.0))(typescript@5.9.3)':
     dependencies:
@@ -6322,6 +6353,10 @@ snapshots:
   strip-bom@3.0.0: {}
 
   strip-json-comments@3.1.1: {}
+
+  stripe@23.1.0(@types/node@22.20.5):
+    optionalDependencies:
+      '@types/node': 22.20.5
 
   styled-jsx@5.1.6(@babel/core@7.29.7)(react@19.2.4):
     dependencies:

@@ -83,7 +83,7 @@ export function GlossIcon({
       aria-label={label}
       aria-pressed={active}
       className={cn(
-        'win-gloss flex flex-col items-center gap-1 rounded-[3px] px-1 py-1.5 text-center',
+        'win-gloss flex flex-col items-center gap-1 rounded-sm px-1 py-1.5 text-center',
         size === 'sm' ? 'w-[64px]' : 'w-[62px]',
         tone === 'dark' ? 'text-[#253b59] hover:bg-[#e6eef9]' : 'text-white/95 hover:bg-white/10',
         active &&

@@ -3,17 +3,16 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { getDictionary, type Locale } from '@/lib/i18n';
-import { designsHref, href } from '@/lib/routes';
+import { designsHref, domainHref, href } from '@/lib/routes';
 import { site } from '@/content/site';
 import { cn } from '@/lib/cn';
 import { useWindow, type PanelId } from './WindowProvider';
 
 function routeFor(locale: Locale, panel: PanelId): string {
   if (panel === 'home') return href(locale, 'home');
-  if (panel === 'projects') return href(locale, 'projects');
   if (panel === 'contact') return href(locale, 'contact');
   if (panel === 'method') return `${href(locale, 'home')}#method`;
-  return href(locale, 'domain', panel);
+  return domainHref(locale, panel);
 }
 
 export function Footer({ locale }: { locale: Locale }) {
@@ -24,14 +23,13 @@ export function Footer({ locale }: { locale: Locale }) {
 
   const links: { id: PanelId; label: string }[] = [
     { id: 'home', label: dict.nav.home },
-    { id: 'projects', label: dict.nav.projects },
-    { id: 'method', label: dict.window.navMethod },
+    { id: 'method', label: dict.nav.company },
     { id: 'contact', label: dict.nav.contact },
   ];
 
   return (
     <footer className="win-footer shrink-0">
-      <div className="flex flex-col gap-1 px-3 py-1.5 text-[11px] text-[#5f5f5f] sm:flex-row sm:items-center sm:gap-x-2">
+      <div className="flex flex-col gap-1 px-3 py-1.5 text-[11px] text-[#45505d] sm:flex-row sm:items-center sm:gap-x-2">
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
           <span>
             © {new Date().getFullYear()} {site.name}

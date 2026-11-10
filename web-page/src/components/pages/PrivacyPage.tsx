@@ -27,7 +27,7 @@ export function PrivacyPage({ locale }: { locale: Locale }) {
               ))}
             </div>
 
-            <div className="mt-5 border-t border-[#e6e6e6] pt-3 text-[12px] text-[#5f5f5f]">
+            <div className="mt-5 border-t border-[#e6e6e6] pt-3 text-[12px] text-[#45505d]">
               {dict.contact.direct.emailLabel}:{' '}
               <a href={`mailto:${site.email}`} className="win-link font-bold">
                 {site.email}

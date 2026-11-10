@@ -7,11 +7,6 @@ export const es = {
       description:
         'Diseñamos software a medida para ordenar operaciones en domótica, agricultura, industria y salud. Soluciones construidas sobre el proceso real, no paquetes por rubro.',
     },
-    projects: {
-      title: 'Proyectos',
-      description:
-        'Productos activos y nuevas verticales en exploración. Conocé cómo resolvemos operaciones reales con software a medida.',
-    },
     contact: {
       title: 'Contacto',
       description:
@@ -30,44 +25,23 @@ export const es = {
       'No vendemos un paquete por rubro: construimos el software y diseñamos la solución con tu equipo.',
     allProjects: 'Ver proyectos',
     tellUs: 'Cuéntanos tu caso',
-    projects: 'Proyectos',
     contact: 'Contacto',
+    company: 'Empresa',
     cta: 'Hablemos',
     menu: 'Menú',
     close: 'Cerrar',
     language: 'Idioma',
   },
   window: {
-    navMethod: 'Método',
     screenTitle: 'Panel de control',
     osdTitle: 'Selector',
     clock: '09:41',
-    live: {
-      label: 'En producción',
-      title: 'Domótica: tres sistemas trabajando',
-      body: 'Smart House, Fitness Gym y Health Psychology operan todos los días en casa, gimnasio y clínica.',
-      cta: 'Ver los productos',
-    },
-    exploration: {
-      label: 'En exploración',
-      title: 'Tres áreas por abrir',
-      body: 'Agricultura, Industria y Salud: el método es el mismo, falta el primer caso en cada una.',
-      cta: 'Proponer un caso',
-    },
-    method: {
-      label: 'Método',
-      title: 'Primero el problema, después el sistema',
-      body: 'Mapeamos la operación, construimos el núcleo y operamos con evidencia.',
-      cta: 'Ver los tres pasos',
-    },
-    projects: {
-      note: 'Agricultura, Industria y Salud siguen en exploración: todavía no hay producto público que mostrar.',
-    },
     unit: {
       openPage: 'Abrir la página del área',
       solutionsTitle: 'Qué construimos aquí',
-      statusLive: 'En operación',
-      statusExploration: 'En exploración',
+      workingTitle: 'Estamos trabajando en el primer producto de esta unidad.',
+      workingBody:
+        'Todavía no publicamos productos acá. Estamos mapeando operaciones reales de este sector para construir el sistema que hace falta: si operás en esta industria, contanos qué querés ordenar.',
       contact: 'Cuéntanos tu caso',
     },
     contactPanel: {
@@ -77,15 +51,13 @@ export const es = {
   },
   common: {
     viewProjects: 'Ver proyectos',
-    viewProject: 'Ver proyecto',
+    viewProject: 'Ver producto',
     talkToUs: 'Hablemos',
     comingSoon: 'Próximamente',
     active: 'Activo',
     exploration: 'En exploración',
-    backToProjects: 'Volver a proyectos',
     email: 'Email',
     project: 'proyecto',
-    projects: 'proyectos',
     status: 'Estado',
     stack: 'Stack',
     domotics: 'Domótica',
@@ -95,13 +67,12 @@ export const es = {
   },
   home: {
     hero: {
-      eyebrow: 'Software para operaciones reales',
-      title: 'Sistemas que ordenan el trabajo real.',
-      titleAccent: 'ordenan',
+      title: 'Tecnologia resolviendo problemas reales.',
+      titleAccent: 'resolviendo',
       subtitle:
-        'Construimos software a medida para ordenar operaciones en domótica, agricultura, industria y salud. Menos planillas paralelas, menos datos sin dueño y menos decisiones a ciegas.',
-      note: 'Tres productos en operación. Cuatro áreas en el mapa.',
-      primaryCta: 'Ver sistemas en operación',
+        'Construimos software a medida para operaciones reales en sectores como domótica, agricultura, industria y salud. Nuestros sistemas se caracterizan por su simplesa, efectividad y funcionalidad.',
+      note: 'Mapeamos la operación, construimos el sistema y lo operamos con evidencia.',
+      primaryCta: 'Ver los productos',
       secondaryCta: 'Hablemos',
       valuesLabel: 'Cómo trabajamos',
       value1: 'Dominio primero: mapeamos el proceso real antes de escribir código',
@@ -109,6 +80,19 @@ export const es = {
       value3: 'Software a medida, no paquetes por rubro',
       value4: 'Entregamos, medimos e iteramos con evidencia',
       valuesNote: 'Cuatro principios. Cada proyecto.',
+    },
+    units: {
+      domotics: 'Dispositivos, accesos y espacios',
+      industrial: 'Línea, logística y calidad',
+      agriculture: 'Cultivos, alertas y trazabilidad',
+      medical: 'Agenda, expedientes y documentos',
+    },
+    company: {
+      teaser:
+        'Somos un estudio de ingenieria que trabaja sobre operaciones reales: mapeamos el proceso, ordenamos el dominio y construimos el sistema con tu equipo.',
+      title: 'Empresa y método.',
+      body: 'Cosmos Compass construye software a medida para cuatro operaciones reales: domótica, agricultura, industria y salud. No compramos ni revendemos productos de terceros: escribimos el sistema que tu operación necesita, lo ponemos en marcha y lo sostenemos con evidencia.',
+      cta: 'Conocer más',
     },
     domains: {
       title: 'Cuatro áreas. Software a medida en cada una.',
@@ -121,9 +105,10 @@ export const es = {
       customCta: 'Cuéntanos tu caso',
     },
     projects: {
-      title: 'Sistemas que ya están trabajando.',
+      label: 'Productos',
+      title: 'Productos nuestros que encuentran disponibles.',
       subtitle:
-        'Tres productos en operación. No son demos: resuelven caja, accesos, agenda, dispositivos y auditoría todos los días.',
+        'Smart House, Fitness Center y Health consultory: sistemas a medida para casa, gimnasio y consultorio.',
       cta: 'Ver todos los proyectos',
     },
     approach: {
@@ -151,25 +136,11 @@ export const es = {
       ],
     },
     cta: {
-      title: '¿Tu operación necesita un sistema que aguante?',
+      title: '¿Tu operación necesita un sistema estable?',
       subtitle:
         'Cuéntanos qué se está rompiendo, qué se concilia a mano o qué no puedes ver. Respondemos con un diagnóstico inicial.',
       button: 'Hablemos de tu caso',
     },
-  },
-  projects: {
-    title: 'Productos activos y áreas en exploración.',
-    subtitle:
-      'Empezamos por domótica, donde ya operamos tres productos. Agricultura, industria y salud son las áreas que estamos abriendo.',
-    domoticsTitle: 'Domotics',
-    domoticsHeading: 'Productos en operación',
-    domoticsSubtitle: 'Software a medida para operar dispositivos, accesos, caja y agenda.',
-    upcomingTitle: 'En exploración',
-    upcomingHeading: 'Áreas que queremos abrir',
-    upcomingSubtitle:
-      'Si operas en agricultura, industria o salud, hablemos: buscamos el primer caso para abrir cada área.',
-    statusLive: 'Activo',
-    statusUpcoming: 'Próximamente',
   },
   project: {
     challenge: 'El desafío',
@@ -181,8 +152,49 @@ export const es = {
     ctaButton: 'Hablemos',
     ctaButtonBuy: 'Comprar ahora',
     ctaButtonDemo: 'Solicitar demo',
+    customTitle: '¿No es lo que buscas?',
+    customSubtitle:
+      'Te ofrecemos desarrollo a medida para tu operación. Cuéntanos tu caso y diseñamos la solución que necesitas.',
+    customButton: 'Solicitar desarrollo personalizado',
+    paymentTitle: 'Formas de pago',
+    paymentMethods: {
+      online: 'Pago en línea (tarjeta)',
+      transfer: 'Depósito / Transferencia bancaria',
+      transferNote: 'Enviar comprobante',
+      paypal: 'PayPal',
+      mercadolibre: 'MercadoLibre',
+    },
+    payment: {
+      selectMethod: 'Elige cómo pagar',
+      amount: 'Total a pagar',
+      card: {
+        title: 'Tarjeta (Stripe)',
+        description: 'Pago seguro con tarjeta de crédito/débito',
+      },
+      transfer: {
+        title: 'Transferencia / Depósito',
+        description: 'Depósito bancario, envía comprobante',
+        instructions: 'Datos bancarios',
+        uploadProof: 'Subir comprobante',
+        pending: 'Comprobante recibido, verificamos en 24h',
+      },
+      paypal: {
+        title: 'PayPal',
+        description: 'Paga con tu cuenta PayPal',
+      },
+      mercadopago: {
+        title: 'MercadoLibre / MercadoPago',
+        description: 'Pago en cuotas o saldo',
+      },
+      success: '¡Pago confirmado!',
+      cancel: 'Pago cancelado',
+      error: 'Ocurrió un error, intente de nuevo',
+      confirmEmailSent: 'Hemos enviado la confirmación a tu correo.',
+    },
     next: 'Siguiente proyecto',
     live: 'En operación',
+    tutorialsTitle: 'Tutoriales y guías',
+    tutorialsSubtitle: 'Aprende a configurar y aprovechar al máximo tu sistema.',
     specsTitle: 'Especificaciones técnicas',
     screenshots: 'Capturas del sistema',
     viewSuite: 'Ver suite del sistema',
@@ -220,16 +232,9 @@ export const es = {
       company: 'Empresa',
       companyPlaceholder: 'Nombre de la empresa',
       project: 'Proyecto de interés',
-      projectPlaceholder: 'Elige una opción',
-      projectOptions: {
-        smartHouse: 'Smart House',
-        fitnessGym: 'Fitness Gym',
-        healthPsychology: 'Health Psychology',
-        agriculture: 'Agriculture',
-        industrial: 'Industrial',
-        medical: 'Medical',
-        other: 'Otro',
-      },
+      projectPlaceholder: 'Sin especificar',
+      projectOptional: 'Opcional',
+      projectOther: 'Otro',
       message: 'Mensaje',
       messagePlaceholder: 'Cuéntanos brevemente qué quieres resolver.',
       consent: 'Acepto que Cosmos Compass use estos datos para responder mi consulta.',
@@ -261,7 +266,7 @@ export const es = {
     sections: [
       {
         title: 'Qué datos recibimos',
-        body: 'Nombre, email, empresa, proyecto de interés y el mensaje que decidas enviarnos. No pedimos datos sensibles.',
+        body: 'Nombre, email, empresa, proyecto de interés (opcional) y el mensaje que decidas enviarnos. No pedimos datos sensibles.',
       },
       {
         title: 'Para qué los usamos',
@@ -282,15 +287,7 @@ export const es = {
     ],
   },
   domain: {
-    productsTitle: 'Productos en operación',
-    explorationTitle: 'Esta vertical está en exploración.',
-    explorationBody:
-      'Todavía no publicamos productos en esta unidad. Estamos buscando el primer caso: si operas en este sector, cuéntanos qué quieres ordenar y mapeamos la operación antes de construir.',
-    explorationCta: 'Proponer un caso',
-    explorationNote:
-      'El método es el mismo que usamos en las verticales con producto: entender la operación, ordenar el dominio y construir sobre una base segura.',
-    statusActive: 'En operación',
-    statusExploration: 'En exploración',
+    productsTitle: 'Productos',
   },
   designs: {
     title: 'Tres direcciones de diseño.',
